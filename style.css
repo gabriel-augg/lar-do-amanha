@@ -36,15 +36,85 @@ nav {
   text-decoration: none;
 }
 
+#whyToAdopt-section {
+  width: 100%;
+  padding: 30px;
+}
+
+#whyToAdopt-content {
+  display: flex;
+  width: 100%;
+  background-color: #122633;
+  border-radius: 25px;
+  padding: 40px 30px;
+  box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#whyToAdopt-content aside, #whyToAdopt-content article {
+  width: 50%;
+}
+
+#whyToAdopt-content aside {
+  border-radius: 25px;
+  background: url(../assets/woman.jpg) no-repeat center;
+  background-size: cover;
+  height: 80vh;
+}
+
+#whyToAdopt-content article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+#whyToAdopt-content article h1 {
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#whyToAdopt-content article p {
+  font-size: 25px;
+  font-weight: 900;
+  color: #629c8b;
+  text-align: initial;
+  width: 90%;
+}
+
+.p-color {
+  color: #e56512;
+}
+
+@media only screen and (max-width: 600px) {
+  #whyToAdopt-section {
+    width: 100%;
+    padding: 0;
+  }
+  #whyToAdopt-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0;
+    padding: 40px 20px;
+    gap: 20px;
+  }
+  #whyToAdopt-content aside, #whyToAdopt-content article {
+    width: 100%;
+  }
+  #whyToAdopt-content aside {
+    border-radius: 25px;
+    height: 60vh;
+  }
+}
 * {
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
 }
 
 body {
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
   background-color: #619b8a;
 }/*# sourceMappingURL=style.css.map */
