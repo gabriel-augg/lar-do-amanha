@@ -5,8 +5,8 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid red;
-    padding: 30px;
+    padding: 50px;
+    
 }
 
 img{
@@ -14,29 +14,44 @@ img{
     height: 78px;
 }
 
-nav ul{
-
-    display: flex;
-    gap: 40px;
-    border: 1px solid red;
-    
-}
-
-nav{
-    border: 1px solid red;
-    
-}
-
-
 #menu{
+    gap: 40px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     list-style: none;
 }
 
 #menu a{
     color: white;
     text-decoration: none;
-    
+    font-size: 24px;
+    font-weight: bold;
+    transition: all .3s;
+    position: relative;
 }
 
+#menu a:hover{
+    color: $orangeP-1;
+}
+
+#btnDonate{
+    width:180px ;
+    height:60px;
+    border-radius: 16px;
+    background-color: $orangeP;
+    color: $whiteP;
+    font-size: 24px;
+    font-weight: bold;
+    border: none;
+    transition: all .3s;
+}
+
+#btnDonate:hover{
+    background-color: $orangeP-1;
+    transform: scale(1.1);
+}
+
+@media only screen and (max-width: 600px) {
+    
+  }
