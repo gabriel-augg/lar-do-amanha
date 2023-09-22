@@ -136,6 +136,7 @@ nav img {
   #div-card {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 50px;
   }
   #text-card h1 {
