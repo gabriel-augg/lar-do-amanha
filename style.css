@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
 header {
   width: 100%;
   height: 120px;
@@ -52,12 +53,31 @@ img {
   transform: scale(1.1);
 }
 
-@media (max-width: 480px) {
-  img {
+nav img {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  header {
+    padding: 20px;
+  }
+
+  #menu {
+    display: none;
+  }
+
+  #image-logo img {
     width: 187px;
     height: 44px;
   }
+
+  nav img {
+    width: 45px;
+    height: 40px;
+    display: block;
+  }
 }
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -69,4 +89,6 @@ body {
   width: 100%;
   height: 100%;
   background-color: #619b8a;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */
