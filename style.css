@@ -28,7 +28,6 @@ img {
   font-size: 24px;
   font-weight: bold;
   transition: all 0.3s;
-  position: relative;
 }
 
 #menu li:hover {
@@ -51,6 +50,20 @@ img {
 #btnDonate:hover {
   background-color: #f39754;
   transform: scale(1.1);
+}
+
+.selected {
+  position: relative;
+}
+
+.selected::after {
+  content: " ";
+  width: 100%;
+  height: 6px;
+  background-color: #fe7f2d;
+  position: absolute;
+  left: 0;
+  bottom: -42px;
 }
 
 nav img {
