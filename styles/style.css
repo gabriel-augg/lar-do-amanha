@@ -449,11 +449,15 @@ footer {
 #wannaAdopt-section {
   padding: 30px 190px;
   height: 90vh;
-  display: flex;
 }
 
 #all-inputs-wannaAdopt {
   width: 100%;
+}
+
+#title-wannaAdopt {
+  display: flex;
+  align-items: center;
 }
 
 #title-wannaAdopt h1 {
@@ -463,20 +467,16 @@ footer {
 }
 
 #upload-image {
-  width: 90px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   background-color: white;
   padding: 5px;
   box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
   display: none;
 }
 
-#title-wannaAdopt {
-  display: flex;
-  justify-content: space-between;
-}
-
-.inputs-wannaAdopt, #radio-wannaAdopt {
+.inputs-wannaAdopt,
+#radio-wannaAdopt {
   width: 40%;
 }
 
@@ -489,7 +489,6 @@ footer {
   color: #fff;
   font-size: 24px;
   text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
-  padding-bottom: 10px;
 }
 
 #radio-wannaAdopt input {
@@ -523,7 +522,9 @@ footer {
   opacity: 1;
 }
 
-.inputs-wannaAdopt input, .inputs-wannaAdopt select, #textare-wannaAdopt textarea {
+.inputs-wannaAdopt input,
+.inputs-wannaAdopt select,
+#textare-wannaAdopt textarea {
   width: 100%;
   padding: 2%;
   font-size: 18px;
@@ -544,7 +545,9 @@ footer {
   justify-content: space-between;
 }
 
-#title-wannaAdopt, #textare-wannaAdopt, #button-wannaAdopt {
+#title-wannaAdopt,
+#textare-wannaAdopt,
+#button-wannaAdopt {
   padding: 20px;
   display: flex;
 }
@@ -586,11 +589,38 @@ input[type=file] {
   background: #fff;
 }
 
-.inputs-wannaAdopt #fileImgLabel:hover, .inputs-wannaAdopt select:hover {
+.inputs-wannaAdopt #fileImgLabel:hover,
+.inputs-wannaAdopt select:hover {
   cursor: pointer;
   background-color: #EEEEEE;
 }
 
+@media only screen and (max-width: 600px) {
+  #wannaAdopt-section {
+    padding: 0;
+    height: auto;
+  }
+  #title-wannaAdopt,
+  .content-wannaAdopt {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .inputs-wannaAdopt,
+  #radio-wannaAdopt {
+    width: 100%;
+  }
+  .content-wannaAdopt {
+    padding: 20px 20px;
+  }
+  #radio-wannaAdopt {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+  }
+  #radio-wannaAdopt label {
+    font-size: 22px;
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0;
