@@ -195,6 +195,7 @@ footer {
 }
 
 .title-footer {
+  text-align: center;
   font-weight: bold;
   color: #fff;
   margin: 10px;
@@ -225,7 +226,7 @@ footer {
 
 @media only screen and (max-width: 600px) {
   .title-footer {
-    font-size: 13px;
+    font-size: 11px;
   }
 }
 #animal-cards {
