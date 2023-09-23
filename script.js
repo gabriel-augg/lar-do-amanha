@@ -32,7 +32,7 @@ closeMenu[0].addEventListener('click', () => {
 const changePage = (page) => {
     switch (page) {
         case 'start':
-            location.href = "http://127.0.0.1:5500/index.html"
+            location.href = "index.html"
             break;
         case 'adopt':
             document.getElementById('navItem').style.display = "none"
@@ -46,7 +46,7 @@ const changePage = (page) => {
 
             break;
         case 'btnDonate':
-
+            location.href = "wannaAdopt.html"
             break;
 
         default:
@@ -58,7 +58,7 @@ const changePage = (page) => {
 const statusLogin = document.getElementById('status-login')
 const statusLoginResponse = document.getElementById('status-login-response')
 let userCreated = false;
-const nomeUser = prompt('digite seu nome')
+const nomeUser = undefined
 function createUser() {
     if(userCreated === true){
         return
