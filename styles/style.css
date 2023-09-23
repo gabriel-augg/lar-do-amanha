@@ -446,21 +446,20 @@ footer {
     font-size: 1.4em;
   }
 }
-#wannaAdopt-section {
-  padding: 30px 190px;
-  height: 90vh;
+#wannaDonation-section {
+  padding: 2% 10%;
 }
 
-#all-inputs-wannaAdopt {
+#all-inputs-wannaDonation {
   width: 100%;
 }
 
-#title-wannaAdopt {
+#title-wannaDonation {
   display: flex;
   align-items: center;
 }
 
-#title-wannaAdopt h1 {
+#title-wannaDonation h1 {
   color: #fff;
   font-size: 37px;
   text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
@@ -475,23 +474,23 @@ footer {
   display: none;
 }
 
-.inputs-wannaAdopt,
-#radio-wannaAdopt {
+.inputs-wannaDonation,
+#radio-wannaDonation {
   width: 40%;
 }
 
-#radio-wannaAdopt {
+#radio-wannaDonation {
   display: flex;
   gap: 50px;
 }
 
-#radio-wannaAdopt label {
+#radio-wannaDonation label {
   color: #fff;
   font-size: 24px;
   text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-#radio-wannaAdopt input {
+#radio-wannaDonation input {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -508,7 +507,7 @@ footer {
   justify-content: center;
 }
 
-#radio-wannaAdopt input::before {
+#radio-wannaDonation input::before {
   position: absolute;
   content: "";
   width: 21px;
@@ -518,13 +517,13 @@ footer {
   opacity: 0;
 }
 
-#radio-wannaAdopt input:checked::before {
+#radio-wannaDonation input:checked::before {
   opacity: 1;
 }
 
-.inputs-wannaAdopt input,
-.inputs-wannaAdopt select,
-#textare-wannaAdopt textarea {
+.inputs-wannaDonation input,
+.inputs-wannaDonation select,
+#textare-wannaDonation textarea {
   width: 100%;
   padding: 2%;
   font-size: 18px;
@@ -534,30 +533,30 @@ footer {
   box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-#textare-wannaAdopt textarea {
+#textare-wannaDonation textarea {
   resize: none;
   height: 130px;
 }
 
-.content-wannaAdopt {
+.content-wannaDonation {
   padding: 20px;
   display: flex;
   justify-content: space-between;
 }
 
-#title-wannaAdopt,
-#textare-wannaAdopt,
-#button-wannaAdopt {
+#title-wannaDonation,
+#textare-wannaDonation,
+#button-wannaDonation {
   padding: 20px;
   display: flex;
 }
 
-#button-wannaAdopt {
+#button-wannaDonation {
   display: flex;
   justify-content: center;
 }
 
-#button-wannaAdopt button {
+#button-wannaDonation button {
   box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
   border: none;
   font-size: 24px;
@@ -568,7 +567,7 @@ footer {
   background: #fcca46;
 }
 
-#button-wannaAdopt button:hover {
+#button-wannaDonation button:hover {
   cursor: pointer;
   background-color: #e3b029;
 }
@@ -577,7 +576,7 @@ input[type=file] {
   display: none;
 }
 
-.inputs-wannaAdopt #fileImgLabel {
+.inputs-wannaDonation #fileImgLabel {
   display: block;
   width: 100%;
   padding: 2%;
@@ -589,35 +588,35 @@ input[type=file] {
   background: #fff;
 }
 
-.inputs-wannaAdopt #fileImgLabel:hover,
-.inputs-wannaAdopt select:hover {
+.inputs-wannaDonation #fileImgLabel:hover,
+.inputs-wannaDonation select:hover {
   cursor: pointer;
   background-color: #EEEEEE;
 }
 
 @media only screen and (max-width: 600px) {
-  #wannaAdopt-section {
+  #wannaDonation-section {
     padding: 0;
     height: auto;
   }
-  #title-wannaAdopt,
-  .content-wannaAdopt {
+  #title-wannaDonation,
+  .content-wannaDonation {
     flex-direction: column;
     gap: 40px;
   }
-  .inputs-wannaAdopt,
-  #radio-wannaAdopt {
+  .inputs-wannaDonation,
+  #radio-wannaDonation {
     width: 100%;
   }
-  .content-wannaAdopt {
+  .content-wannaDonation {
     padding: 20px 20px;
   }
-  #radio-wannaAdopt {
+  #radio-wannaDonation {
     display: flex;
     justify-content: center;
     gap: 50px;
   }
-  #radio-wannaAdopt label {
+  #radio-wannaDonation label {
     font-size: 22px;
   }
 }

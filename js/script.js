@@ -43,6 +43,7 @@ const changePage = (page) => {
             location.href = "index.html"
             break;
         case 'adopt':
+            location.href = 'wannaAdopt.html'
             document.getElementById('navItem').style.display = "none"
             document.getElementById('navItemResponse').style.display = "none"
             loginValidation()
@@ -54,7 +55,7 @@ const changePage = (page) => {
 
             break;
         case 'btnDonate':
-            location.href = "wannaAdopt.html"
+            location.href = "wannaDonation.html"
             break;
 
         default:
