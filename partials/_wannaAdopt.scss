@@ -1,0 +1,145 @@
+#wannaAdopt-section {
+    padding: 30px 190px;
+    height: 90vh;
+    display: flex;
+}
+
+#all-inputs-wannaAdopt {
+    width: 100%;
+}
+
+#title-wannaAdopt h1 {
+    color: $whiteP;
+    font-size: 37px;
+    text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
+}
+
+#upload-image {
+    width: 90px;
+    height: 100px;
+    background-color: white;
+    padding: 5px;
+    box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
+    display: none;
+}
+
+#title-wannaAdopt {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.inputs-wannaAdopt, #radio-wannaAdopt {
+    width: 40%;
+}
+
+#radio-wannaAdopt {
+    display: flex;
+    gap: 50px;
+}
+
+#radio-wannaAdopt label {
+    color: $whiteP;
+    font-size: 24px;
+    text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
+    padding-bottom: 10px;
+}
+
+#radio-wannaAdopt input {
+   appearance: none;
+   width: 25px;
+   height: 25px;
+   border-radius: 50%;
+   margin: 10px 0;
+   background: $whiteP;
+   position: relative;
+   box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+#radio-wannaAdopt input::before {
+    position: absolute;
+    content: '';
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    background: $orangeP1;
+    opacity: 0;
+ }
+
+ #radio-wannaAdopt input:checked::before {
+    opacity: 1;
+ }
+
+.inputs-wannaAdopt input,.inputs-wannaAdopt select, #textare-wannaAdopt textarea {
+    width: 100%;
+    padding: 2%;
+    font-size: 18px;
+    border-radius: 9px;
+    outline: none;
+    border: none;
+    box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
+}
+
+#textare-wannaAdopt textarea {
+    resize: none;
+    height: 130px;
+}
+
+.content-wannaAdopt {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#title-wannaAdopt, #textare-wannaAdopt, #button-wannaAdopt {
+    padding: 20px;
+    display: flex;
+}
+
+
+#button-wannaAdopt {
+    display: flex;
+    justify-content: center;
+}
+
+#button-wannaAdopt button {
+    box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
+    border: none;
+    font-size: 24px;
+    padding: 10px 20px;
+    border-radius: 16px;
+    color: $whiteP;
+    font-weight: 800;
+    background: $yellowP;
+}
+
+#button-wannaAdopt button:hover {
+    cursor: pointer;
+    background-color: $yellowP1;
+}
+
+input[type= "file"]{
+    display: none;
+}
+
+.inputs-wannaAdopt #fileImgLabel {
+    display: block;
+    width: 100%;
+    padding: 2%;
+    font-size: 18px;
+    border-radius: 9px;
+    outline: none;
+    border: none;
+    box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
+    background: $whiteP;
+}
+
+.inputs-wannaAdopt #fileImgLabel:hover, .inputs-wannaAdopt select:hover {
+    cursor: pointer;
+    background-color: #EEEEEE;
+}
+
