@@ -12,8 +12,6 @@ menuItem.forEach((item) =>
 )
 
 
-
-
 const listedMenu = document.getElementsByClassName('listed-menu')
 const closeMenu = document.getElementsByClassName('close-menu')
 
@@ -38,6 +36,7 @@ const changePage = (page) => {
             break;
         case 'adopt':
             document.getElementById('navItem').style.display = "none"
+            document.getElementById('navItemResponse').style.display = "none"
             loginValidation()
             break;
         case 'contactus':
@@ -58,19 +57,31 @@ const changePage = (page) => {
 
 const statusLogin = document.getElementById('status-login')
 const statusLoginResponse = document.getElementById('status-login-response')
+let userCreated = false;
 const nomeUser = prompt('digite seu nome')
 function createUser() {
+    if(userCreated === true){
+        return
+    }
     var userImage = document.createElement('img');
     userImage.src = "./assets/user.svg";
     var arrow = document.createElement('img');
     arrow.src = "./assets/caret-down.svg";
 
     var user = document.createElement('div');
+    var userResponse = document.createElement('div')
     user.className = "content-user"
     user.innerHTML = `<img class="icon-user" src="${userImage.src}"/><h4 id="name-user">${nomeUser}</h4><img class="arrow-user" src="${arrow.src}" />`;
+
+    userResponse.className = "content-user-response"
+    userResponse.innerHTML = `<img src="./assets/caret-right.svg"><img class="icon-user-response" src="${userImage.src}"/><h4 id="name-user-response">${nomeUser}</h4><img class="arrow-user-response" src="${arrow.src}" />`;
+
     statusLogin.appendChild(user);
-   
+    statusLoginResponse.appendChild(userResponse);
+    userCreated = true;
+
 }
+
 
 
 
@@ -78,6 +89,7 @@ function loginValidation() {
     let logado = true
     if (logado === true) {
         createUser()
+        return
     } else {
         
     }
