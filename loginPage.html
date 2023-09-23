@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lar do amanhã</title>
+    <link rel="icon" href="./assets/logo2.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<header>
+    <div id="image-logo">
+        <img src="./assets/logo1.png" alt="">
+    </div>
+    <nav>
+        <ul id="menu">
+            <li class="nav-item">
+                <h4 onclick="changePage('start')">Início</h4>
+            </li>
+            <li class="nav-item">
+                <h4 onclick="changePage('adopt')">Adotar</h4>
+            </li>
+            <li class="nav-item">
+                <h4 onclick="changePage('contactus')">Quem somos</h4>
+            </li>
+            <li class="nav-item" id="navItem">
+                <h4 onclick="changePage('login')" id="login">Entrar</h4>
+            </li>
+            <li id="status-login"></li>
+            <li><button id="btnDonate" onclick="changePage('btnDonate')">Quero Doar</button></li>
+        </ul>
+        <div>
+            <img class="listed-menu" src="./assets/bars.svg" alt="">
+            <img class="close-menu" src="./assets/xmark.svg" alt="">
+
+            <div class="responsive-menu">
+                <ul class="list-menu">
+                    <li class="nav-item">
+                        <h4 onclick="changePage('start')"><span><img src="./assets/caret-right.svg" alt=""></span>Início</h4>
+                    </li>
+                    <li class="nav-item">
+                        <h4 onclick="changePage('adopt')"><span><img src="./assets/caret-right.svg" alt=""></span>Adotar</h4>
+                    </li>
+                    <li class="nav-item">
+                        <h4 onclick="changePage('contactus')"><span><img src="./assets/caret-right.svg" alt=""></span>Quem somos</h4>
+                    </li>
+                    <li class="nav-item" id="navItemResponse">
+                        <h4 onclick="changePage('login')"><span><img src="./assets/caret-right.svg" alt=""></span>Entrar</h4>
+                    </li>
+                    <li id="status-login-response"></li>
+                    <li class="list-btn"><button id="btnDonate"  onclick="changePage('btnDonate')">Quero Doar</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </header>
+    
+    <section class="loginCard">
+        <div id="divCardLogin">
+        <h1 id="enter">Entrar</h1>
+        
+        <label for="inputEmail">Email</label>
+        <input type="email" id="inputEmail" required>
+
+        <label for="inputPass">Senha</label>
+        <input type="password" id="inputPass" required>
+
+        <button id="btnEnter">Entrar</button>
+
+        <h5 id="register">Não tem cadastro? <a href="#" id="registerLink">Cadastre-se</a></h5>
+        </div>
+        
+    </section>
+
+    <footer id="footer">
+
+        <h4 class="title-footer">© 2023 Lar do amanhã. Todos os direitos reservados.</h4>
+
+        <div class="footer-content">
+
+            <img src="./assets/logo3.png" alt="" class="logo3">
+            <div class="social-media">
+                <img src="./assets/logoInstagram.png" alt="" class="Insta-logo">
+                <img src="./assets/logoTwiter.png" alt="" class="Twitter-logo">
+                <img src="./assets/logoWhatsapp.png" alt="" class="Whats-logo">
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

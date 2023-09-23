@@ -442,6 +442,302 @@ footer {
     font-size: 1.4em;
   }
 }
+header {
+  width: 100%;
+  height: 12.3vh;
+  background-color: #233d4d;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+}
+
+img {
+  width: 324px;
+  height: 78px;
+}
+
+#menu {
+  gap: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+
+#menu li {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+#menu li:hover {
+  cursor: pointer;
+  color: #f39754;
+}
+
+#btnDonate {
+  width: 180px;
+  height: 60px;
+  border-radius: 16px;
+  background-color: #fe7f2d;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  border: none;
+  transition: all 0.3s;
+}
+
+#btnDonate:hover {
+  background-color: #f39754;
+  transform: scale(1.1);
+}
+
+.selected {
+  position: relative;
+}
+
+.selected::after {
+  content: " ";
+  width: 100%;
+  height: 6px;
+  background-color: #fe7f2d;
+  position: absolute;
+  left: 0;
+  bottom: -42px;
+}
+
+.content-user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+
+.icon-user {
+  width: 24px;
+  height: 24px;
+}
+
+.arrow-user {
+  width: 30px;
+  height: 30px;
+}
+
+.listed-menu {
+  display: none;
+}
+
+.responsive-menu {
+  display: none;
+}
+
+.close-menu {
+  display: none;
+}
+
+@media screen and (min-width: 601px) {
+  .listed-menu {
+    display: none !important;
+  }
+  .responsive-menu {
+    display: none !important;
+  }
+  .close-menu {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 600px) {
+  header {
+    padding: 20px;
+  }
+  #menu {
+    display: none;
+  }
+  #image-logo img {
+    width: 187px;
+    height: 44px;
+  }
+  nav img {
+    width: 45px;
+    height: 40px;
+    display: block;
+  }
+  .responsive-menu {
+    display: flex;
+    width: 95%;
+    position: absolute;
+    height: 240px;
+    background-color: #385566;
+    left: 10px;
+    top: 17.5%;
+    z-index: 5;
+    border-radius: 16px;
+    box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+    display: none;
+  }
+  .list-menu {
+    width: 100%;
+    list-style: none;
+    color: #fff;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  .nav-item span {
+    align-self: flex-start;
+  }
+  .nav-item h4 {
+    display: flex;
+    align-items: center;
+  }
+  .listed-menu {
+    display: block;
+  }
+  .list-btn {
+    display: flex;
+    justify-content: center;
+  }
+  #btnDonate {
+    font-size: 20px;
+    height: 38px;
+    width: 227px;
+    box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  .selected-response {
+    background-color: #233d4d;
+    border-radius: 12px;
+  }
+  .selected::after {
+    display: none;
+  }
+  .content-user-response {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin-bottom: 7px;
+  }
+  .icon-user-response {
+    width: 20px;
+    height: 20px;
+  }
+}
+.loginCard {
+  width: 100%;
+  height: 80%;
+}
+
+#divCardLogin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+#enter {
+  color: #fff;
+  text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#divCardLogin input {
+  width: 350px;
+  height: 42px;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+label {
+  text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+
+#btnEnter {
+  margin-top: 20px;
+  color: #fff;
+  background-color: #fcca46;
+  width: 350px;
+  height: 44px;
+  border: none;
+  border-radius: 16px;
+  font-size: 24px;
+  font-weight: bold;
+  box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#register {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#register a {
+  color: #458270;
+}
+
+@media only screen and (max-width: 600px) {
+  .loginCard {
+    height: 90vh;
+  }
+}
+footer {
+  width: 100%;
+  height: 16.8vh;
+  padding: 50px;
+  background-color: #233d4d;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title-footer {
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  margin: 10px;
+}
+
+.footer-content {
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+}
+
+.social-media {
+  display: flex;
+  margin-top: 12px;
+  height: 45px;
+}
+
+.logo3 {
+  width: 64px;
+  height: 78px;
+}
+
+.Insta-logo, .Twitter-logo, .Whats-logo {
+  width: 45px;
+  height: 45px;
+}
+
+@media only screen and (max-width: 600px) {
+  .title-footer {
+    font-size: 11px;
+  }
+  footer {
+    height: 22vh;
+  }
+  .logo3 {
+    width: 44px;
+    height: 58px;
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0;

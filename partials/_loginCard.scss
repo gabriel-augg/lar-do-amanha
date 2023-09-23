@@ -1,0 +1,63 @@
+.loginCard{
+    width: 100%;
+    height: 80%;
+}
+
+#divCardLogin{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+#enter{
+    color: $whiteP;
+    text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);;
+    
+}
+
+#divCardLogin input{
+    width: 350px;
+    height: 42px;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
+
+}
+
+label{
+    text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);;
+    color: $whiteP;
+    
+
+}
+
+#btnEnter{
+    margin-top: 20px;
+    color: $whiteP;
+    background-color: $yellowP;
+    width: 350px;
+    height: 44px;
+    border: none;
+    border-radius: 16px;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
+}
+
+#register{
+    color: $whiteP;
+    margin-top: 10px;
+}
+
+#register a{
+    color: $greenP1;
+}
+
+@media only screen and (max-width: 600px) {
+    .loginCard{
+        height: 90vh;
+    }
+}
