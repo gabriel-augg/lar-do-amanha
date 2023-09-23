@@ -1,4 +1,12 @@
 
+const clickLogo = document.getElementById('image-logo')
+clickLogo.addEventListener('click', () => {
+    location.href = "index.html"
+})
+
+
+
+
 const menuItem = document.querySelectorAll('.nav-item')
 function selectMenu() {
     menuItem.forEach((item) =>
@@ -64,9 +72,9 @@ function createUser() {
         return
     }
     var userImage = document.createElement('img');
-    userImage.src = "./assets/user.svg";
+    userImage.src = ".././assets/user.svg";
     var arrow = document.createElement('img');
-    arrow.src = "./assets/caret-down.svg";
+    arrow.src = ".././assets/caret-down.svg";
 
     var user = document.createElement('div');
     var userResponse = document.createElement('div')
@@ -74,7 +82,7 @@ function createUser() {
     user.innerHTML = `<img class="icon-user" src="${userImage.src}"/><h4 id="name-user">${nomeUser}</h4><img class="arrow-user" src="${arrow.src}" />`;
 
     userResponse.className = "content-user-response"
-    userResponse.innerHTML = `<img src="./assets/caret-right.svg"><img class="icon-user-response" src="${userImage.src}"/><h4 id="name-user-response">${nomeUser}</h4><img class="arrow-user-response" src="${arrow.src}" />`;
+    userResponse.innerHTML = `<img src=".././assets/caret-right.svg"><img class="icon-user-response" src="${userImage.src}"/><h4 id="name-user-response">${nomeUser}</h4><img class="arrow-user-response" src="${arrow.src}" />`;
 
     statusLogin.appendChild(user);
     statusLoginResponse.appendChild(userResponse);

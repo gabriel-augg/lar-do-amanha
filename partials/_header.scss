@@ -9,10 +9,15 @@ header {
 
 }
 
-img {
+#image-logo img {
     width: 324px;
     height: 78px;
 }
+
+#image-logo img:hover {
+    cursor: pointer;
+}
+
 
 #menu {
     gap: 40px;
@@ -100,20 +105,20 @@ img {
 }
 
 
-@media screen and  (min-width:601px) {
+@media screen and (min-width:601px) {
     .listed-menu {
-        display: none!important;
+        display: none !important;
     }
-    
+
     .responsive-menu {
-        display: none!important;
+        display: none !important;
     }
-    
+
     .close-menu {
-        display: none!important;
+        display: none !important;
     }
-    
-    
+
+
 }
 
 
@@ -207,7 +212,7 @@ img {
         margin-bottom: 7px;
     }
 
-    .icon-user-response{
+    .icon-user-response {
         width: 20px;
         height: 20px;
     }

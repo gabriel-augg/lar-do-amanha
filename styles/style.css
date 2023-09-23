@@ -9,9 +9,13 @@ header {
   padding: 50px;
 }
 
-img {
+#image-logo img {
   width: 324px;
   height: 78px;
+}
+
+#image-logo img:hover {
+  cursor: pointer;
 }
 
 #menu {
