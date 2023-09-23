@@ -1,19 +1,24 @@
 @import "./partials/color";
 @import "./partials/header";
+@import "./partials/footerHomePage";
+@import "./partials/animalCards";
 @import "./partials/whyToAdopt";
 @import "./partials/bgHome";
 @import "./partials/wannaAdopt";
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-*{
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
 
-body{
+
+body {
+    width: 100%;
+    height: 100%;
     background-color: $greenP;
 }
-
