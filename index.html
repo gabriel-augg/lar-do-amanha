@@ -17,20 +17,43 @@
         <nav>
             <ul id="menu">
                 <li class="nav-item">
-                    <h4>Início</h4>
+                    <h4 onclick="changePage('start')">Início</h4>
                 </li>
                 <li class="nav-item">
-                    <h4>Adotar</h4>
+                    <h4 onclick="changePage('adopt')">Adotar</h4>
                 </li>
                 <li class="nav-item">
-                    <h4>Quem somos</h4>
+                    <h4 onclick="changePage('contactus')">Quem somos</h4>
                 </li>
-                <li class="nav-item">
-                    <h4>Entrar</h4>
+                <li class="nav-item" id="navItem">
+                    <h4 onclick="changePage('login')" id="login">Entrar</h4>
                 </li>
-                <li><button id="btnDonate">Quero Doar</button></li>
+                <li id="status-login"></li>
+                <li><button id="btnDonate" onclick="changePage('btnDonate')">Quero Doar</button></li>
             </ul>
-            <img src="./assets/bars.svg" alt="">
+            <div>
+                <img class="listed-menu" src="./assets/bars.svg" alt="">
+                <img class="close-menu" src="./assets/xmark.svg" alt="">
+
+                <div class="responsive-menu">
+                    <ul class="list-menu">
+                        <li class="nav-item">
+                            <h4 onclick="changePage('start')"><span><img src="./assets/caret-right.svg" alt=""></span>Início</h4>
+                        </li>
+                        <li class="nav-item">
+                            <h4 onclick="changePage('adopt')"><span><img src="./assets/caret-right.svg" alt=""></span>Adotar</h4>
+                        </li>
+                        <li class="nav-item">
+                            <h4 onclick="changePage('contactus')"><span><img src="./assets/caret-right.svg" alt=""></span>Quem somos</h4>
+                        </li>
+                        <li class="nav-item" id="navItemResponse">
+                            <h4 onclick="changePage('login')"><span><img src="./assets/caret-right.svg" alt=""></span>Entrar</h4>
+                        </li>
+                        <li id="status-login-response"></li>
+                        <li class="list-btn"><button id="btnDonate"  onclick="changePage('btnDonate')">Quero Doar</button></li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
     <section id="bgHome">
