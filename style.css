@@ -66,8 +66,33 @@ img {
   bottom: -42px;
 }
 
-nav img {
+.listed-menu {
   display: none;
+}
+
+.responsive-menu {
+  display: none;
+}
+
+.close-menu {
+  display: none;
+}
+
+.content-user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+
+.icon-user {
+  width: 24px;
+  height: 24px;
+}
+
+.arrow-user {
+  width: 30px;
+  height: 30px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -85,6 +110,69 @@ nav img {
     width: 45px;
     height: 40px;
     display: block;
+  }
+  .responsive-menu {
+    display: flex;
+    width: 95%;
+    position: absolute;
+    height: 240px;
+    background-color: #385566;
+    left: 10px;
+    top: 17.5%;
+    z-index: 5;
+    border-radius: 16px;
+    box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+    display: none;
+  }
+  .list-menu {
+    width: 100%;
+    list-style: none;
+    color: #fff;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  .nav-item span {
+    align-self: flex-start;
+  }
+  .nav-item h4 {
+    display: flex;
+    align-items: center;
+  }
+  .listed-menu {
+    display: block;
+  }
+  .list-btn {
+    display: flex;
+    justify-content: center;
+  }
+  #btnDonate {
+    font-size: 20px;
+    height: 38px;
+    width: 227px;
+    box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  .selected-response {
+    background-color: #233d4d;
+    border-radius: 12px;
+  }
+  .selected::after {
+    display: none;
+  }
+  .content-user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+  }
+  .content-user {
+    position: absolute;
+    border: 1px solid red;
+    gap: 3px;
+    top: 62.1%;
+    left: 50px;
   }
 }
 #animal-cards {
