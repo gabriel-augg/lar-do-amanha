@@ -844,6 +844,46 @@ input[type=file] {
     width: 100%;
   }
 }
+#whoWeAre-section {
+  padding: 5% 7%;
+}
+
+#whoWeAre-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  color: #fff;
+}
+
+#whoWeAre-content h1, .text-bold {
+  font-size: 30px;
+  font-weight: bold;
+  text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#whoWeAre-content p {
+  font-size: 28px;
+}
+
+@media only screen and (max-width: 600px) {
+  #whoWeAre-section {
+    padding: 5% 7%;
+  }
+  #whoWeAre-content h1, .text-bold {
+    font-size: 22px;
+    font-weight: bold;
+    text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  .text-bold {
+    font-size: 22px;
+    text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+    display: block;
+    padding-bottom: 20px;
+  }
+  #whoWeAre-content p {
+    font-size: 20px;
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0;

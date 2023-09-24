@@ -49,7 +49,7 @@ const changePage = (page) => {
             loginValidation()
             break;
         case 'contactus':
-
+            location.href = "whoWeAre.html"
             break;
         case 'login':
 
