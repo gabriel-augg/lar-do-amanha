@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quero doar</title>
+    <link rel="icon" href=".././assets/logo2.png">
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body id="wannaAdopt">
+    <header>
+        <div id="image-logo">
+            <img src=".././assets/logo1.png" alt="">
+        </div>
+        <nav>
+            <ul id="menu">
+                <li class="nav-item">
+                    <h4 onclick="changePage('start')">Início</h4>
+                </li>
+                <li class="nav-item">
+                    <h4 onclick="changePage('adopt')">Adotar</h4>
+                </li>
+                <li class="nav-item">
+                    <h4 onclick="changePage('contactus')">Quem somos</h4>
+                </li>
+                <li class="nav-item" id="navItem">
+                    <h4 onclick="changePage('login')" id="login">Entrar</h4>
+                </li>
+                <li id="status-login"></li>
+                <li><button id="btnDonate" onclick="changePage('btnDonate')">Quero Doar</button></li>
+            </ul>
+            <div>
+                <img class="listed-menu" src=".././assets/bars.svg" alt="">
+                <img class="close-menu" src=".././assets/xmark.svg" alt="">
+
+                <div class="responsive-menu">
+                    <ul class="list-menu">
+                        <li class="nav-item">
+                            <h4 onclick="changePage('start')"><span><img src=".././assets/caret-right.svg" alt=""></span>Início</h4>
+                        </li>
+                        <li class="nav-item">
+                            <h4 onclick="changePage('adopt')"><span><img src=".././assets/caret-right.svg" alt=""></span>Adotar</h4>
+                        </li>
+                        <li class="nav-item">
+                            <h4 onclick="changePage('contactus')"><span><img src=".././assets/caret-right.svg" alt=""></span>Quem somos</h4>
+                        </li>
+                        <li class="nav-item" id="navItemResponse">
+                            <h4 onclick="changePage('login')"><span><img src=".././assets/caret-right.svg" alt=""></span>Entrar</h4>
+                        </li>
+                        <li id="status-login-response"></li>
+                        <li class="list-btn"><button id="btnDonate"  onclick="changePage('btnDonate')">Quero Doar</button></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section id="wannaAdopt-section">
+        <div id=wannaAdopt-content>
+            <div id="inputs-wannaAdopt">
+                <div class="div-inputs">
+                    <input type="text" placeholder='Palavra-chave'>
+                </div>
+                <div class="div-inputs">
+                    <select id="order">
+                        <option selected disabled>Ordenar</option>
+                        <option value="cat">Gato</option>
+                        <option value="dog">Cachorro</option>
+                        <option value="bird">Passarinho</option>
+                        <option value="rabbit">Coelho</option>
+                    </select>
+                </div>
+            </div>
+            <div id="wannaAdopt-cards">
+                <div class="card">
+                    <div>
+                        <img src=".././assets/dog-bg.jpg" style="width: 100%; height: 20%;border-radius: 16px;" alt="">
+                    </div>
+                    <div class="card-content">
+                        <div class="animal-name">
+                            <h3>Caramelo</h3>
+                        </div>
+                        <div class="animal-content">
+                            <div class="animal-gender">
+                                <h3><span><img src=".././assets/mars-and-venus.svg" style="width: 26px; height: 26px;"
+                                            alt=""></span>Macho</h3>
+                            </div>
+                            <div class="location">
+                                <h3><span><img src=".././assets/location.svg" style="width: 26px; height: 26px;"
+                                            alt=""></span>PE</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="date">
+                        <h4>adiconado em 19/02/2023</h4>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <img src=".././assets/dog-bg.jpg" style="width: 100%; height: 20%;border-radius: 16px;" alt="">
+                    </div>
+                    <div class="card-content">
+                        <div class="animal-name">
+                            <h3>Caramelo</h3>
+                        </div>
+                        <div class="animal-content">
+                            <div class="animal-gender">
+                                <h3><span><img src=".././assets/mars-and-venus.svg" style="width: 26px; height: 26px;"
+                                            alt=""></span>Macho</h3>
+                            </div>
+                            <div class="location">
+                                <h3><span><img src=".././assets/location.svg" style="width: 26px; height: 26px;"
+                                            alt=""></span>PE</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="date">
+                        <h4>adiconado em 19/02/2023</h4>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <img src=".././assets/dog-bg.jpg" style="width: 100%; height: 20%;border-radius: 16px;" alt="">
+                    </div>
+                    <div class="card-content">
+                        <div class="animal-name">
+                            <h3>Caramelo</h3>
+                        </div>
+                        <div class="animal-content">
+                            <div class="animal-gender">
+                                <h3><span><img src=".././assets/mars-and-venus.svg" style="width: 26px; height: 26px;"
+                                            alt=""></span>Macho</h3>
+                            </div>
+                            <div class="location">
+                                <h3><span><img src=".././assets/location.svg" style="width: 26px; height: 26px;"
+                                            alt=""></span>PE</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="date">
+                        <h4>adiconado em 19/02/2023</h4>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <img src=".././assets/dog-bg.jpg" style="width: 100%; height: 20%;border-radius: 16px;" alt="">
+                    </div>
+                    <div class="card-content">
+                        <div class="animal-name">
+                            <h3>Caramelo</h3>
+                        </div>
+                        <div class="animal-content">
+                            <div class="animal-gender">
+                                <h3><span><img src=".././assets/mars-and-venus.svg" style="width: 26px; height: 26px;"
+                                            alt=""></span>Macho</h3>
+                            </div>
+                            <div class="location">
+                                <h3><span><img src=".././assets/location.svg" style="width: 26px; height: 26px;"
+                                            alt=""></span>PE</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="date">
+                        <h4>adiconado em 19/02/2023</h4>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <img src=".././assets/dog-bg.jpg" style="width: 100%; height: 20%;border-radius: 16px;" alt="">
+                    </div>
+                    <div class="card-content">
+                        <div class="animal-name">
+                            <h3>Caramelo</h3>
+                        </div>
+                        <div class="animal-content">
+                            <div class="animal-gender">
+                                <h3><span><img src=".././assets/mars-and-venus.svg" style="width: 26px; height: 26px;"
+                                            alt=""></span>Macho</h3>
+                            </div>
+                            <div class="location">
+                                <h3><span><img src=".././assets/location.svg" style="width: 26px; height: 26px;"
+                                            alt=""></span>PE</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="date">
+                        <h4>adiconado em 19/02/2023</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer id="footer">
+
+        <h4 class="title-footer">© 2023 Lar do amanhã. Todos os direitos reservados.</h4>
+
+        <div class="footer-content">
+
+            <img src=".././assets/logo3.png" alt="" class="logo3">
+            <div class="social-media">
+                <img src=".././assets/logoInstagram.png" alt="" class="Insta-logo">
+                <img src=".././assets/logoTwiter.png" alt="" class="Twitter-logo">
+                <img src=".././assets/logoWhatsapp.png" alt="" class="Whats-logo">
+            </div>
+        </div>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+</html>
