@@ -1,7 +1,11 @@
 
 const clickLogo = document.getElementById('image-logo')
 clickLogo.addEventListener('click', () => {
-    location.href = "../index.html"
+    if (window.location.href.includes("/pages/")) {
+        location.href = "../index.html";
+    } else {
+        location.href = "./index.html";
+    }
 })
 
 
@@ -40,24 +44,45 @@ closeMenu[0].addEventListener('click', () => {
 const changePage = (page) => {
     switch (page) {
         case 'start':
-            location.href = "../index.html"
+            if (window.location.href.includes("/pages/")) {
+                location.href = "../index.html";
+            } else {
+                location.href = "./index.html";
+            }
             break;
         case 'adopt':
-            location.href = ".././pages/wannaAdopt.html"
-            document.getElementById('navItem').style.display = "none"
-            document.getElementById('navItemResponse').style.display = "none"
-            loginValidation()
+            if (window.location.href.includes("/pages/")) {
+                location.href = "../pages/wannaAdopt.html"
+            } else {
+                location.href = "./pages/wannaAdopt.html"
+                document.getElementById('navItem').style.display = "none"
+                document.getElementById('navItemResponse').style.display = "none"
+                loginValidation()
+            }
             break;
         case 'contactus':
-            location.href = ".././pages/whoWeAre.html"
+            if (window.location.href.includes("/pages/")) {
+                location.href = "../pages/whoWeAre.html"
+            } else {
+                location.href = "./pages/whoWeAre.html"
+            }
+
             break;
         case 'login':
-            location.href = '.././pages/loginPage.html'
+            if (window.location.href.includes("/pages/")) {
+                location.href = "../pages/loginPage.html"
+            } else {
+                location.href = "./pages/loginPage.html"
+            }
+
             break;
         case 'btnDonate':
-            location.href = ".././pages/wannaDonation.html"
+            if (window.location.href.includes("/pages/")) {
+                location.href = "../pages/wannaDonation.html"
+            } else {
+                location.href = "./pages/wannaDonation.html"
+            }
             break;
-
         default:
             break;
     }
@@ -69,7 +94,7 @@ const statusLoginResponse = document.getElementById('status-login-response')
 let userCreated = false;
 const nomeUser = undefined
 function createUser() {
-    if(userCreated === true){
+    if (userCreated === true) {
         return
     }
     var userImage = document.createElement('img');
@@ -92,75 +117,6 @@ function createUser() {
 }
 
 
-function loginValidation() {
-    let logado = true
-    if (logado === true) {
-        createUser()
-        return
-    } else {
-        
-    }
-}
-
-const btnDonation = document.getElementById('btn-donate')
-
-btnDonation.addEventListener('click', () => {
-    
-    donationCreate()
 
 
-})
 
-function donationCreate (){
-    const animalName = document.getElementById('animal-name')
-    const animalIMG = document.getElementById('img-file')
-    const animalType = document.getElementById('animal-type')
-    const phone = document.getElementById('phone')
-    const zipCode = document.getElementById('zipcode')
-    const city = document.getElementById('city')
-    const state = document.getElementById('state')
-    const gender = document.getElementsByName('gender')
-    
-
-    class Animal {
-        constructor(animalName, animalIMG, animalType, gender, phone, zipCode, city, state){
-            this.animalName = animalName
-            this.animalIMG = animalIMG
-            this.animalType = animalType
-            this.gender = gender
-            this.phone = phone
-            this.zipCode = zipCode
-            this.city = city
-            this.state = state
-        }
-    }
-
-    let newAnimal = new Animal(animalName.value, animalIMG.value, animalType.value, gender.value, phone.value, zipCode.value, city.value, state.value)
-
-    console.log(newAnimal)
-
-}
-
-let inputImage = document.getElementById('img-file');
-let statusImage = false;
-
-inputImage.addEventListener('change', (e) => {
-    let divImage = document.getElementById('upload-image');
-
-    if (statusImage === false) {
-        let img = document.createElement('img');
-        img.src = URL.createObjectURL(e.target.files[0]);
-        img.style.width = '100%';
-        img.style.height = '80%';
-        divImage.appendChild(img);
-        statusImage = true;
-    } else {
-        let img = document.createElement('img');
-        img.src = URL.createObjectURL(e.target.files[0]);
-        img.style.width = '100%';
-        img.style.height = '80%';
-        
-        let existingImg = divImage.querySelector('img');
-        divImage.replaceChild(img, existingImg);
-    }
-});
