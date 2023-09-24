@@ -696,6 +696,154 @@ input[type=file] {
     width: 100%;
   }
 }
+#infoAnimal-section {
+  padding: 1% 7%;
+  display: flex;
+}
+
+#infoAnimal-section aside, #infoAnimal-section article {
+  width: 100%;
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#animal-name, #animal-img, #post-date {
+  width: 100%;
+}
+
+#animal-img img {
+  box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#post-date h3 {
+  text-align: center;
+  color: #C6C6C6;
+  font-size: 20px;
+  font-weight: 800;
+  text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#animal-img img {
+  width: 100%;
+  border-radius: 16px;
+}
+
+#animal-name h1 {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 1%;
+  font-size: 30px;
+}
+
+#location-infoAnimal {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#info-content img {
+  width: 20px;
+  height: 20px;
+}
+
+#location-infoAnimal h1, #location-infoAnimal h2 {
+  background: #fff;
+  padding: 2px 10px;
+  border-radius: 20px;
+  box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#location-infoAnimal h1 {
+  font-size: 25px;
+  font-weight: 800;
+}
+
+#location-infoAnimal h2 {
+  padding: 2px 40px;
+  color: #385566;
+}
+
+#location-infoAnimal, .all-info, #wpp-button {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.all-info {
+  padding: 5%;
+  background: rgba(56, 85, 102, 0.4);
+  border-radius: 20px;
+  box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+  font-size: 20px;
+  color: #fff;
+  font-weight: 900;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.all-info img {
+  width: 40px;
+  height: 40px;
+}
+
+.info-infoAnimal {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-infoAnimal div {
+  width: 40%;
+}
+
+#wpp-button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#wpp-button button {
+  box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 10px 50px 10px 20px;
+  border-radius: 20px;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  background: white url(.././assets/logoWhatsapp.png) no-repeat right;
+  background-size: 50px;
+  font-weight: 900;
+}
+
+@media only screen and (max-width: 600px) {
+  #infoAnimal-section {
+    padding: 3% 5%;
+    display: flex;
+    flex-direction: column;
+  }
+  #animal-name h1 {
+    padding: 4px 15px;
+    font-size: 28px;
+  }
+  #location-infoAnimal {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .info-infoAnimal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+  .info-infoAnimal div {
+    width: 100%;
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0;
