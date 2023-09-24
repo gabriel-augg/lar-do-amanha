@@ -11,17 +11,59 @@ clickLogo.addEventListener('click', () => {
 
 
 
-const menuItem = document.querySelectorAll('.nav-item')
-function selectMenu() {
-    menuItem.forEach((item) =>
-        item.classList.remove('selected', 'selected-response')
-    )
-    this.classList.add('selected', 'selected-response')
+// Obtém a página atual a partir da URL
+function getCurrentPage() {
+    const path = window.location.pathname;
+    const pageName = path.split('/').pop(); // Pega o nome da página a partir da URL
+    return pageName;
 }
 
+
+
+
+const menuItem = document.querySelectorAll('.nav-item');
+
+function selectMenu(event) {
+    event.preventDefault();
+
+    // Remove a classe 'selected' de todos os itens de menu
+    menuItem.forEach((item) =>
+        item.classList.remove('selected', 'selected-response')
+    );
+
+    // Adiciona a classe 'selected' ao item de menu clicado
+    this.classList.add('selected', 'selected-response');
+
+    const menuText = this.textContent;
+    sessionStorage.setItem('selectedMenuItem', menuText); // Salva a classe selecionada
+
+    // Verifica se o item clicado é diferente de "Entrar" antes de redirecionar
+    if (!this.getAttribute('data-page') || this.getAttribute('data-page') !== 'login') {
+        // Redireciona para a página correspondente
+        const page = this.getAttribute('data-page');
+        if (page) {
+            window.location.href = `./pages/${page}.html`;
+        }
+    }
+}
+
+// Adicione um ouvinte de eventos de clique a cada item de menu
 menuItem.forEach((item) =>
     item.addEventListener('click', selectMenu)
-)
+);
+
+// Verifique se há um item de menu selecionado previamente salvo no sessionStorage
+const selectedMenuText = sessionStorage.getItem('selectedMenuItem');
+
+if (selectedMenuText) {
+    // Encontre o item de menu com base no texto armazenado
+    menuItem.forEach((item) => {
+        if (item.textContent.includes(selectedMenuText)) {
+            // Adicione a classe 'selected' ao item de menu previamente selecionado
+            item.classList.add('selected', 'selected-response');
+        }
+    });
+}
 
 
 const listedMenu = document.getElementsByClassName('listed-menu')
@@ -74,7 +116,6 @@ const changePage = (page) => {
             } else {
                 location.href = "./pages/loginPage.html"
             }
-
             break;
         case 'btnDonate':
             if (window.location.href.includes("/pages/")) {
