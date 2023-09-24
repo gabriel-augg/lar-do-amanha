@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quem somos</title>
+    <link rel="icon" href=".././assets/logo2.png">
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body id="wannaAdopt">
+    <header>
+        <div id="image-logo">
+            <img src=".././assets/logo1.png" alt="">
+        </div>
+        <nav>
+            <ul id="menu">
+                <li class="nav-item">
+                    <h4 onclick="changePage('start')">Início</h4>
+                </li>
+                <li class="nav-item">
+                    <h4 onclick="changePage('adopt')">Adotar</h4>
+                </li>
+                <li class="nav-item">
+                    <h4 onclick="changePage('contactus')">Quem somos</h4>
+                </li>
+                <li class="nav-item" id="navItem">
+                    <h4 onclick="changePage('login')" id="login">Entrar</h4>
+                </li>
+                <li id="status-login"></li>
+                <li><button id="btnDonate" onclick="changePage('btnDonate')">Quero Doar</button></li>
+            </ul>
+            <div>
+                <img class="listed-menu" src=".././assets/bars.svg" alt="">
+                <img class="close-menu" src=".././assets/xmark.svg" alt="">
+
+                <div class="responsive-menu">
+                    <ul class="list-menu">
+                        <li class="nav-item">
+                            <h4 onclick="changePage('start')"><span><img src=".././assets/caret-right.svg" alt=""></span>Início</h4>
+                        </li>
+                        <li class="nav-item">
+                            <h4 onclick="changePage('adopt')"><span><img src=".././assets/caret-right.svg" alt=""></span>Adotar</h4>
+                        </li>
+                        <li class="nav-item">
+                            <h4 onclick="changePage('contactus')"><span><img src=".././assets/caret-right.svg" alt=""></span>Quem somos</h4>
+                        </li>
+                        <li class="nav-item" id="navItemResponse">
+                            <h4 onclick="changePage('login')"><span><img src=".././assets/caret-right.svg" alt=""></span>Entrar</h4>
+                        </li>
+                        <li id="status-login-response"></li>
+                        <li class="list-btn"><button id="btnDonate"  onclick="changePage('btnDonate')">Quero Doar</button></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section id="whoWeAre-section">
+        <div id="whoWeAre-content">
+            <h1>Impacto nas Vidas de Animais de Rua:</h1>
+
+            <p><span class="text-bold">Resgates e Adoções:</span> Desde nossa fundação em 2010, já resgatamos e encaminhamos para lares amorosos mais de 5.000 animais de rua. Através de campanhas de adoção responsável, conseguimos encontrar lares permanentes para cerca de 90% desses animais. Isso significa que milhares de animais agora desfrutam de uma vida digna e cheia de amor.</p>
+
+            <p><span class="text-bold">Redução de Eutanásias:</span> Trabalhando em parceria com clínicas veterinárias, implementamos programas de esterilização e castração em larga escala. Isso levou a uma redução significativa no número de animais de rua e, consequentemente, nas eutanásias. Hoje, apenas 10% dos animais que resgatamos precisam ser eutanasiados devido a condições médicas graves.
+            </p>
+
+            <p><span class="text-bold">Redução de Eutanásias:</span> Trabalhando em parceria com clínicas veterinárias, implementamos programas de esterilização e castração em larga escala. Isso levou a uma redução significativa no número de animais de rua e, consequentemente, nas eutanásias. Hoje, apenas 10% dos animais que resgatamos precisam ser eutanasiados devido a condições médicas graves.</p>
+
+            <p><span class="text-bold">Desafios Futuros:</span> Embora tenhamos feito um progresso significativo, ainda enfrentamos desafios constantes. A crescente urbanização e a falta de recursos continuam a contribuir para o número de animais abandonados. Precisamos expandir nossa capacidade de resgate e cuidado, além de aumentar nossa rede de apoiadores.</p>
+        </div>
+    </section>
+    <footer id="footer">
+
+        <h4 class="title-footer">© 2023 Lar do amanhã. Todos os direitos reservados.</h4>
+
+        <div class="footer-content">
+
+            <img src=".././assets/logo3.png" alt="" class="logo3">
+            <div class="social-media">
+                <img src=".././assets/logoInstagram.png" alt="" class="Insta-logo">
+                <img src=".././assets/logoTwiter.png" alt="" class="Twitter-logo">
+                <img src=".././assets/logoWhatsapp.png" alt="" class="Whats-logo">
+            </div>
+        </div>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+</html>

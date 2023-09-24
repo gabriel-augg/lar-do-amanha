@@ -1,0 +1,45 @@
+#whoWeAre-section {
+    padding: 5% 7%;
+}
+
+#whoWeAre-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    color: $whiteP;
+    
+}
+
+#whoWeAre-content h1, .text-bold {
+    font-size: 30px;
+    font-weight: bold;
+    text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
+}
+
+#whoWeAre-content p {
+    font-size: 28px;
+}
+
+@media only screen and (max-width: 600px){
+    #whoWeAre-section {
+        padding: 5% 7%;
+    }
+
+    
+    #whoWeAre-content h1, .text-bold {
+        font-size: 22px;
+        font-weight: bold;
+        text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
+    }
+
+    .text-bold {
+        font-size: 22px;
+        text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
+        display: block;
+        padding-bottom: 20px;
+    }
+    
+    #whoWeAre-content p {
+        font-size: 20px;
+    }
+}
