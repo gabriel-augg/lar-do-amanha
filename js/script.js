@@ -1,7 +1,7 @@
 
 const clickLogo = document.getElementById('image-logo')
 clickLogo.addEventListener('click', () => {
-    location.href = "index.html"
+    location.href = "../index.html"
 })
 
 
@@ -40,7 +40,7 @@ closeMenu[0].addEventListener('click', () => {
 const changePage = (page) => {
     switch (page) {
         case 'start':
-            location.href = "index.html"
+            location.href = "../index.html"
             break;
         case 'adopt':
             document.getElementById('navItem').style.display = "none"
@@ -51,10 +51,10 @@ const changePage = (page) => {
 
             break;
         case 'login':
-            location.href = 'loginPage.html'
+            location.href = '.././pages/loginPage.html'
             break;
         case 'btnDonate':
-            location.href = "wannaDonation.html"
+            location.href = ".././pages/wannaDonation.html"
             break;
 
         default:
