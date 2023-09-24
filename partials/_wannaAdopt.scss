@@ -1,180 +1,84 @@
 #wannaAdopt-section {
-    padding: 30px 190px;
-    height: 90vh;
+    padding: 5% 6%;
 }
 
-#all-inputs-wannaAdopt {
-    width: 100%;
-}
 
-#title-wannaAdopt {
-    display: flex;
-    align-items: center;
-}
-
-#title-wannaAdopt h1 {
-    color: $whiteP;
-    font-size: 37px;
-    text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20); 
-}
-
-#upload-image {
-    width: 120px;
-    height: 120px;
-    background-color: white;
-    padding: 5px;
-    box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
-    display: none;
-}
-
-.inputs-wannaAdopt,
-#radio-wannaAdopt {
-    width: 40%;
-}
-
-#radio-wannaAdopt {
-    display: flex;
-    gap: 50px;
-}
-
-#radio-wannaAdopt label {
-    color: $whiteP;
-    font-size: 24px;
-    text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
-}
-
-#radio-wannaAdopt input {
-    appearance: none;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    margin: 10px 0;
-    background: $whiteP;
-    position: relative;
-    box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#radio-wannaAdopt input::before {
-    position: absolute;
-    content: '';
-    width: 21px;
-    height: 21px;
-    border-radius: 50%;
-    background: $orangeP1;
-    opacity: 0;
-}
-
-#radio-wannaAdopt input:checked::before {
-    opacity: 1;
-}
-
-.inputs-wannaAdopt input,
-.inputs-wannaAdopt select,
-#textare-wannaAdopt textarea {
-    width: 100%;
-    padding: 2%;
-    font-size: 18px;
-    border-radius: 9px;
-    outline: none;
-    border: none;
-    box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
-}
-
-#textare-wannaAdopt textarea {
-    resize: none;
-    height: 130px;
-}
-
-.content-wannaAdopt {
-    padding: 20px;
+#inputs-wannaAdopt {
     display: flex;
     justify-content: space-between;
-}
-
-#title-wannaAdopt,
-#textare-wannaAdopt,
-#button-wannaAdopt {
-    padding: 20px;
-    display: flex;
-}
-
-
-#button-wannaAdopt {
-    display: flex;
-    justify-content: center;
-}
-
-#button-wannaAdopt button {
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2.2% 1.5%;
+    border-radius: 8px;
+    background: $blueP-1;
     box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
-    border: none;
-    font-size: 24px;
-    padding: 10px 20px;
-    border-radius: 16px;
-    color: $whiteP;
-    font-weight: 800;
-    background: $yellowP;
+    gap: 10px;
 }
 
-#button-wannaAdopt button:hover {
-    cursor: pointer;
-    background-color: $yellowP1;
-}
 
-input[type="file"] {
-    display: none;
-}
 
-.inputs-wannaAdopt #fileImgLabel {
-    display: block;
-    width: 100%;
-    padding: 2%;
+#inputs-wannaAdopt input {
+    width: 450px;
+    min-width: 200px;
+    padding: 3% 3% 3% 9%;
     font-size: 18px;
     border-radius: 9px;
     outline: none;
     border: none;
     box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
-    background: $whiteP;
+    background: url(.././assets/search.svg) no-repeat center left;
+    background-color: white;
+    background-position: 10px;
+    background-size: 20px 20px;
 }
 
-.inputs-wannaAdopt #fileImgLabel:hover,
-.inputs-wannaAdopt select:hover {
-    cursor: pointer;
-    background-color: #EEEEEE;
+#inputs-wannaAdopt select {
+    width: 250px;
+    padding: 4.5%;
+    font-size: 18px;
+    border-radius: 9px;
+    outline: none;
+    border: none;
+    box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
+}
+
+#wannaAdopt-cards {
+    margin: 50px 0;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 50px 10px;
+    flex-wrap: wrap;
 }
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 600px){
     #wannaAdopt-section {
-        padding: 0;
-        height: auto;
+        padding: 0%;
     }
 
-    #title-wannaAdopt,
-    .content-wannaAdopt {
-        flex-direction: column;
-        gap: 40px;
-    }
-
-    .inputs-wannaAdopt,
-    #radio-wannaAdopt {
-        width: 100%;
-    }
-
-    .content-wannaAdopt {
-        padding: 20px 20px;
-    }
-
-    #radio-wannaAdopt {
+    #inputs-wannaAdopt {
+        margin-top: 20px;
         display: flex;
-        justify-content: center;
-        gap: 50px;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: space-between;
+        align-items: center;
+        padding: 4%;
+        border-radius: 0;
+        box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
+    }
+
+    #inputs-wannaAdopt input {
+        width: 100%;
+        padding: 3% 3% 3% 11%;
     }
     
-    #radio-wannaAdopt label {
-        font-size: 22px;
+    #inputs-wannaAdopt select {
+        width: 100%;
+        padding: 3%;
+    }
+
+    .div-inputs {
+        width: 100%;
     }
 }
