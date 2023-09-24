@@ -43,12 +43,13 @@ const changePage = (page) => {
             location.href = "../index.html"
             break;
         case 'adopt':
+            location.href = ".././pages/wannaAdopt.html"
             document.getElementById('navItem').style.display = "none"
             document.getElementById('navItemResponse').style.display = "none"
             loginValidation()
             break;
         case 'contactus':
-            location.href = "whoWeAre.html"
+            location.href = ".././pages/whoWeAre.html"
             break;
         case 'login':
             location.href = '.././pages/loginPage.html'
