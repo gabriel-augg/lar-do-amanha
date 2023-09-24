@@ -444,7 +444,7 @@ footer {
 }
 header {
   width: 100%;
-  height: 12.3vh;
+  height: 120px;
   background-color: #233d4d;
   display: flex;
   align-items: center;
@@ -628,24 +628,30 @@ img {
 }
 .loginCard {
   width: 100%;
-  height: 80%;
+  height: 80vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
 #divCardLogin {
+  gap: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
 }
 
 #enter {
+  font-size: 36px;
+  margin-bottom: 30px;
+  font-weight: bold;
   color: #fff;
   text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 #divCardLogin input {
+  font-size: 16px;
+  padding: 10px;
   width: 350px;
   height: 42px;
   border-radius: 8px;
@@ -654,6 +660,7 @@ img {
 }
 
 label {
+  font-size: 18px;
   text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
   color: #fff;
 }
@@ -674,15 +681,17 @@ label {
 #register {
   color: #fff;
   margin-top: 10px;
+  font-size: 18px;
+  margin-left: 8px;
 }
 
 #register a {
   color: #458270;
 }
 
-@media only screen and (max-width: 600px) {
-  .loginCard {
-    height: 90vh;
+@media screen and (max-width: 600px) {
+  .divCardLogin {
+    width: 100%;
   }
 }
 footer {
