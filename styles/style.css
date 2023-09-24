@@ -446,6 +446,75 @@ footer {
     font-size: 1.4em;
   }
 }
+.loginCard {
+  width: 100%;
+  height: 80vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+#divCardLogin {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#enter {
+  font-size: 36px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#divCardLogin input {
+  font-size: 16px;
+  padding: 10px;
+  width: 350px;
+  height: 42px;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+label {
+  font-size: 18px;
+  text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+
+#btnEnter {
+  margin-top: 20px;
+  color: #fff;
+  background-color: #fcca46;
+  width: 350px;
+  height: 44px;
+  border: none;
+  border-radius: 16px;
+  font-size: 24px;
+  font-weight: bold;
+  box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#register {
+  color: #fff;
+  margin-top: 10px;
+  font-size: 18px;
+  margin-left: 8px;
+}
+
+#register a {
+  color: #458270;
+}
+
+@media screen and (max-width: 600px) {
+  .divCardLogin {
+    width: 100%;
+  }
+}
 #wannaDonation-section {
   padding: 2% 10%;
 }
@@ -472,6 +541,10 @@ footer {
   background-color: white;
   padding: 5px;
   box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#fileImgLabel {
+  color: #4f4f4f;
 }
 
 .inputs-wannaDonation,

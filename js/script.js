@@ -43,7 +43,6 @@ const changePage = (page) => {
             location.href = "index.html"
             break;
         case 'adopt':
-            location.href = 'wannaAdopt.html'
             document.getElementById('navItem').style.display = "none"
             document.getElementById('navItemResponse').style.display = "none"
             loginValidation()
@@ -52,7 +51,7 @@ const changePage = (page) => {
 
             break;
         case 'login':
-
+            location.href = 'loginPage.html'
             break;
         case 'btnDonate':
             location.href = "wannaDonation.html"
@@ -112,7 +111,6 @@ btnDonation.addEventListener('click', () => {
 })
 
 function donationCreate (){
-
     const animalName = document.getElementById('animal-name')
     const animalIMG = document.getElementById('img-file')
     const animalType = document.getElementById('animal-type')
