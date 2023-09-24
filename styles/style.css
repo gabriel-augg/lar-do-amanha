@@ -457,6 +457,7 @@ footer {
 #title-wannaDonation {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 #title-wannaDonation h1 {
@@ -471,7 +472,6 @@ footer {
   background-color: white;
   padding: 5px;
   box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
-  display: none;
 }
 
 .inputs-wannaDonation,

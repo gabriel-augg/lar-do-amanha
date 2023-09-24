@@ -92,8 +92,6 @@ function createUser() {
 }
 
 
-
-
 function loginValidation() {
     let logado = true
     if (logado === true) {
@@ -103,3 +101,67 @@ function loginValidation() {
         
     }
 }
+
+const btnDonation = document.getElementById('btn-donate')
+
+btnDonation.addEventListener('click', () => {
+    
+    donationCreate()
+
+
+})
+
+function donationCreate (){
+
+    const animalName = document.getElementById('animal-name')
+    const animalIMG = document.getElementById('img-file')
+    const animalType = document.getElementById('animal-type')
+    const phone = document.getElementById('phone')
+    const zipCode = document.getElementById('zipcode')
+    const city = document.getElementById('city')
+    const state = document.getElementById('state')
+    const gender = document.getElementsByName('gender')
+    
+
+    class Animal {
+        constructor(animalName, animalIMG, animalType, gender, phone, zipCode, city, state){
+            this.animalName = animalName
+            this.animalIMG = animalIMG
+            this.animalType = animalType
+            this.gender = gender
+            this.phone = phone
+            this.zipCode = zipCode
+            this.city = city
+            this.state = state
+        }
+    }
+
+    let newAnimal = new Animal(animalName.value, animalIMG.value, animalType.value, gender.value, phone.value, zipCode.value, city.value, state.value)
+
+    console.log(newAnimal)
+
+}
+
+let inputImage = document.getElementById('img-file');
+let statusImage = false;
+
+inputImage.addEventListener('change', (e) => {
+    let divImage = document.getElementById('upload-image');
+
+    if (statusImage === false) {
+        let img = document.createElement('img');
+        img.src = URL.createObjectURL(e.target.files[0]);
+        img.style.width = '100%';
+        img.style.height = '80%';
+        divImage.appendChild(img);
+        statusImage = true;
+    } else {
+        let img = document.createElement('img');
+        img.src = URL.createObjectURL(e.target.files[0]);
+        img.style.width = '100%';
+        img.style.height = '80%';
+        
+        let existingImg = divImage.querySelector('img');
+        divImage.replaceChild(img, existingImg);
+    }
+});

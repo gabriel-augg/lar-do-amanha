@@ -61,23 +61,23 @@
                     <h1>Quero doar</h1>
                 </div>
                 <div>
-                    <div id="upload-image" ></div>
+                    <div id="upload-image"></div>
                 </div>
             </div>
             <div class="content-wannaDonation">
                 <div class="inputs-wannaDonation">
-                    <input type="text" placeholder="Nome do animal" >
+                    <input type="text" id="animal-name" placeholder="Nome do animal" >
                     
                 </div>
                 <div class="inputs-wannaDonation">
-                    <label for="imgFile" id="fileImgLabel">Selecionar imagem</label>
-                    <input type="file" name="img" id="imgFile" >
+                    <label for="img-file" id="fileImgLabel">Selecionar imagem</label>
+                    <input type="file" name="img" id="img-file" >
                 </div>
             </div >
             <div class="content-wannaDonation">
                 <div class="inputs-wannaDonation">
                     
-                    <select>
+                    <select id="animal-type">
                         <option selected disabled>Animal</option>
                         <option value="cat">Gato</option>
                         <option value="dog">Cachorro</option>
@@ -86,21 +86,21 @@
                     </select>
                 </div>
                 <div class="inputs-wannaDonation">
-                    <input type="text" placeholder="Telefone">
+                    <input type="text" id="phone" placeholder="Telefone">
                 </div>
             </div>
             <div class="content-wannaDonation">
                 <div class="inputs-wannaDonation">
-                    <input type="text" placeholder="CEP" >
+                    <input type="text" id="zipcode" placeholder="CEP" >
                 </div>
                 <div class="inputs-wannaDonation">
-                    <input type="text" placeholder="Cidade" >
+                    <input type="text" id="city" placeholder="Cidade" >
                 </div>
 
             </div>
             <div class="content-wannaDonation">
                 <div class="inputs-wannaDonation">
-                    <select>
+                    <select id="state">
                         <option selected disabled>Estado</option>
                         <option value="AC">Acre</option>
                         <option value="AL">Alagoas</option>
@@ -144,10 +144,10 @@
 
             </div>
             <div id="textare-wannaDonation">
-                <textarea placeholder="Descrição"></textarea>
+                <textarea id="textarea" placeholder="Descrição"></textarea>
             </div>
             <div id="button-wannaDonation">
-                <button>Colocar para adoção</button>
+                <button id="btn-donate">Colocar para adoção</button>
             </div>
         </div>
     </section>
