@@ -37,29 +37,34 @@
             <div class="responsive-menu">
                 <ul class="list-menu">
                     <li class="nav-item">
-                        <h4 onclick="changePage('start')"><span><img src=".././assets/caret-right.svg" alt=""></span>Início</h4>
+                        <h4 onclick="changePage('start')"><span><img src=".././assets/caret-right.svg"
+                                    alt=""></span>Início</h4>
                     </li>
                     <li class="nav-item">
-                        <h4 onclick="changePage('adopt')"><span><img src=".././assets/caret-right.svg" alt=""></span>Adotar</h4>
+                        <h4 onclick="changePage('adopt')"><span><img src=".././assets/caret-right.svg"
+                                    alt=""></span>Adotar</h4>
                     </li>
                     <li class="nav-item">
-                        <h4 onclick="changePage('contactus')"><span><img src=".././assets/caret-right.svg" alt=""></span>Quem somos</h4>
+                        <h4 onclick="changePage('contactus')"><span><img src=".././assets/caret-right.svg"
+                                    alt=""></span>Quem somos</h4>
                     </li>
                     <li class="nav-item" id="navItemResponse">
-                        <h4 onclick="changePage('login')"><span><img src=".././assets/caret-right.svg" alt=""></span>Entrar</h4>
+                        <h4 onclick="changePage('login')"><span><img src=".././assets/caret-right.svg"
+                                    alt=""></span>Entrar</h4>
                     </li>
                     <li id="status-login-response"></li>
-                    <li class="list-btn"><button id="btnDonate"  onclick="changePage('btnDonate')">Quero Doar</button></li>
+                    <li class="list-btn"><button id="btnDonate" onclick="changePage('btnDonate')">Quero Doar</button>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
-    </header>
-    
-    <section class="loginCard">
-        <div id="divCardLogin">
+</header>
+
+<section class="loginCard">
+    <div id="divCardLogin">
         <h1 id="enter">Entrar</h1>
-        
+
         <label for="inputEmail">Email</label>
         <input type="email" id="inputEmail" required>
 
@@ -68,26 +73,50 @@
 
         <button id="btnEnter" onclick="logar()">Entrar</button>
 
-        <h5 id="register">Não tem cadastro? <a href="#" id="registerLink">Cadastre-se</a></h5>
+        <h5 id="register">Não tem cadastro? <a id="openRegister">Cadastre-se!</a></h5>
+
+    </div>
+
+</section>
+
+<dialog id="modal">
+    <div class="modalContent">
+        <h1>Cadastrar</h1>
+        <div class="contentSingUp">
+            <label for="registerEmail">Email</label>
+            <input type="email" id="registerEmail" required>
+            <label for="registerName">Nome</label>
+            <input type="text" id="registerName" required>
+            <label for="registerPass">Senha</label>
+            <input type="password" id="registerPass" required>
+            <label for="confirmPass">Repetir Senha</label>
+            <input type="password" id="confirmPass" required>
+            
+            <button id="sendRegister">Cadastrar</button>
         </div>
-        
-    </section>
 
-    <footer id="footer">
+    </div>
+    <img src=".././assets/xmark.svg" id="closeModal"></img>
 
-        <h4 class="title-footer">© 2023 Lar do amanhã. Todos os direitos reservados.</h4>
+</dialog>
 
-        <div class="footer-content">
+<footer id="footer">
 
-            <img src=".././assets/logo3.png" alt="" class="logo3">
-            <div class="social-media">
-                <img src=".././assets/logoInstagram.png" alt="" class="Insta-logo">
-                <img src=".././assets/logoTwiter.png" alt="" class="Twitter-logo">
-                <img src=".././assets/logoWhatsapp.png" alt="" class="Whats-logo">
-            </div>
+    <h4 class="title-footer">© 2023 Lar do amanhã. Todos os direitos reservados.</h4>
+
+    <div class="footer-content">
+
+        <img src=".././assets/logo3.png" alt="" class="logo3">
+        <div class="social-media">
+            <img src=".././assets/logoInstagram.png" alt="" class="Insta-logo">
+            <img src=".././assets/logoTwiter.png" alt="" class="Twitter-logo">
+            <img src=".././assets/logoWhatsapp.png" alt="" class="Whats-logo">
         </div>
-    </footer>
-    <script src="../js/script.js"></script>
-    <script src="../js/loginpage.js"></script>
+    </div>
+</footer>
+
+<script src="../js/script.js"></script>
+<script src="../js/loginpage.js"></script>
 </body>
+
 </html>

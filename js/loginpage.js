@@ -1,40 +1,50 @@
 
-function createUser(){
-    const email= document.getElementById('inputEmail')
-    const password = document.getElementById('inputPass')
-    const animals = []
-    const logged = true
+function createUser() {
+  const email = document.getElementById('inputEmail')
+  const password = document.getElementById('inputPass')
+  const animals = []
+  const logged = true
 
-    class User {
-        constructor(email , name , password , animals, Logged){
-            this.email = email
-            this.name = name
-            this.password = password
-            this.animals = animals
-            this.logged = logged
-        }
+  class User {
+    constructor(email, name, password, animals, Logged) {
+      this.email = email
+      this.name = name
+      this.password = password
+      this.animals = animals
+      this.logged = logged
     }
+  }
 
-    let newUser = new User(email.value , name.value , password.value , animals , logged)
-    createClient(newUser)
-    console.log(newUser)
-    console.log(animals)
+  let newUser = new User(email.value, name.value, password.value, animals, logged)
+  createClient(newUser)
+  console.log(newUser)
+  console.log(animals)
 }
 
-function logar(){
-    createUser()
+function logar() {
+  createUser()
 }
 
+const modal = document.getElementById('modal')
+const openModal = document.getElementById('openRegister')
+const closeModal = document.getElementById('closeModal')
 
+openModal.addEventListener('click', () => {
+  modal.showModal()
+})
+
+closeModal.addEventListener('click', () => {
+  modal.close()
+})
 
 function loginValidation() {
-    let logado = true
-    if (logado === true) {
-        createUser()
-        return
-    } else {
-        
-    }
+  let logado = true
+  if (logado === true) {
+    createUser()
+    return
+  } else {
+
+  }
 }
 
 

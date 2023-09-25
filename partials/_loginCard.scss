@@ -1,4 +1,4 @@
-.loginCard{
+.loginCard {
     width: 100%;
     height: 80vh;
     justify-content: center;
@@ -6,23 +6,24 @@
     display: flex;
 }
 
-#divCardLogin{
+#divCardLogin {
     gap: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-#enter{
+#enter {
     font-size: 36px;
     margin-bottom: 30px;
     font-weight: bold;
     color: $whiteP;
-    text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);;
-    
+    text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
+    ;
+
 }
 
-#divCardLogin input{
+#divCardLogin input {
     font-size: 16px;
     padding: 10px;
     width: 350px;
@@ -34,16 +35,20 @@
 
 }
 
-label{
+label {
     font-size: 18px;
-    text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);;
+    text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
+    ;
     color: $whiteP;
-    
+
 
 }
 
-#btnEnter{
+#btnEnter {
     margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: $whiteP;
     background-color: $yellowP;
     width: 350px;
@@ -55,19 +60,90 @@ label{
     box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
 }
 
-#register{
+#register {
     color: $whiteP;
-    margin-top: 10px;
     font-size: 18px;
-    margin-left: 8px;
+    display: flex;
+    gap: 15px;
 }
 
-#register a{
-    color: $greenP1;
+#openRegister {
+    color: $lightGrennP-1;
+    
 }
+
+#openRegister:hover{
+    cursor: pointer;
+}
+
+#closeModal{
+    width: 25px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#modal {
+    border-radius: 20px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 25%;
+    height: 550px;
+    transform: translate(-50%, -50%);
+    padding: 26px 50px 91px;
+    background-color: $blueP-1;
+    box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
+    border: none;
+
+}
+
+.modalContent {
+    flex-direction: column;
+    display: flex;
+    position: relative;
+    height: 100%;
+    justify-content: center;
+    text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
+}
+
+.modalContent h1 {
+    color: $whiteP;
+    text-align: center;
+    font-weight: bold;
+    
+}
+
+.contentSingUp {
+    gap: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contentSingUp button{
+    margin-top: 20px;
+    background-color: $yellowP;
+    color: $whiteP;
+    font-size: 21px;
+    font-weight: bold;
+    border-radius: 16px;
+}
+
+.contentSingUp input, button{
+    outline: none;
+    border-radius: 8px;
+    padding: 10px;
+    border: none;
+    box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
+}
+
+
+
+
 
 @media screen and (max-width: 600px) {
- .divCardLogin{
-    width: 100%;
- }
+    .divCardLogin {
+        width: 100%;
+    }
 }
