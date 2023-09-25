@@ -1,0 +1,182 @@
+#wannaDonation-section {
+    padding: 2% 10%;
+}
+
+#all-inputs-wannaDonation {
+    width: 100%;
+}
+
+#title-wannaDonation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#title-wannaDonation h1 {
+    color: $whiteP;
+    font-size: 37px;
+    text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20); 
+}
+
+#upload-image {
+    width: 120px;
+    height: 120px;
+    background-color: white;
+    padding: 5px;
+    box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
+}
+#fileImgLabel{
+    color: $grayP;
+}
+
+.inputs-wannaDonation,
+#radio-wannaDonation {
+    width: 40%;
+}
+
+#radio-wannaDonation {
+    display: flex;
+    gap: 50px;
+}
+
+#radio-wannaDonation label {
+    color: $whiteP;
+    font-size: 24px;
+    text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
+}
+
+#radio-wannaDonation input {
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin: 10px 0;
+    background: $whiteP;
+    position: relative;
+    box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#radio-wannaDonation input::before {
+    position: absolute;
+    content: '';
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    background: $orangeP1;
+    opacity: 0;
+}
+
+#radio-wannaDonation input:checked::before {
+    opacity: 1;
+}
+
+.inputs-wannaDonation input,
+.inputs-wannaDonation select,
+#textare-wannaDonation textarea {
+    width: 100%;
+    padding: 2%;
+    font-size: 18px;
+    border-radius: 9px;
+    outline: none;
+    border: none;
+    box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
+}
+
+#textare-wannaDonation textarea {
+    resize: none;
+    height: 130px;
+}
+
+.content-wannaDonation {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#title-wannaDonation,
+#textare-wannaDonation,
+#button-wannaDonation {
+    padding: 20px;
+    display: flex;
+}
+
+
+#button-wannaDonation {
+    display: flex;
+    justify-content: center;
+}
+
+#button-wannaDonation button {
+    box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
+    border: none;
+    font-size: 24px;
+    padding: 10px 20px;
+    border-radius: 16px;
+    color: $whiteP;
+    font-weight: 800;
+    background: $yellowP;
+}
+
+#button-wannaDonation button:hover {
+    cursor: pointer;
+    background-color: $yellowP1;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.inputs-wannaDonation #fileImgLabel {
+    display: block;
+    width: 100%;
+    padding: 2%;
+    font-size: 18px;
+    border-radius: 9px;
+    outline: none;
+    border: none;
+    box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
+    background: $whiteP;
+}
+
+.inputs-wannaDonation #fileImgLabel:hover,
+.inputs-wannaDonation select:hover {
+    cursor: pointer;
+    background-color: #EEEEEE;
+}
+
+
+@media only screen and (max-width: 600px) {
+    #wannaDonation-section {
+        padding: 0;
+        height: auto;
+    }
+
+    #title-wannaDonation,
+    .content-wannaDonation {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .inputs-wannaDonation,
+    #radio-wannaDonation {
+        width: 100%;
+    }
+
+    .content-wannaDonation {
+        padding: 20px 20px;
+    }
+
+    #radio-wannaDonation {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+    }
+    
+    #radio-wannaDonation label {
+        font-size: 22px;
+    }
+}
