@@ -101,4 +101,18 @@ cepInput.addEventListener('blur', () => {
 
 
 
+// local storage 
+
+const getLocalStorage = () => JSON.parse(localStorage.getItem('usuarios')) || [];
+
+const setLocalStorage = (usuarios) => localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+
+const createClient = (client) => {
+  const usuarios = getLocalStorage();
+  usuarios.push(client);
+  setLocalStorage(usuarios);
+};
+
+
 
