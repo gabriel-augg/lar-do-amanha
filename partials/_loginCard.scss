@@ -58,9 +58,16 @@ label {
     font-size: 24px;
     font-weight: bold;
     box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
+    transition: all .3s;
+}
+
+#btnEnter:hover{
+    transform: scale(1.05);
 }
 
 #register {
+    justify-content: center;
+    display: flex;
     color: $whiteP;
     font-size: 18px;
     display: flex;
@@ -81,6 +88,11 @@ label {
     position: absolute;
     top: 20px;
     right: 20px;
+    cursor: pointer;
+    transition: all .4s;
+}
+#closeModal:hover{
+  transform: scale(1.2);
 }
 
 #modal {
@@ -95,6 +107,15 @@ label {
     background-color: $blueP-1;
     box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
     border: none;
+    
+}
+
+
+
+
+#modal::backdrop{
+    background-color: rgba(0, 0, 0, 0.466);
+    backdrop-filter: blur(2.5px);
 
 }
 
@@ -128,6 +149,12 @@ label {
     font-size: 21px;
     font-weight: bold;
     border-radius: 16px;
+    transition: all .4s;
+
+}
+
+.contentSingUp button:hover{
+    transform: scale(1.05);
 }
 
 .contentSingUp input, button{
@@ -144,6 +171,10 @@ label {
 
 @media screen and (max-width: 600px) {
     .divCardLogin {
+        width: 100%;
+    }
+
+    #modal{
         width: 100%;
     }
 }

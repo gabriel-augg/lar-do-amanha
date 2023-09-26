@@ -1,13 +1,116 @@
-.section{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: $blueP;
-    color: $whiteP;
-   padding: 40px;
+#contactUs-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $blueP;
+  color: $whiteP;
+  gap: 30px;
+  padding: 40px;
+  visibility: hidden;
+}
+
+#contactUs-section h2{
+  text-align: center;
+  font-size: 35px;
+  text-transform: uppercase;
+  text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
+}
+
+.all-inputs-contactUs {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  width: 70%;
+  flex-wrap: wrap;
+}
+
+.all-inputs-contactUs input{
+    width: 40%;
+    padding: 1%;
+    font-size: 18px;
+    border-radius: 9px;
+    outline: none;
+    border: none;
+    box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
+    margin-top: 20px;
+}
+
+#div-textarea {
+  width: 70%;
+}
+
+#div-textarea textarea {
+  width: 100%;
+  padding: 2%;
+  font-size: 18px;
+  border-radius: 9px;
+  outline: none;
+  border: none;
+  box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
+  resize: none;
+  height: 180px;
+  margin-top: 50px;
+}
+
+#contactUs-section button {
+  box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
+  border: none;
+  font-size: 24px;
+  padding: 10px 20px;
+  width: 350px;
+  border-radius: 16px;
+  color: $whiteP;
+  font-weight: 800;
+  background: $orangeP;
+  margin: 40px 0;
+  transition: all .3s;
+  
+}
+
+#contactUs-section button:hover {
+  transform: scale(1.05);
+  background-color: $orangeP-1;
+}
+
+@media only screen and (max-width: 600px) {
+  #contactUs-section{
+    padding: 40px;
   }
   
+  #contactUs-section h2{
+    text-align: center;
+    font-size: 35px;
+    text-transform: uppercase;
+  }
+  
+  .all-inputs-contactUs {
+    display: flex;
+    flex-direction: column;
+    justify-content: unset;
+    gap: 25px;
+    width: 100%;
+    flex-wrap: unset;
+  }
+  
+  .all-inputs-contactUs input{
+      width: 100%;
+      padding: 2%;
+  }
+  
+  #div-textarea {
+    width: 100%;
+  }
+
+  #div-btn {
+    width: 100%;
+  }
+  
+  #contactUs-section button {
+    width: 100%;
+  }
+}
+  /*
   .input{
     flex-direction: column;
     flex-wrap: wrap;
@@ -57,5 +160,7 @@
     box-shadow: none;
     transform: scale(1.2);
   }
+
+  */
   
   

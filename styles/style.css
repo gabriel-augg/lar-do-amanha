@@ -130,24 +130,32 @@ header {
     display: flex;
     width: 95%;
     position: absolute;
-    height: 240px;
     background-color: #385566;
     left: 10px;
     top: 17.5%;
     z-index: 5;
     border-radius: 16px;
     box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
-    display: none;
+  }
+  .show {
+    transition: 0.25s;
+    height: 240px;
+  }
+  .hide {
+    transition: 0.25s;
+    height: 0;
   }
   .list-menu {
     width: 100%;
     list-style: none;
     color: #fff;
-    padding: 20px 10px;
+    padding: 0px 10px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     gap: 2px;
     text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+    overflow-y: hidden;
   }
   .nav-item span {
     align-self: flex-start;
@@ -168,6 +176,9 @@ header {
     height: 38px;
     width: 227px;
     box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .selected-response {
     background-color: #233d4d;
@@ -245,7 +256,7 @@ footer {
 }
 
 #text-card h1 {
-  font-size: 24px;
+  font-size: 35px;
   font-weight: bold;
   text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
   color: #fff;
@@ -265,6 +276,7 @@ footer {
   background-color: #fff;
   box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
   padding: 20px;
+  visibility: hidden;
 }
 
 .animal-name {
@@ -315,6 +327,7 @@ footer {
   border-radius: 25px;
   padding: 40px 30px;
   box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+  visibility: hidden;
 }
 
 #whyToAdopt-content aside, #whyToAdopt-content article {
@@ -390,6 +403,10 @@ footer {
   padding: 100px;
   color: #fff;
   box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#bg-content {
+  visibility: hidden;
 }
 
 #bg-content h1 {
@@ -500,9 +517,16 @@ label {
   font-size: 24px;
   font-weight: bold;
   box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+}
+
+#btnEnter:hover {
+  transform: scale(1.05);
 }
 
 #register {
+  justify-content: center;
+  display: flex;
   color: #fff;
   font-size: 18px;
   display: flex;
@@ -522,6 +546,12 @@ label {
   position: absolute;
   top: 20px;
   right: 20px;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+#closeModal:hover {
+  transform: scale(1.2);
 }
 
 #modal {
@@ -536,6 +566,12 @@ label {
   background-color: #385566;
   box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
   border: none;
+}
+
+#modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.466);
+  -webkit-backdrop-filter: blur(2.5px);
+          backdrop-filter: blur(2.5px);
 }
 
 .modalContent {
@@ -567,6 +603,11 @@ label {
   font-size: 21px;
   font-weight: bold;
   border-radius: 16px;
+  transition: all 0.4s;
+}
+
+.contentSingUp button:hover {
+  transform: scale(1.05);
 }
 
 .contentSingUp input, button {
@@ -579,6 +620,9 @@ label {
 
 @media screen and (max-width: 600px) {
   .divCardLogin {
+    width: 100%;
+  }
+  #modal {
     width: 100%;
   }
 }
@@ -760,17 +804,113 @@ input[type=file] {
     font-size: 22px;
   }
 }
-.section {
+#contactUs-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #233d4d;
   color: #fff;
+  gap: 30px;
   padding: 40px;
+  visibility: hidden;
 }
 
-.input {
+#contactUs-section h2 {
+  text-align: center;
+  font-size: 35px;
+  text-transform: uppercase;
+  text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.all-inputs-contactUs {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  width: 70%;
+  flex-wrap: wrap;
+}
+
+.all-inputs-contactUs input {
+  width: 40%;
+  padding: 1%;
+  font-size: 18px;
+  border-radius: 9px;
+  outline: none;
+  border: none;
+  box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+}
+
+#div-textarea {
+  width: 70%;
+}
+
+#div-textarea textarea {
+  width: 100%;
+  padding: 2%;
+  font-size: 18px;
+  border-radius: 9px;
+  outline: none;
+  border: none;
+  box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+  resize: none;
+  height: 180px;
+  margin-top: 50px;
+}
+
+#contactUs-section button {
+  box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+  border: none;
+  font-size: 24px;
+  padding: 10px 20px;
+  width: 350px;
+  border-radius: 16px;
+  color: #fff;
+  font-weight: 800;
+  background: #fe7f2d;
+  margin: 40px 0;
+  transition: all 0.3s;
+}
+
+#contactUs-section button:hover {
+  transform: scale(1.05);
+  background-color: #f39754;
+}
+
+@media only screen and (max-width: 600px) {
+  #contactUs-section {
+    padding: 40px;
+  }
+  #contactUs-section h2 {
+    text-align: center;
+    font-size: 35px;
+    text-transform: uppercase;
+  }
+  .all-inputs-contactUs {
+    display: flex;
+    flex-direction: column;
+    justify-content: unset;
+    gap: 25px;
+    width: 100%;
+    flex-wrap: unset;
+  }
+  .all-inputs-contactUs input {
+    width: 100%;
+    padding: 2%;
+  }
+  #div-textarea {
+    width: 100%;
+  }
+  #div-btn {
+    width: 100%;
+  }
+  #contactUs-section button {
+    width: 100%;
+  }
+}
+/*
+.input{
   flex-direction: column;
   flex-wrap: wrap;
   margin: 30px;
@@ -778,48 +918,49 @@ input[type=file] {
   margin-left: 5px;
   margin-right: 30px;
   margin-bottom: 30px;
-  color: #fff;
-  border-radius: 6px;
-  box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+  color: $whiteP;
+  border-radius: 6px ;
+  box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
   padding: 7px 40px;
 }
 
-.description {
+.description{
   margin-bottom: 30px;
-  color: #fff;
-  border-radius: 6px;
-  text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+  color: $whiteP;
+  border-radius: 6px ;
+  text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
   padding: 5px;
   margin-top: 50px;
 }
 
-.button {
+.button{
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 10%;
   padding: 3px 20px;
-  background: #fe7f2d;
-  border: 2px solid #fe7f2d;
+  background: $orangeP;
+  border: 2px solid  $orangeP;
   outline: none;
   border-radius: 6px;
-  box-shadow: 10px 10px 100px #000000;
+  box-shadow: 10px 10px 100px $blackP;
   font-size: 18px;
-  color: #fff;
+  color: $whiteP;
   letter-spacing: 1px;
   font-weight: 200;
   cursor: pointer;
-  transition: 0.3s;
+  transition: .3s;
   margin-top: 25px;
 }
 
-.button:hover {
-  background: #fe7f2d;
+.button:hover{
+  background:  $orangeP;
   box-shadow: none;
   transform: scale(1.2);
 }
 
+*/
 #wannaAdopt-section {
   padding: 5% 6%;
 }

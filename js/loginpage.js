@@ -30,8 +30,10 @@ const openModal = document.getElementById('openRegister')
 const closeModal = document.getElementById('closeModal')
 
 openModal.addEventListener('click', () => {
+  modal.style.animation = 'openModal .5s'
   modal.showModal()
 })
+
 
 closeModal.addEventListener('click', () => {
   modal.close()

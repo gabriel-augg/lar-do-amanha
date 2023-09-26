@@ -10,7 +10,7 @@
 }
 
 #text-card h1{
-    font-size: 24px;
+    font-size: 35px;
     font-weight: bold;
     text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
     color: $whiteP;
@@ -30,7 +30,7 @@
     background-color: $whiteP;
     box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
     padding: 20px;
-
+    visibility: hidden;
 }
 
 .animal-name{

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lar do amanhã</title>
     <link rel="icon" href="./assets/logo2.png">
+    <script src="https://unpkg.com/scrollreveal"></script>
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 
@@ -35,8 +36,8 @@
                 <img class="listed-menu" src="./assets/bars.svg" alt="">
                 <img class="close-menu" src="./assets/xmark.svg" alt="">
 
-                <div class="responsive-menu">
-                    <ul class="list-menu">
+                <div class="responsive-menu hide">
+                    <ul class="list-menu ">
                         <li class="nav-item">
                             <h4 onclick="changePage('start')"><span><img src="./assets/caret-right.svg" alt=""></span>Início</h4>
                         </li>
@@ -164,22 +165,27 @@
         </div>
     </section>
     
-    <section class="section">
-        <h2>Fale Conosco</h2>
+    <section id="contactUs-section">
         <div>
+            <h2>Fale Conosco</h2>
+        </div>
+        <div class="all-inputs-contactUs">
            <input type="text" placeholder="Digite seu nome" class="input" >
            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" placeholder="Digite seu Telefone" class="input" >
-           <div>
+           
            <input type="email"placeholder="Digite seu email" class="input" >
            <input type="text" placeholder="Titulo" class="input" >  
-           </div>
+           
         </div>
    
-        <div>
+        <div id="div-textarea">
            <textarea name="Descrição" id="" cols="80" rows="5" placeholder="Descrição" class="description"></textarea>
         </div>
-   
-        <button class="button">Enviar</button>
+
+        <div id="div-btn">
+            <button class="button">Enviar</button>
+        </div>
+
        
        </section>
 
@@ -198,6 +204,7 @@
         </div>
     </footer>
     <script src="./js/script.js"></script>
+    <script src="./js/animations.js"></script>
     
 </body>
 
