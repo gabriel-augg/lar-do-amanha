@@ -1177,10 +1177,6 @@ input[type=file] {
   justify-content: center;
 }
 
-* {
-  border: 1px solid red;
-}
-
 .date-register {
   margin-top: 5%;
   text-align: center;

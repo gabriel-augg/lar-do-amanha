@@ -46,29 +46,10 @@ const getLocalStorage = () => JSON.parse(localStorage.getItem('usuarios')) || []
 
 const setLocalStorage = (usuarios) => localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
-const deleteClient = (index) => {
-  const usuarios = readClient();
-  usuarios.splice(index, 1);
-  setLocalStorage(usuarios);
-};
-
-const updateClient = (index, client) => {
-  const usuarios = readClient();
-  usuarios[index] = client;
-  setLocalStorage(usuarios);
-};
-
-const readClient = () => getLocalStorage();
-
 const createClient = (client) => {
   const usuarios = getLocalStorage();
   usuarios.push(client);
   setLocalStorage(usuarios);
 };
-
-function usuarioJaExiste(nomeUsuario) {
-  const usuarios = readClient();
-  return usuarios.some(client => client.usuario === nomeUsuario);
-}
 
 
