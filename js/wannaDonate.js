@@ -56,6 +56,7 @@ inputImage.addEventListener('change', (e) => {
     if (statusImage === false) {
         let img = document.createElement('img');
         img.src = URL.createObjectURL(e.target.files[0]);
+        console.log(URL.createObjectURL(e.target.files[0]))
         img.style.width = '100%';
         img.style.height = '80%';
         divImage.appendChild(img);
@@ -94,6 +95,16 @@ cepInput.addEventListener('blur', () => {
             inputState.value = state;
         })
 });
+
+const getLocalStorage = () => JSON.parse(localStorage.getItem('usuarios')) || [];
+
+const setLocalStorage = (usuarios) => localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+const createClient = (client) => {
+  const usuarios = getLocalStorage();
+  usuarios.push(client);
+  setLocalStorage(usuarios);
+};
 
 
 
