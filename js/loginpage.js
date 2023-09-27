@@ -4,7 +4,7 @@ function createUser() {
   const password = document.getElementById('inputPass')
   const nameUser = document
   const animals = []
-  const logged = false
+  const logged = true
 
   class User {
     constructor(email, nameUser, password, animals, Logged) {
@@ -22,7 +22,10 @@ function createUser() {
 
 // function para cadastrar usuario 
 
+function cadastrar (){
+  createUser()
 
+}
 
 // validação usuario 
 

@@ -14,12 +14,13 @@ function donationCreate() {
     const city = document.getElementById('city')
     const state = document.getElementById('state')
     const gender = document.getElementsByName('gender')
+    
 
 
 
 
     class Animal {
-        constructor(animalName, animalIMG, animalType, gender, phone, zipCode, city, state) {
+        constructor(animalName, animalIMG, animalType, gender, phone, zipCode, city, state , date) {
             this.animalName = animalName
             this.animalIMG = animalIMG
             this.animalType = animalType
@@ -28,6 +29,7 @@ function donationCreate() {
             this.zipCode = zipCode
             this.city = city
             this.state = state
+            this.date = date
         }
     }
 
@@ -96,6 +98,9 @@ cepInput.addEventListener('blur', () => {
         })
 });
 
+
+
+// local storage
 const getLocalStorage = () => JSON.parse(localStorage.getItem('usuarios')) || [];
 
 const setLocalStorage = (usuarios) => localStorage.setItem("usuarios", JSON.stringify(usuarios));
@@ -105,25 +110,3 @@ const createClient = (client) => {
   usuarios.push(client);
   setLocalStorage(usuarios);
 };
-
-
-
-
-
-
-
-// local storage 
-
-const getLocalStorage = () => JSON.parse(localStorage.getItem('usuarios')) || [];
-
-const setLocalStorage = (usuarios) => localStorage.setItem("usuarios", JSON.stringify(usuarios));
-
-
-const createClient = (client) => {
-  const usuarios = getLocalStorage();
-  usuarios.push(client);
-  setLocalStorage(usuarios);
-};
-
-
-
