@@ -13,7 +13,7 @@ function donationCreate() {
     const zipCode = document.getElementById('zipcode')
     const city = document.getElementById('city')
     const state = document.getElementById('state')
-    const gender = document.getElementsByName('gender')
+    const selectedGender = document.querySelector('input[name="gender"]:checked');
 
 
 
@@ -31,7 +31,7 @@ function donationCreate() {
         }
     }
 
-    let newAnimal = new Animal(animalName.value, animalIMG.value, animalType.value, gender.value, phone.value, zipCode.value, city.value, state.value)
+    let newAnimal = new Animal(animalName.value, animalIMG.value, animalType.value, selectedGender.value, phone.value, zipCode.value, city.value, state.value)
 
     const itemLocal = JSON.parse(localStorage.getItem('usuarios'));
     itemLocal.forEach(item => {
