@@ -37,57 +37,67 @@
             <div class="responsive-menu">
                 <ul class="list-menu">
                     <li class="nav-item">
-                        <h4 onclick="changePage('start')"><span><img src=".././assets/caret-right.svg" alt=""></span>Início</h4>
+                        <h4 onclick="changePage('start')"><span><img src=".././assets/caret-right.svg"
+                                    alt=""></span>Início</h4>
                     </li>
                     <li class="nav-item">
-                        <h4 onclick="changePage('adopt')"><span><img src=".././assets/caret-right.svg" alt=""></span>Adotar</h4>
+                        <h4 onclick="changePage('adopt')"><span><img src=".././assets/caret-right.svg"
+                                    alt=""></span>Adotar</h4>
                     </li>
                     <li class="nav-item">
-                        <h4 onclick="changePage('contactus')"><span><img src=".././assets/caret-right.svg" alt=""></span>Quem somos</h4>
+                        <h4 onclick="changePage('contactus')"><span><img src=".././assets/caret-right.svg"
+                                    alt=""></span>Quem somos</h4>
                     </li>
                     <li class="nav-item" id="navItemResponse">
-                        <h4 onclick="changePage('login')"><span><img src=".././assets/caret-right.svg" alt=""></span>Entrar</h4>
+                        <h4 onclick="changePage('login')"><span><img src=".././assets/caret-right.svg"
+                                    alt=""></span>Entrar</h4>
                     </li>
                     <li id="status-login-response"></li>
-                    <li class="list-btn"><button id="btnDonate"  onclick="changePage('btnDonate')">Quero Doar</button></li>
+                    <li class="list-btn"><button id="btnDonate" onclick="changePage('btnDonate')">Quero Doar</button>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
-    </header>
-    
-    <section class="loginCard">
-        <div id="divCardLogin">
+</header>
+
+<section class="loginCard">
+    <div id="divCardLogin">
         <h1 id="enter">Entrar</h1>
-        
+
+        <div id="errorUserPass"></div>
         <label for="inputEmail">Email</label>
+        <div id="user-empty">Digite um email</div>
         <input type="email" id="inputEmail" required>
 
+        
         <label for="inputPass">Senha</label>
+        <div id="pass-empty">Digite uma senha</div>
         <input type="password" id="inputPass" required>
 
-        <button id="btnEnter" onclick="logar()">Entrar</button>
+        <button id="btnEnter">Entrar</button>
 
         <h5 id="register">Não tem cadastro? <a href="#" id="registerLink">Cadastre-se</a></h5>
+    </div>
+
+</section>
+
+<footer id="footer">
+
+    <h4 class="title-footer">© 2023 Lar do amanhã. Todos os direitos reservados.</h4>
+
+    <div class="footer-content">
+
+        <img src=".././assets/logo3.png" alt="" class="logo3">
+        <div class="social-media">
+            <img src=".././assets/logoInstagram.png" alt="" class="Insta-logo">
+            <img src=".././assets/logoTwiter.png" alt="" class="Twitter-logo">
+            <img src=".././assets/logoWhatsapp.png" alt="" class="Whats-logo">
         </div>
-        
-    </section>
-
-    <footer id="footer">
-
-        <h4 class="title-footer">© 2023 Lar do amanhã. Todos os direitos reservados.</h4>
-
-        <div class="footer-content">
-
-            <img src=".././assets/logo3.png" alt="" class="logo3">
-            <div class="social-media">
-                <img src=".././assets/logoInstagram.png" alt="" class="Insta-logo">
-                <img src=".././assets/logoTwiter.png" alt="" class="Twitter-logo">
-                <img src=".././assets/logoWhatsapp.png" alt="" class="Whats-logo">
-            </div>
-        </div>
-    </footer>
-    <script src="../js/script.js"></script>
-    <script src="../js/loginpage.js"></script>
+    </div>
+</footer>
+<script src="../js/script.js"></script>
+<script src="../js/loginpage.js"></script>
 </body>
+
 </html>

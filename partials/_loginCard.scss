@@ -66,6 +66,22 @@ label{
     color: $greenP1;
 }
 
+
+#user-empty{
+    color: rgb(172, 12, 12);
+    display: none;
+    font-weight: bold;
+}
+
+
+#pass-empty{
+    color: rgb(172, 12, 12);
+    display: none;
+    font-weight: bold;
+}
+
+
+
 @media screen and (max-width: 600px) {
  .divCardLogin{
     width: 100%;
