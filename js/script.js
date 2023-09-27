@@ -61,9 +61,7 @@ function b (){
         location.href = "../pages/wannaAdopt.html"
     } else {
         location.href = "./pages/wannaAdopt.html"
-        document.getElementById('navItem').style.display = "none"
-        document.getElementById('navItemResponse').style.display = "none"
-        loginValidation()
+        ValidationData()
     }
 }
 
@@ -96,7 +94,7 @@ const statusLogin = document.getElementById('status-login')
 const statusLoginResponse = document.getElementById('status-login-response')
 let userCreated = false;
 const nomeUser = undefined
-function createUser() {
+function showUser() {
     if (userCreated === true) {
         return
     }
@@ -122,4 +120,39 @@ function createUser() {
 
 
 
+// validação email e senha
 
+const ValidationData = () => {
+    let validation = false;
+    const itemLocal = getLocalStorage()
+    itemLocal.forEach(item => {
+      if (item.email === inputEmail.value && item.password === inputPass.value) {
+        item.logged = true;
+        validation = true;
+        setLocalStorage(itemLocal);
+      }
+    });
+  
+    if (validation) {
+      location.href = "../index.html";
+    } else {
+      console.log('usuario ou senha n encontrados')
+    }
+  }
+  
+
+
+
+
+
+  
+// local storage
+const getLocalStorage = () => JSON.parse(localStorage.getItem('usuarios')) || [];
+
+const setLocalStorage = (usuarios) => localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+const createClient = (client) => {
+  const usuarios = getLocalStorage();
+  usuarios.push(client);
+  setLocalStorage(usuarios);
+};

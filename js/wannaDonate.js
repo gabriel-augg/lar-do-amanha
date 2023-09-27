@@ -13,14 +13,14 @@ function donationCreate() {
     const zipCode = document.getElementById('zipcode')
     const city = document.getElementById('city')
     const state = document.getElementById('state')
-    const gender = document.getElementsByName('gender')
-    
-
+    const selectedGender = document.querySelector('input[name="gender"]:checked');
+    const date = new Date()
+    const currentDate = `${date.getDate()}/0${date.getMonth()+1}/${date.getFullYear()}`
 
 
 
     class Animal {
-        constructor(animalName, animalIMG, animalType, gender, phone, zipCode, city, state , date) {
+        constructor(animalName, animalIMG, animalType, gender, phone, zipCode, city, state, date) {
             this.animalName = animalName
             this.animalIMG = animalIMG
             this.animalType = animalType
@@ -33,7 +33,7 @@ function donationCreate() {
         }
     }
 
-    let newAnimal = new Animal(animalName.value, animalIMG.value, animalType.value, gender.value, phone.value, zipCode.value, city.value, state.value)
+    let newAnimal = new Animal(animalName.value, animalIMG.value, animalType.value, selectedGender.value, phone.value, zipCode.value, city.value, state.value, currentDate)
 
     const itemLocal = JSON.parse(localStorage.getItem('usuarios'));
     itemLocal.forEach(item => {
@@ -99,14 +99,3 @@ cepInput.addEventListener('blur', () => {
 });
 
 
-
-// local storage
-const getLocalStorage = () => JSON.parse(localStorage.getItem('usuarios')) || [];
-
-const setLocalStorage = (usuarios) => localStorage.setItem("usuarios", JSON.stringify(usuarios));
-
-const createClient = (client) => {
-  const usuarios = getLocalStorage();
-  usuarios.push(client);
-  setLocalStorage(usuarios);
-};

@@ -29,8 +29,16 @@
     height: 380px;
     background-color: $whiteP;
     box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
+    transition: 0.4s;
     padding: 20px;
+}
 
+.card:hover{
+    cursor: pointer;
+    background-color: #c6c6c6;
+    transition: all 0.4s;
+    transform: scale(1.05);
+    box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.50);
 }
 
 .animal-name{

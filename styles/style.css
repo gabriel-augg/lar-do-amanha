@@ -264,7 +264,16 @@ footer {
   height: 380px;
   background-color: #fff;
   box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: 0.4s;
   padding: 20px;
+}
+
+.card:hover {
+  cursor: pointer;
+  background-color: #c6c6c6;
+  transition: all 0.4s;
+  transform: scale(1.05);
+  box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.5);
 }
 
 .animal-name {
@@ -497,6 +506,11 @@ label {
   font-size: 24px;
   font-weight: bold;
   box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#btnEnter:hover {
+  cursor: pointer;
+  background-color: #e3b029;
 }
 
 #register {
@@ -773,7 +787,6 @@ input[type=file] {
 }
 
 #contactUs-section button:hover {
-  transform: scale(1.2);
   background-color: #f39754;
 }
 
