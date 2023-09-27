@@ -58,10 +58,10 @@
         <div id=wannaAdopt-content>
             <div id="inputs-wannaAdopt">
                 <div class="div-inputs">
-                    <input type="text" placeholder='Palavra-chave'>
+                    <input type="text" placeholder='Palavra-chave' id="key-word" onkeyup="search()" >
                 </div>
                 <div class="div-inputs">
-                    <select id="order">
+                    <select id="order" onchange="order()">
                         <option selected disabled>Ordenar</option>
                         <option value="all">Todos</option>
                         <option value="cat">Gato</option>
