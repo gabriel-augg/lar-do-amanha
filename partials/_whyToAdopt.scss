@@ -9,7 +9,8 @@
    background-color: $blueP1;
    border-radius: 25px;
    padding: 40px 30px;
-   box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20)
+   box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
+   visibility: hidden;
 }
 
 #whyToAdopt-content aside, #whyToAdopt-content article{

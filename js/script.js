@@ -10,18 +10,22 @@ clickLogo.addEventListener('click', () => {
 
 const listedMenu = document.getElementsByClassName('listed-menu')
 const closeMenu = document.getElementsByClassName('close-menu')
+const responsiveMenu = document.getElementsByClassName('responsive-menu')
 
 listedMenu[0].addEventListener('click', () => {
-    document.getElementsByClassName('responsive-menu')[0].style.display = 'block'
-    closeMenu[0].style.display = 'block'
-    listedMenu[0].style.display = 'none'
+    listedMenu[0].style.display = 'none';
+    closeMenu[0].style.display = 'block';
+    responsiveMenu[0].classList.add('show');
+    responsiveMenu[0].classList.remove('hide');
+})
+closeMenu[0].addEventListener('click', () => {
+    closeMenu[0].style.display = 'none';
+    listedMenu[0].style.display = 'block';
+    responsiveMenu[0].classList.add('hide');
+    responsiveMenu[0].classList.remove('show');
 })
 
-closeMenu[0].addEventListener('click', () => {
-    document.getElementsByClassName('responsive-menu')[0].style.display = 'none'
-    closeMenu[0].style.display = 'none'
-    listedMenu[0].style.display = 'block'
-})
+
 
 
 
