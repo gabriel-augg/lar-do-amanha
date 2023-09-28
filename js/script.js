@@ -105,12 +105,14 @@ function e() {
 
 
 function showUser() {
-      getLocalStorage().forEach(item => {
+    getLocalStorage().forEach(item => {
         if (item.logged) {
             const statusLogin = document.getElementById('status-login')
             const statusLoginResponse = document.getElementById('status-login-response')
             let userCreated = false;
             if (userCreated === true) {
+                document.getElementById('navItem').style.display = 'block'
+                document.getElementById('navItemResponse').style.display = 'block'
                 return
             } else {
                 document.getElementById('navItem').style.display = 'none'
@@ -119,21 +121,21 @@ function showUser() {
                 userImage.src = ".././assets/user.svg";
                 let arrow = document.createElement('img');
                 arrow.src = ".././assets/caret-down.svg";
-        
+
                 let user = document.createElement('div');
                 let userResponse = document.createElement('div')
                 user.className = "content-user"
                 user.innerHTML = `<img class="icon-user" src="${userImage.src}"/><h4 id="name-user">${item.email}</h4><img class="arrow-user" src="${arrow.src}" />`;
-        
+
                 userResponse.className = "content-user-response"
                 userResponse.innerHTML = `<img src=".././assets/caret-right.svg"><img class="icon-user-response" src="${userImage.src}"/><h4 id="name-user-response">${item.email}</h4><img class="arrow-user-response" src="${arrow.src}" />`;
-        
+
                 statusLogin.appendChild(user);
                 statusLoginResponse.appendChild(userResponse);
                 userCreated = true;
+            }
         }
-        }
-});
+    });
 }
 
 showUser()
