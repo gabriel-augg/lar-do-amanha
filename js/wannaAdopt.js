@@ -11,9 +11,7 @@ function createAnimalCard(animalNameParam, animalIMG, animalType, phone, zipCode
 function animals() {
     
     let animalList = [];
-    const itemLocal = JSON.parse(localStorage.getItem('usuarios') || '[]');
-    
-    itemLocal.forEach(item => {
+    getLocalStorage().forEach(item => {
         for (let i = 0; i < item.animals.length; i++) {
             animalList.push(item.animals[i])
         }

@@ -562,6 +562,7 @@ label {
 }
 
 #upload-image {
+  display: none;
   width: 120px;
   height: 120px;
   background-color: white;

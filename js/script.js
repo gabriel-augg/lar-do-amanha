@@ -1,3 +1,15 @@
+// local storage
+const getLocalStorage = () => JSON.parse(localStorage.getItem('usuarios')) || [];
+
+const setLocalStorage = (usuarios) => localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+const createClient = (client) => {
+    const usuarios = getLocalStorage();
+    usuarios.push(client);
+    setLocalStorage(usuarios);
+};
+
+
 
 const clickLogo = document.getElementById('image-logo')
 clickLogo.addEventListener('click', () => {
@@ -34,7 +46,7 @@ const changePage = (page) => {
             b()
             break;
         case 'contactus':
-           c()
+            c()
             break;
         case 'login':
             d()
@@ -49,14 +61,14 @@ const changePage = (page) => {
 
 
 
-function a (){
+function a() {
     if (window.location.href.includes("/pages/")) {
         location.href = "../index.html";
     } else {
         location.href = "./index.html";
     }
 }
-function b (){
+function b() {
     if (window.location.href.includes("/pages/")) {
         location.href = "../pages/wannaAdopt.html"
     } else {
@@ -65,7 +77,7 @@ function b (){
     }
 }
 
-function c (){
+function c() {
     if (window.location.href.includes("/pages/")) {
         location.href = "../pages/whoWeAre.html"
     } else {
@@ -73,7 +85,7 @@ function c (){
     }
 }
 
-function d (){
+function d() {
     if (window.location.href.includes("/pages/")) {
         location.href = "../pages/loginPage.html"
     } else {
@@ -81,7 +93,7 @@ function d (){
     }
 }
 
-function e (){
+function e() {
     if (window.location.href.includes("/pages/")) {
         location.href = "../pages/wannaDonation.html"
     } else {
@@ -90,69 +102,65 @@ function e (){
 }
 
 
-const statusLogin = document.getElementById('status-login')
-const statusLoginResponse = document.getElementById('status-login-response')
-let userCreated = false;
-const nomeUser = undefined
+
+
 function showUser() {
-    if (userCreated === true) {
-        return
-    }
-    var userImage = document.createElement('img');
-    userImage.src = ".././assets/user.svg";
-    var arrow = document.createElement('img');
-    arrow.src = ".././assets/caret-down.svg";
-
-    var user = document.createElement('div');
-    var userResponse = document.createElement('div')
-    user.className = "content-user"
-    user.innerHTML = `<img class="icon-user" src="${userImage.src}"/><h4 id="name-user">${nomeUser}</h4><img class="arrow-user" src="${arrow.src}" />`;
-
-    userResponse.className = "content-user-response"
-    userResponse.innerHTML = `<img src=".././assets/caret-right.svg"><img class="icon-user-response" src="${userImage.src}"/><h4 id="name-user-response">${nomeUser}</h4><img class="arrow-user-response" src="${arrow.src}" />`;
-
-    statusLogin.appendChild(user);
-    statusLoginResponse.appendChild(userResponse);
-    userCreated = true;
-
+      getLocalStorage().forEach(item => {
+        if (item.logged) {
+            const statusLogin = document.getElementById('status-login')
+            const statusLoginResponse = document.getElementById('status-login-response')
+            let userCreated = false;
+            if (userCreated === true) {
+                return
+            } else {
+                document.getElementById('navItem').style.display = 'none'
+                document.getElementById('navItemResponse').style.display = 'none'
+                let userImage = document.createElement('img');
+                userImage.src = ".././assets/user.svg";
+                let arrow = document.createElement('img');
+                arrow.src = ".././assets/caret-down.svg";
+        
+                let user = document.createElement('div');
+                let userResponse = document.createElement('div')
+                user.className = "content-user"
+                user.innerHTML = `<img class="icon-user" src="${userImage.src}"/><h4 id="name-user">${item.email}</h4><img class="arrow-user" src="${arrow.src}" />`;
+        
+                userResponse.className = "content-user-response"
+                userResponse.innerHTML = `<img src=".././assets/caret-right.svg"><img class="icon-user-response" src="${userImage.src}"/><h4 id="name-user-response">${item.email}</h4><img class="arrow-user-response" src="${arrow.src}" />`;
+        
+                statusLogin.appendChild(user);
+                statusLoginResponse.appendChild(userResponse);
+                userCreated = true;
+        }
+        }
+});
 }
 
-
+showUser()
 
 
 // validação email e senha
 
 const ValidationData = () => {
     let validation = false;
-    const itemLocal = getLocalStorage()
-    itemLocal.forEach(item => {
-      if (item.email === inputEmail.value && item.password === inputPass.value) {
-        item.logged = true;
-        validation = true;
-        setLocalStorage(itemLocal);
-      }
+    getLocalStorage().forEach(item => {
+        if (item.email === inputEmail.value && item.password === inputPass.value) {
+            item.logged = true;
+            validation = true;
+            setLocalStorage(itemLocal);
+        }
     });
-  
+
     if (validation) {
-      location.href = "../index.html";
+        location.href = "../index.html";
     } else {
-      console.log('usuario ou senha n encontrados')
+        console.log('usuario ou senha n encontrados')
     }
-  }
-  
+}
 
 
 
 
 
-  
-// local storage
-const getLocalStorage = () => JSON.parse(localStorage.getItem('usuarios')) || [];
 
-const setLocalStorage = (usuarios) => localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
-const createClient = (client) => {
-  const usuarios = getLocalStorage();
-  usuarios.push(client);
-  setLocalStorage(usuarios);
-};
