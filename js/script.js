@@ -9,7 +9,13 @@ const createClient = (client) => {
     setLocalStorage(usuarios);
 };
 
-
+const clickUser = () => {
+    if (window.location.href.includes("/pages/")) {
+        location.href = "../pages/registeredAnimals.html"
+    } else {
+        location.href = "./pages/registeredAnimals.html"
+    }
+}
 
 
 
@@ -109,6 +115,7 @@ function showUser() {
                 let user = document.createElement('div');
                 let userResponse = document.createElement('div')
                 user.className = "content-user"
+                user.onchange = clickUser
                 user.innerHTML = `<img class="icon-user" src="${userImage.src}"/><h4 id="name-user">${item.nameUser}</h4>`;
 
                 userResponse.className = "content-user-response"
@@ -125,14 +132,7 @@ function showUser() {
 showUser()
 
 
-const clickUser = document.getElementsByClassName('content-user')[0]
-clickUser.addEventListener('click', ()=> {
-    if (window.location.href.includes("/pages/")) {
-        location.href = "../pages/registeredAnimals.html"
-    } else {
-        location.href = "./pages/registeredAnimals.html"
-    }
-})
+
 
 
 // validação email e senha
