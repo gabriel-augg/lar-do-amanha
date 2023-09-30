@@ -11,6 +11,8 @@ const createClient = (client) => {
 
 
 
+
+
 const clickLogo = document.getElementById('image-logo')
 clickLogo.addEventListener('click', () => {
     if (window.location.href.includes("/pages/")) {
