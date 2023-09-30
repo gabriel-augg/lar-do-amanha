@@ -20,7 +20,7 @@ function donationCreate() {
 
 
     class Animal {
-        constructor(animalName, animalIMG, animalType, gender, phone, zipCode, city, state, date) {
+        constructor(animalName, animalIMG, animalType, gender, phone, zipCode, city, state, date, animalId) {
             this.animalName = animalName
             this.animalIMG = animalIMG
             this.animalType = animalType
@@ -30,6 +30,7 @@ function donationCreate() {
             this.city = city
             this.state = state
             this.date = date
+            this.animalId = animalId
         }
     }
 

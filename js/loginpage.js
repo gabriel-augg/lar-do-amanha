@@ -1,3 +1,6 @@
+const userId = 0
+
+
 
 function createUser() {
   const email = document.getElementById('inputEmail')
@@ -5,19 +8,20 @@ function createUser() {
   const nameUser = document
   const animals = []
   const logged = false
-
   class User {
-    constructor(email, nameUser, password, animals, Logged) {
+    constructor(email, nameUser, password, animals, userId, Logged) {
       this.email = email
       this.nameUser = nameUser
       this.password = password
       this.animals = animals
+      this.userId = userId
       this.logged = logged
     }
   }
 
-  let newUser = new User(email.value, nameUser.value, password.value, animals, logged)
+  let newUser = new User(email.value, nameUser.value, password.value, animals, userId , logged)
   createClient(newUser)
+  userId++
 }
 
 // function para cadastrar usuario 
