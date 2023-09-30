@@ -70,7 +70,19 @@ const execulteEmail = () => {
   inputEmail.style.outline = '2px solid brown';
 }
 
+const modal = document.getElementById('modal')
+const openModal = document.getElementById('openRegister')
+const closeModal = document.getElementById('closeModal')
 
+openModal.addEventListener('click', () => {
+  modal.style.animation = 'openModal .5s'
+  modal.showModal()
+})
+
+
+closeModal.addEventListener('click', () => {
+  modal.close()
+})
 
 inputEmail.addEventListener('input', ()  => {
   errorEmail.style.display = 'none';
