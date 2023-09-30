@@ -35,8 +35,9 @@ function donationCreate() {
     }
 
     let newAnimal = new Animal(animalName.value, animalIMG.value, animalType.value, selectedGender.value, phone.value, zipCode.value, city.value, state.value, currentDate)
+    
+    let itemLocal = JSON.parse(localStorage.getItem('usuarios')) || []
 
-    const itemLocal = JSON.parse(localStorage.getItem('usuarios'));
     itemLocal.forEach(item => {
         if (item.logged) {
             item.animals.push(newAnimal)
@@ -58,8 +59,8 @@ inputImage.addEventListener('change', (e) => {
 
     if (statusImage === false) {
         let img = document.createElement('img');
+        document.getElementById('upload-image').style.display = "block"
         img.src = URL.createObjectURL(e.target.files[0]);
-        console.log(URL.createObjectURL(e.target.files[0]))
         img.style.width = '100%';
         img.style.height = '80%';
         divImage.appendChild(img);

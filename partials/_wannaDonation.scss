@@ -19,6 +19,7 @@
 }
 
 #upload-image {
+    display: none;
     width: 120px;
     height: 120px;
     background-color: white;
@@ -147,6 +148,7 @@ input[type="file"] {
     cursor: pointer;
     background-color: #EEEEEE;
 }
+
 
 
 @media only screen and (max-width: 600px) {

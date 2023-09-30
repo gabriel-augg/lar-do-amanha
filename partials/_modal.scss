@@ -4,10 +4,6 @@
     top: 20px;
     right: 20px;
     cursor: pointer;
-    transition: all .4s;
-}
-#closeModal:hover{
-  transform: scale(1.2);
 }
 
 #modal {
@@ -16,9 +12,9 @@
     left: 50%;
     top: 50%;
     width: 25%;
-    height: 550px;
+    height: 600px;
     transform: translate(-50%, -50%);
-    padding: 26px 50px 91px;
+    padding: 60px 50px 91px;
     background-color: $blueP-1;
     box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
     border: none;
@@ -62,12 +58,12 @@
     font-size: 21px;
     font-weight: bold;
     border-radius: 16px;
-    transition: all .4s;
 
 }
 
 .contentSingUp button:hover{
-    transform: scale(1.05);
+    background-color: $yellowP1;
+    cursor: pointer;
 }
 
 .contentSingUp input, button{
@@ -78,8 +74,27 @@
     box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
 }
 
+
+#test{
+    display: none;
+    color: green;
+    font-size: 30px;
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+
 @media screen and (max-width: 600px) {
     #modal{
         width: 100%;
+    }
+
+    #closeModal{
+        top: 10px;
+        right: 15px;
     }
 }

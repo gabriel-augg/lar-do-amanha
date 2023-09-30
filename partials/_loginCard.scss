@@ -31,7 +31,6 @@
     border-radius: 8px;
     border: none;
     box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
-    outline: none;
 
 }
 
@@ -86,7 +85,7 @@ label {
 }
 
 
-#user-empty{
+#user-empty, #errorEmail,#errorPass , #enter-password, #erroName , #existingName{
     color: rgb(172, 12, 12);
     display: none;
     font-weight: bold;
@@ -97,9 +96,11 @@ label {
     color: rgb(172, 12, 12);
     display: none;
     font-weight: bold;
+    
 #openRegister:hover{
     cursor: pointer;
 }
+
 
 
 @media screen and (max-width: 600px) {

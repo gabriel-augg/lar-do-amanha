@@ -70,7 +70,7 @@
         <div id="user-empty">Digite um email</div>
         <input type="email" id="inputEmail" required autocomplete="off">
 
-        
+
         <label for="inputPass">Senha</label>
         <div id="pass-empty">Digite uma senha</div>
         <input type="password" id="inputPass" required>
@@ -82,25 +82,31 @@
     </div>
 
 </section>
-
 <dialog id="modal">
+    <div id="test">Usuário<br>Cadastrado</div>
     <div class="modalContent">
         <h1>Cadastrar</h1>
         <div class="contentSingUp">
+            <div id="errorEmail">Digite um email válido</div>
             <label for="registerEmail">Email</label>
-            <input type="email" id="registerEmail" required>
+            <input type="email" id="registerEmail" autocomplete="off">
+            <div id="erroName">Digite um nome</div>
+            <div id="existingName">Nome Ja usado</div>
             <label for="registerName">Nome</label>
-            <input type="text" id="registerName" required>
+            <input type="text" id="registerName" autocomplete="off">
+            <div id="errorPass">As senha não se conhecidem</div>
+            <div id="enter-password">Digite uma senha</div>
             <label for="registerPass">Senha</label>
-            <input type="password" id="registerPass" required>
+            <input type="password" id="registerPass">
             <label for="confirmPass">Repetir Senha</label>
-            <input type="password" id="confirmPass" required>
-            
-            <button id="sendRegister">Cadastrar</button>
+            <input type="password" id="confirmPass">
+
+            <button id="send-register">Cadastrar</button>
+
         </div>
 
     </div>
-    <img src=".././assets/xmark.svg" id="closeModal"></img>
+    <img src=".././assets/xmark.svg" id="closeModal" onclick="closeSingUp()"></img>
 
 </dialog>
 

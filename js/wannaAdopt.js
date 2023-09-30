@@ -11,8 +11,7 @@ function createAnimalCard(animalNameParam, animalIMG, animalType, phone, zipCode
 function animals() {
     
     let animalList = [];
-    const itemLocal = JSON.parse(localStorage.getItem('usuarios') || '[]');
-    
+    let itemLocal = JSON.parse(localStorage.getItem('usuarios')) || []
     itemLocal.forEach(item => {
         for (let i = 0; i < item.animals.length; i++) {
             animalList.push(item.animals[i])
@@ -21,6 +20,7 @@ function animals() {
    
     return animalList
 }
+
 
 
 function createCard(animalNameParam, animalIMG, animalType, phone, zipCode, city, state, gender, postDate) {
@@ -79,7 +79,7 @@ function createCard(animalNameParam, animalIMG, animalType, phone, zipCode, city
 
 function matchAnimalsAndCards() {
     for (let i = 0; i < animals().length; i++) {
-        createCard(animals()[i].animalName, null, null, null, null, null, animals()[i].state, animals()[i].gender, animals()[i].postDate)
+        createCard(animals()[i].animalName, null, null, null, null, null, animals()[i].state, animals()[i].gender, animals()[i].date)
     }
 }
 
@@ -88,7 +88,7 @@ function matchAnimalsAndCards() {
 function showAnimalsOrdered() {
 
     for (let i = 0; i < animals().length; i++) {
-        createCard(animals()[i].animalName, null, null, null, null, null, animals()[i].state, animals()[i].gender, animals()[i].postDate)
+        createCard(animals()[i].animalName, null, null, null, null, null, animals()[i].state, animals()[i].gender, animals()[i].date)
     }
 }
 
@@ -152,6 +152,26 @@ function search() {
 
     console.log(filteredAnimals);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 showAnimals()
 

@@ -285,7 +285,6 @@ footer {
   transition: all 0.4s;
   transform: scale(1.05);
   box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.5);
-  visibility: hidden;
 }
 
 .animal-name {
@@ -503,7 +502,6 @@ footer {
   border-radius: 8px;
   border: none;
   box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
-  outline: none;
 }
 
 label {
@@ -552,7 +550,7 @@ label {
   cursor: pointer;
 }
 
-#user-empty {
+#user-empty, #errorEmail, #errorPass, #enter-password, #erroName, #existingName {
   color: rgb(172, 12, 12);
   display: none;
   font-weight: bold;
@@ -593,6 +591,7 @@ label {
 }
 
 #upload-image {
+  display: none;
   width: 120px;
   height: 120px;
   background-color: white;
@@ -1264,11 +1263,6 @@ input[type=file] {
   top: 20px;
   right: 20px;
   cursor: pointer;
-  transition: all 0.4s;
-}
-
-#closeModal:hover {
-  transform: scale(1.2);
 }
 
 #modal {
@@ -1277,9 +1271,9 @@ input[type=file] {
   left: 50%;
   top: 50%;
   width: 25%;
-  height: 550px;
+  height: 600px;
   transform: translate(-50%, -50%);
-  padding: 26px 50px 91px;
+  padding: 60px 50px 91px;
   background-color: #385566;
   box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
   border: none;
@@ -1320,11 +1314,11 @@ input[type=file] {
   font-size: 21px;
   font-weight: bold;
   border-radius: 16px;
-  transition: all 0.4s;
 }
 
 .contentSingUp button:hover {
-  transform: scale(1.05);
+  background-color: #e3b029;
+  cursor: pointer;
 }
 
 .contentSingUp input, button {
@@ -1335,9 +1329,24 @@ input[type=file] {
   box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+#test {
+  display: none;
+  color: green;
+  font-size: 30px;
+  position: absolute;
+  top: 40%;
+  left: 20%;
+  text-align: center;
+  font-weight: bold;
+}
+
 @media screen and (max-width: 600px) {
   #modal {
     width: 100%;
+  }
+  #closeModal {
+    top: 10px;
+    right: 15px;
   }
 }
 * {

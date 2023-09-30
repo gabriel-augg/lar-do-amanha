@@ -1,3 +1,15 @@
+// local storage
+const getLocalStorage = () => JSON.parse(localStorage.getItem('usuarios')) || [];
+
+const setLocalStorage = (usuarios) => localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+const createClient = (client) => {
+    const usuarios = getLocalStorage();
+    usuarios.push(client);
+    setLocalStorage(usuarios);
+};
+
+
 
 const clickLogo = document.getElementById('image-logo')
 clickLogo.addEventListener('click', () => {
@@ -32,19 +44,40 @@ closeMenu[0].addEventListener('click', () => {
 const changePage = (page) => {
     switch (page) {
         case 'start':
-            a()
+            if (window.location.href.includes("/pages/")) {
+                location.href = "../index.html";
+            } else {
+                location.href = "./index.html";
+            }
             break;
         case 'adopt':
-            b()
+            if (window.location.href.includes("/pages/")) {
+                location.href = "../pages/wannaAdopt.html"
+            } else {
+                location.href = "./pages/wannaAdopt.html"
+                ValidationData()
+            }
             break;
         case 'contactus':
-           c()
+            if (window.location.href.includes("/pages/")) {
+                location.href = "../pages/whoWeAre.html"
+            } else {
+                location.href = "./pages/whoWeAre.html"
+            }
             break;
         case 'login':
-            d()
+            if (window.location.href.includes("/pages/")) {
+                location.href = "../pages/loginPage.html"
+            } else {
+                location.href = "./pages/loginPage.html"
+            }
             break;
         case 'btnDonate':
-            e()
+            if (window.location.href.includes("/pages/")) {
+                location.href = "../pages/wannaDonation.html"
+            } else {
+                location.href = "./pages/wannaDonation.html"
+            }
             break;
         default:
             break;
@@ -53,110 +86,74 @@ const changePage = (page) => {
 
 
 
-function a (){
-    if (window.location.href.includes("/pages/")) {
-        location.href = "../index.html";
-    } else {
-        location.href = "./index.html";
-    }
-}
-function b (){
-    if (window.location.href.includes("/pages/")) {
-        location.href = "../pages/wannaAdopt.html"
-    } else {
-        location.href = "./pages/wannaAdopt.html"
-        ValidationData()
-    }
-}
-
-function c (){
-    if (window.location.href.includes("/pages/")) {
-        location.href = "../pages/whoWeAre.html"
-    } else {
-        location.href = "./pages/whoWeAre.html"
-    }
-}
-
-function d (){
-    if (window.location.href.includes("/pages/")) {
-        location.href = "../pages/loginPage.html"
-    } else {
-        location.href = "./pages/loginPage.html"
-    }
-}
-
-function e (){
-    if (window.location.href.includes("/pages/")) {
-        location.href = "../pages/wannaDonation.html"
-    } else {
-        location.href = "./pages/wannaDonation.html"
-    }
-}
-
-
-const statusLogin = document.getElementById('status-login')
-const statusLoginResponse = document.getElementById('status-login-response')
-let userCreated = false;
-const nomeUser = undefined
 function showUser() {
-    if (userCreated === true) {
-        return
-    }
-    var userImage = document.createElement('img');
-    userImage.src = ".././assets/user.svg";
-    var arrow = document.createElement('img');
-    arrow.src = ".././assets/caret-down.svg";
+    getLocalStorage().forEach(item => {
+        if (item.logged) {
+            const statusLogin = document.getElementById('status-login')
+            const statusLoginResponse = document.getElementById('status-login-response')
+            let userCreated = false;
+            if (userCreated === true) {
+                document.getElementById('navItem').style.display = 'block'
+                document.getElementById('navItemResponse').style.display = 'block'
+                return
+            } else {
+                document.getElementById('navItem').style.display = 'none'
+                document.getElementById('navItemResponse').style.display = 'none'
+                let userImage = document.createElement('img');
+                userImage.src = ".././assets/user.svg";
+                let arrow = document.createElement('img');
+                arrow.src = ".././assets/caret-down.svg";
 
-    var user = document.createElement('div');
-    var userResponse = document.createElement('div')
-    user.className = "content-user"
-    user.innerHTML = `<img class="icon-user" src="${userImage.src}"/><h4 id="name-user">${nomeUser}</h4><img class="arrow-user" src="${arrow.src}" />`;
+                let user = document.createElement('div');
+                let userResponse = document.createElement('div')
+                user.className = "content-user"
+                user.innerHTML = `<img class="icon-user" src="${userImage.src}"/><h4 id="name-user">${item.nameUser}</h4>`;
 
-    userResponse.className = "content-user-response"
-    userResponse.innerHTML = `<img src=".././assets/caret-right.svg"><img class="icon-user-response" src="${userImage.src}"/><h4 id="name-user-response">${nomeUser}</h4><img class="arrow-user-response" src="${arrow.src}" />`;
+                userResponse.className = "content-user-response"
+                userResponse.innerHTML = `<img src=".././assets/caret-right.svg"><img class="icon-user-response" src="${userImage.src}"/><h4 id="name-user-response">${item.nameUser}</h4>`;
 
-    statusLogin.appendChild(user);
-    statusLoginResponse.appendChild(userResponse);
-    userCreated = true;
-
+                statusLogin.appendChild(user);
+                statusLoginResponse.appendChild(userResponse);
+                userCreated = true;
+            }
+        }
+    });
 }
 
+showUser()
 
+
+const clickUser = document.getElementsByClassName('content-user')[0]
+clickUser.addEventListener('click', ()=> {
+    if (window.location.href.includes("/pages/")) {
+        location.href = "../pages/registeredAnimals.html"
+    } else {
+        location.href = "./pages/registeredAnimals.html"
+    }
+})
 
 
 // validação email e senha
 
 const ValidationData = () => {
     let validation = false;
-    const itemLocal = getLocalStorage()
+    let itemLocal = JSON.parse(localStorage.getItem('usuarios')) || [];
     itemLocal.forEach(item => {
-      if (item.email === inputEmail.value && item.password === inputPass.value) {
-        item.logged = true;
-        validation = true;
-        setLocalStorage(itemLocal);
-      }
+        if (item.email === inputEmail.value && item.password === inputPass.value) {
+            item.logged = true;
+            validation = true;
+            setLocalStorage(itemLocal);
+        }
     });
-  
+
     if (validation) {
-      location.href = "../index.html";
+        location.href = "../index.html";
     } else {
-      console.log('usuario ou senha n encontrados')
+        console.log('usuario ou senha n encontrados')
     }
-  }
-  
+}
 
 
 
 
 
-  
-// local storage
-const getLocalStorage = () => JSON.parse(localStorage.getItem('usuarios')) || [];
-
-const setLocalStorage = (usuarios) => localStorage.setItem("usuarios", JSON.stringify(usuarios));
-
-const createClient = (client) => {
-  const usuarios = getLocalStorage();
-  usuarios.push(client);
-  setLocalStorage(usuarios);
-};
