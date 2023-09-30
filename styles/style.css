@@ -130,24 +130,32 @@ header {
     display: flex;
     width: 95%;
     position: absolute;
-    height: 240px;
     background-color: #385566;
     left: 10px;
     top: 17.5%;
     z-index: 5;
     border-radius: 16px;
     box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
-    display: none;
+  }
+  .show {
+    transition: 0.25s;
+    height: 240px;
+  }
+  .hide {
+    transition: 0.25s;
+    height: 0;
   }
   .list-menu {
     width: 100%;
     list-style: none;
     color: #fff;
-    padding: 20px 10px;
+    padding: 0px 10px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     gap: 2px;
     text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+    overflow-y: hidden;
   }
   .nav-item span {
     align-self: flex-start;
@@ -168,6 +176,9 @@ header {
     height: 38px;
     width: 227px;
     box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .selected-response {
     background-color: #233d4d;
@@ -324,6 +335,7 @@ footer {
   border-radius: 25px;
   padding: 40px 30px;
   box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+  visibility: hidden;
 }
 
 #whyToAdopt-content aside, #whyToAdopt-content article {
@@ -399,6 +411,10 @@ footer {
   padding: 100px;
   color: #fff;
   box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#bg-content {
+  visibility: hidden;
 }
 
 #bg-content h1 {
@@ -486,7 +502,6 @@ footer {
   border-radius: 8px;
   border: none;
   box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
-  outline: none;
 }
 
 label {
@@ -497,6 +512,9 @@ label {
 
 #btnEnter {
   margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #fff;
   background-color: #fcca46;
   width: 350px;
@@ -506,6 +524,7 @@ label {
   font-size: 24px;
   font-weight: bold;
   box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
 }
 
 #btnEnter:hover {
@@ -514,17 +533,24 @@ label {
 }
 
 #register {
+  transform: scale(1.05);
+}
+
+#register {
+  justify-content: center;
+  display: flex;
   color: #fff;
-  margin-top: 10px;
   font-size: 18px;
-  margin-left: 8px;
+  display: flex;
+  gap: 15px;
 }
 
-#register a {
-  color: #458270;
+#openRegister {
+  color: #c2dba9;
+  cursor: pointer;
 }
 
-#user-empty {
+#user-empty, #errorEmail, #errorPass, #enter-password, #erroName, #existingName {
   color: rgb(172, 12, 12);
   display: none;
   font-weight: bold;
@@ -535,12 +561,15 @@ label {
   display: none;
   font-weight: bold;
 }
-
+#pass-empty #openRegister:hover {
+  cursor: pointer;
+}
 @media screen and (max-width: 600px) {
-  .divCardLogin {
+  #pass-empty .divCardLogin {
     width: 100%;
   }
 }
+
 #wannaDonation-section {
   padding: 2% 10%;
 }
@@ -729,6 +758,7 @@ input[type=file] {
   color: #fff;
   gap: 30px;
   padding: 40px;
+  visibility: hidden;
 }
 
 #contactUs-section h2 {
@@ -788,6 +818,12 @@ input[type=file] {
 }
 
 #contactUs-section button:hover {
+  margin: 40px 0;
+  transition: all 0.3s;
+}
+
+#contactUs-section button:hover {
+  transform: scale(1.05);
   background-color: #f39754;
 }
 
@@ -1221,6 +1257,98 @@ input[type=file] {
     font-size: 30px;
   }
 }
+#closeModal {
+  width: 25px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+#modal {
+  border-radius: 20px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 25%;
+  height: 600px;
+  transform: translate(-50%, -50%);
+  padding: 60px 50px 91px;
+  background-color: #385566;
+  box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+  border: none;
+}
+
+#modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.466);
+  -webkit-backdrop-filter: blur(2.5px);
+          backdrop-filter: blur(2.5px);
+}
+
+.modalContent {
+  flex-direction: column;
+  display: flex;
+  position: relative;
+  height: 100%;
+  justify-content: center;
+  text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modalContent h1 {
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+}
+
+.contentSingUp {
+  gap: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contentSingUp button {
+  margin-top: 20px;
+  background-color: #fcca46;
+  color: #fff;
+  font-size: 21px;
+  font-weight: bold;
+  border-radius: 16px;
+}
+
+.contentSingUp button:hover {
+  background-color: #e3b029;
+  cursor: pointer;
+}
+
+.contentSingUp input, button {
+  outline: none;
+  border-radius: 8px;
+  padding: 10px;
+  border: none;
+  box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#test {
+  display: none;
+  color: green;
+  font-size: 30px;
+  position: absolute;
+  top: 40%;
+  left: 20%;
+  text-align: center;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+  #modal {
+    width: 100%;
+  }
+  #closeModal {
+    top: 10px;
+    right: 15px;
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -1232,5 +1360,5 @@ input[type=file] {
 body {
   width: 100%;
   height: 100%;
-  background-color: #619b8a;
+  background-color: #458270;
 }/*# sourceMappingURL=style.css.map */

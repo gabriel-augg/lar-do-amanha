@@ -1,4 +1,4 @@
-.loginCard{
+.loginCard {
     width: 100%;
     height: 80vh;
     justify-content: center;
@@ -6,23 +6,24 @@
     display: flex;
 }
 
-#divCardLogin{
+#divCardLogin {
     gap: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-#enter{
+#enter {
     font-size: 36px;
     margin-bottom: 30px;
     font-weight: bold;
     color: $whiteP;
-    text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);;
-    
+    text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
+    ;
+
 }
 
-#divCardLogin input{
+#divCardLogin input {
     font-size: 16px;
     padding: 10px;
     width: 350px;
@@ -30,20 +31,23 @@
     border-radius: 8px;
     border: none;
     box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
-    outline: none;
 
 }
 
-label{
+label {
     font-size: 18px;
-    text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);;
+    text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
+    ;
     color: $whiteP;
-    
+
 
 }
 
-#btnEnter{
+#btnEnter {
     margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: $whiteP;
     background-color: $yellowP;
     width: 350px;
@@ -53,6 +57,7 @@ label{
     font-size: 24px;
     font-weight: bold;
     box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
+    transition: all .3s;
 }
 
 #btnEnter:hover{
@@ -61,18 +66,26 @@ label{
 }
 
 #register{
+    transform: scale(1.05);
+}
+
+#register {
+    justify-content: center;
+    display: flex;
     color: $whiteP;
-    margin-top: 10px;
     font-size: 18px;
-    margin-left: 8px;
+    display: flex;
+    gap: 15px;
 }
 
-#register a{
-    color: $greenP1;
+#openRegister {
+    color: $lightGrennP-1;
+    cursor: pointer;
+    
 }
 
 
-#user-empty{
+#user-empty, #errorEmail,#errorPass , #enter-password, #erroName , #existingName{
     color: rgb(172, 12, 12);
     display: none;
     font-weight: bold;
@@ -83,12 +96,15 @@ label{
     color: rgb(172, 12, 12);
     display: none;
     font-weight: bold;
+    
+#openRegister:hover{
+    cursor: pointer;
 }
 
 
 
 @media screen and (max-width: 600px) {
- .divCardLogin{
-    width: 100%;
- }
-}
+    .divCardLogin {
+        width: 100%;
+    }
+} }

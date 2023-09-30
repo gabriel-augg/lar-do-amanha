@@ -22,85 +22,67 @@ clickLogo.addEventListener('click', () => {
 
 const listedMenu = document.getElementsByClassName('listed-menu')
 const closeMenu = document.getElementsByClassName('close-menu')
+const responsiveMenu = document.getElementsByClassName('responsive-menu')
 
 listedMenu[0].addEventListener('click', () => {
-    document.getElementsByClassName('responsive-menu')[0].style.display = 'block'
-    closeMenu[0].style.display = 'block'
-    listedMenu[0].style.display = 'none'
+    listedMenu[0].style.display = 'none';
+    closeMenu[0].style.display = 'block';
+    responsiveMenu[0].classList.add('show');
+    responsiveMenu[0].classList.remove('hide');
+})
+closeMenu[0].addEventListener('click', () => {
+    closeMenu[0].style.display = 'none';
+    listedMenu[0].style.display = 'block';
+    responsiveMenu[0].classList.add('hide');
+    responsiveMenu[0].classList.remove('show');
 })
 
-closeMenu[0].addEventListener('click', () => {
-    document.getElementsByClassName('responsive-menu')[0].style.display = 'none'
-    closeMenu[0].style.display = 'none'
-    listedMenu[0].style.display = 'block'
-})
+
 
 
 
 const changePage = (page) => {
     switch (page) {
         case 'start':
-            a()
+            if (window.location.href.includes("/pages/")) {
+                location.href = "../index.html";
+            } else {
+                location.href = "./index.html";
+            }
             break;
         case 'adopt':
-            b()
+            if (window.location.href.includes("/pages/")) {
+                location.href = "../pages/wannaAdopt.html"
+            } else {
+                location.href = "./pages/wannaAdopt.html"
+                ValidationData()
+            }
             break;
         case 'contactus':
-            c()
+            if (window.location.href.includes("/pages/")) {
+                location.href = "../pages/whoWeAre.html"
+            } else {
+                location.href = "./pages/whoWeAre.html"
+            }
             break;
         case 'login':
-            d()
+            if (window.location.href.includes("/pages/")) {
+                location.href = "../pages/loginPage.html"
+            } else {
+                location.href = "./pages/loginPage.html"
+            }
             break;
         case 'btnDonate':
-            e()
+            if (window.location.href.includes("/pages/")) {
+                location.href = "../pages/wannaDonation.html"
+            } else {
+                location.href = "./pages/wannaDonation.html"
+            }
             break;
         default:
             break;
     }
 }
-
-
-
-function a() {
-    if (window.location.href.includes("/pages/")) {
-        location.href = "../index.html";
-    } else {
-        location.href = "./index.html";
-    }
-}
-function b() {
-    if (window.location.href.includes("/pages/")) {
-        location.href = "../pages/wannaAdopt.html"
-    } else {
-        location.href = "./pages/wannaAdopt.html"
-        ValidationData()
-    }
-}
-
-function c() {
-    if (window.location.href.includes("/pages/")) {
-        location.href = "../pages/whoWeAre.html"
-    } else {
-        location.href = "./pages/whoWeAre.html"
-    }
-}
-
-function d() {
-    if (window.location.href.includes("/pages/")) {
-        location.href = "../pages/loginPage.html"
-    } else {
-        location.href = "./pages/loginPage.html"
-    }
-}
-
-function e() {
-    if (window.location.href.includes("/pages/")) {
-        location.href = "../pages/wannaDonation.html"
-    } else {
-        location.href = "./pages/wannaDonation.html"
-    }
-}
-
 
 
 
@@ -125,10 +107,10 @@ function showUser() {
                 let user = document.createElement('div');
                 let userResponse = document.createElement('div')
                 user.className = "content-user"
-                user.innerHTML = `<img class="icon-user" src="${userImage.src}"/><h4 id="name-user">${item.email}</h4><img class="arrow-user" src="${arrow.src}" />`;
+                user.innerHTML = `<img class="icon-user" src="${userImage.src}"/><h4 id="name-user">${item.nameUser}</h4>`;
 
                 userResponse.className = "content-user-response"
-                userResponse.innerHTML = `<img src=".././assets/caret-right.svg"><img class="icon-user-response" src="${userImage.src}"/><h4 id="name-user-response">${item.email}</h4><img class="arrow-user-response" src="${arrow.src}" />`;
+                userResponse.innerHTML = `<img src=".././assets/caret-right.svg"><img class="icon-user-response" src="${userImage.src}"/><h4 id="name-user-response">${item.nameUser}</h4>`;
 
                 statusLogin.appendChild(user);
                 statusLoginResponse.appendChild(userResponse);
@@ -141,11 +123,22 @@ function showUser() {
 showUser()
 
 
+const clickUser = document.getElementsByClassName('content-user')[0]
+clickUser.addEventListener('click', ()=> {
+    if (window.location.href.includes("/pages/")) {
+        location.href = "../pages/registeredAnimals.html"
+    } else {
+        location.href = "./pages/registeredAnimals.html"
+    }
+})
+
+
 // validação email e senha
 
 const ValidationData = () => {
     let validation = false;
-    getLocalStorage().forEach(item => {
+    let itemLocal = JSON.parse(localStorage.getItem('usuarios')) || [];
+    itemLocal.forEach(item => {
         if (item.email === inputEmail.value && item.password === inputPass.value) {
             item.logged = true;
             validation = true;
