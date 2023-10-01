@@ -64,9 +64,9 @@
         </nav>
     </header>
 
-    <section class="user-content">
+    <section id="user-content">
         <article>
-            <nav>
+            <nav id="user-menu">
                 <ul>
                     <li>Configurações</li>
                     <li>Animais Cadastrados</li>
@@ -76,9 +76,128 @@
 
         </article>
         <aside>
+            <div style="display: none;" id="content-edit">
 
-            <div id="animal-cards-register">
+                <div id="contentArea-edit">
+                    <div class="edit-inputs">
+                        <label for="edit-email">Email</label>
+                        <input type="email" id="edit-email" autocomplete="off">
+                    </div>
+                    <div class="edit-inputs">
+                        <label for="edit-name">Nome</label>
+                        <input type="text" id="edit-name" autocomplete="off">
+                    </div>
+                    <div class="edit-inputs">
+                        <label for="edit-pass">Senha</label>
+                        <input type="password" id="edit-pass">
+                    </div>
+                    <div class="edit-inputs">
+                        <label for="edit-confirm-pass">Repetir Senha</label>
+                        <input type="password" id="edit-confirm-pass">
+                    </div>
+                    <div id="btn-register">
+                        <button id="save-register">Salvar alterações</button>
+                    </div>
+                </div>
+            </div>
+            <div id="animalEdit-section">
+                <div id="all-inputs-animalEdit">
+                    <div id="title-animalEdit">
+                        <div>
+                            <div id="upload-image"></div>
+                        </div>
+                    </div>
+                    <div class="content-animalEdit">
+                        <div class="inputs-animalEdit">
+                            <input type="text" id="animal-name" placeholder="Nome do animal">
+        
+                        </div>
+                        <div class="inputs-animalEdit">
+                            <label for="img-file" id="fileImgLabel">Selecionar imagem</label>
+                            <input type="file" name="img" id="img-file">
+                        </div>
+                    </div>
+                    <div class="content-animalEdit">
+                        <div class="inputs-animalEdit">
+        
+                            <select id="animal-type">
+                                <option selected disabled>Animal</option>
+                                <option value="cat">Gato</option>
+                                <option value="dog">Cachorro</option>
+                                <option value="bird">Passarinho</option>
+                                <option value="rabbit">Coelho</option>
+                            </select>
+                        </div>
+                        <div class="inputs-animalEdit">
+                            <input type="text" id="phone" placeholder="Telefone" onkeypress="$(this).mask('(00) 0 0000-0000')">
+                        </div>
+                    </div>
+                    <div class="content-animalEdit">
+                        <div class="inputs-animalEdit">
+                            <input type="text" id="zipcode" onkeypress="$(this).mask('00000-000')"
+                                placeholder="CEP">
+        
+                        </div>
+                        <div class="inputs-animalEdit">
+                            <input type="text" id="city" placeholder="Cidade">
+                        </div>
+        
+                    </div>
+                    <div class="content-animalEdit">
+                        <div class="inputs-animalEdit">
+                            <select id="state">
+                                <option selected disabled>Estado</option>
+                                <option value="AC">Acre</option>
+                                <option value="AL">Alagoas</option>
+                                <option value="AP">Amapá</option>
+                                <option value="AM">Amazonas</option>
+                                <option value="BA">Bahia</option>
+                                <option value="CE">Ceará</option>
+                                <option value="DF">Distrito Federal</option>
+                                <option value="ES">Espírito Santo</option>
+                                <option value="GO">Goiás</option>
+                                <option value="MA">Maranhão</option>
+                                <option value="MT">Mato Grosso</option>
+                                <option value="MS">Mato Grosso do Sul</option>
+                                <option value="MG">Minas Gerais</option>
+                                <option value="PA">Pará</option>
+                                <option value="PB">Paraíba</option>
+                                <option value="PR">Paraná</option>
+                                <option value="PE">Pernambuco</option>
+                                <option value="PI">Piauí</option>
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="RN">Rio Grande do Norte</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="RO">Rondônia</option>
+                                <option value="RR">Roraima</option>
+                                <option value="SC">Santa Catarina</option>
+                                <option value="SP">São Paulo</option>
+                                <option value="SE">Sergipe</option>
+                                <option value="TO">Tocantins</option>
+                            </select>
+                        </div>
+                        <div id="radio-animalEdit">
+                            <div>
+                                <label for="macho">Macho</label>
+                                <input type="radio" name="gender" value="Macho" id="male">
+                            </div>
+                            <div>
+                                <label for="femea">Fêmea</label>
+                                <input type="radio" name="gender" value="Fêmea" id="female">
+                            </div>
+                        </div>
+        
+                    </div>
+                    <div id="textare-animalEdit">
+                        <textarea id="textarea" placeholder="Descrição"></textarea>
+                    </div>
+                    <div id="button-animalEdit">
+                        <button id="btn-donate">Colocar para adoção</button>
+                    </div>
+                </div>
+            </div>
 
+            <!-- <div id="animal-cards-register">
                 <div id="div-card-register">
                     <div class="card-register">
                         <div>
@@ -115,9 +234,7 @@
                     </div>
 
                 </div>
-
-
-            </div>
+            </div> -->
         </aside>
 
     </section>

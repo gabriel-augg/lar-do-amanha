@@ -17,6 +17,8 @@ const clickUser = () => {
     }
 }
 
+
+
 const clickLogo = document.getElementById('image-logo')
 clickLogo.addEventListener('click', () => {
     if (window.location.href.includes("/pages/")) {
@@ -152,8 +154,6 @@ const ValidationData = () => {
         console.log('usuario ou senha n encontrados')
     }
 }
-
-
 
 
 

@@ -1,3 +1,7 @@
+
+
+
+
 const email = document.getElementById('registerEmail')
 const password = document.getElementById('registerPass')
 const nameUser = document.getElementById('registerName')
@@ -6,17 +10,18 @@ const modal = document.getElementById('modal')
 const openModal = document.getElementById('openRegister')
 const closeModal = document.getElementById('closeModal')
 
+
 function createUser() {
 
   const animals = []
   const logged = false
-
   class User {
-    constructor(email, nameUser, password, animals, Logged) {
+    constructor(email, nameUser, password, animals, userId, Logged) {
       this.email = email
       this.nameUser = nameUser
       this.password = password
       this.animals = animals
+      this.userId = userId
       this.logged = logged
     }
   }
