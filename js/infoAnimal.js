@@ -84,8 +84,9 @@ function redirectWpp(){
     let localAnimal = JSON.parse(localStorage.getItem('animal'))
     let wpp; 
     animals().forEach(item => {
-        if(item.animalId === localAnimal) {
-            wpp = `https://wa.me/${item.phone}`
+        if(item.animalId === localAnimal[0]) {
+
+            wpp = `https://wa.me/55${item.phone.replace(/\D/g, "")}`
         }
     })
     window.open (wpp, '_blank')
