@@ -1011,6 +1011,15 @@ input[type=file] {
   flex-wrap: wrap;
 }
 
+#notFound {
+  color: white;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  height: 50vh;
+}
+
 @media only screen and (max-width: 600px) {
   #wannaAdopt-section {
     padding: 0%;
