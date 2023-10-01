@@ -113,7 +113,7 @@ function showUser() {
                 let user = document.createElement('div');
                 let userResponse = document.createElement('div')
                 user.className = "content-user"
-                user.onchange = clickUser
+                user.onclick = clickUser
                 user.innerHTML = `<img class="icon-user" src="${userImage.src}"/><h4 id="name-user">${item.nameUser}</h4>`;
 
                 userResponse.className = "content-user-response"
