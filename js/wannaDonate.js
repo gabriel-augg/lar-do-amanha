@@ -1,10 +1,21 @@
 let animalId = 0
 
+function back() {
+    document.getElementById('modal-sucessfulDonation').style.display = 'none'
+    document.getElementsByTagName('body')[0].style.overflow = 'scroll'
+    location.href = '../index.html'
+}
+
+function donateAnother() {
+    document.getElementsByTagName('body')[0].style.overflow = 'scroll'
+    document.getElementById('modal-sucessfulDonation').style.display = 'none' 
+}
+
 const btnDonation = document.getElementById('btn-donate')
 btnDonation.addEventListener('click', () => {
+    document.getElementById('modal-sucessfulDonation').style.display = 'flex'
+    document.getElementsByTagName('body')[0].style.overflow = 'hidden'
     donationCreate()
-
-
 })
 
 function getUserId(){
