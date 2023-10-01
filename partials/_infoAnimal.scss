@@ -99,7 +99,7 @@
 }
 
 .info-infoAnimal div {
-    width: 40%;
+    width: 50%;
 }
 
 #wpp-button {
@@ -117,6 +117,11 @@
     background: white url(.././assets/logoWhatsapp.png) no-repeat right;
     background-size: 50px;
     font-weight: 900;
+}
+
+#wpp-button button:hover {
+    background-color: #C6C6C6;
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 600px) {

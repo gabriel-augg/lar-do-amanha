@@ -1,9 +1,21 @@
+let animalId = 0
+
 const btnDonation = document.getElementById('btn-donate')
 btnDonation.addEventListener('click', () => {
     donationCreate()
 
 
 })
+
+function getUserId(){
+    let itemLocal = JSON.parse(localStorage.getItem('usuarios')) || []
+    for (const item of itemLocal) {
+        if (item.logged) {
+          return item.id;
+        }
+      }
+}
+
 
 function donationCreate() {
     const animalName = document.getElementById('animal-name')
@@ -14,13 +26,20 @@ function donationCreate() {
     const city = document.getElementById('city')
     const state = document.getElementById('state')
     const selectedGender = document.querySelector('input[name="gender"]:checked');
+    const description = document.getElementById('textarea')
     const date = new Date()
-    const currentDate = `${date.getDate()}/0${date.getMonth()+1}/${date.getFullYear()}`
+    const currentDate = `0${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}`
+    
+    
+
+    
+
+
 
 
 
     class Animal {
-        constructor(animalName, animalIMG, animalType, gender, phone, zipCode, city, state, date, animalId) {
+        constructor(animalName, animalIMG, animalType, gender, phone, zipCode, city, state, description , date, userId) {
             this.animalName = animalName
             this.animalIMG = animalIMG
             this.animalType = animalType
@@ -30,11 +49,15 @@ function donationCreate() {
             this.city = city
             this.state = state
             this.date = date
-            this.animalId = animalId
+            this.userId = userId
+            this.description = description
+            this.animalId = animalId++
         }
     }
 
-    let newAnimal = new Animal(animalName.value, animalIMG.value, animalType.value, selectedGender.value, phone.value, zipCode.value, city.value, state.value, currentDate)
+
+
+    let newAnimal = new Animal(animalName.value, animalIMG.value, animalType.value, selectedGender.value, phone.value, zipCode.value, city.value, state.value, description.value, currentDate, getUserId())
     
     let itemLocal = JSON.parse(localStorage.getItem('usuarios')) || []
 

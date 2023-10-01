@@ -1087,7 +1087,7 @@ input[type=file] {
 }
 
 .info-infoAnimal div {
-  width: 40%;
+  width: 50%;
 }
 
 #wpp-button {
@@ -1105,6 +1105,11 @@ input[type=file] {
   background: white url(.././assets/logoWhatsapp.png) no-repeat right;
   background-size: 50px;
   font-weight: 900;
+}
+
+#wpp-button button:hover {
+  background-color: #C6C6C6;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 600px) {
@@ -1263,12 +1268,10 @@ article #user-menu ul {
 
 article {
   width: 30%;
-  border: 1px solid green;
 }
 
 aside {
   padding: 50px;
-  border: 1px solid blue;
   width: 70%;
 }
 

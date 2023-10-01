@@ -58,38 +58,37 @@
         <div id="infoAnimal-section">
             <aside>
                 <div id="animal-name">
-                    <h1>Caramelo</h1>
+                    <h1 id="animalName"></h1>
                 </div>
                 <div id="animal-img">
                     <img src=".././assets/dog-bg.jpg">
                 </div>
-                <div id="post-date"><h3>Adicionado em 24/09/2023</h3></div>
+                <div id="post-date"><h3 id="date"></h3></div>
             </aside>
             <article>
                 <div id="location-infoAnimal">
                     <div id="info-content">
-                        <h1><img src=".././assets/location.svg">  <span>Pernambuco</span></h1>
+                        <h1><img src=".././assets/location.svg">  <span id="animalUf"></span></h1>
                     </div>
                     <div >
-                        <h2><span>Olinda</span></h2>
+                        <h2><span id="animalCity"></span></h2>
                     </div>
                 </div>
                 <div class="all-info" id="specific-Info">
                     <div class="info-infoAnimal">
-                        <div><h1><img src=".././assets/mars-and-venus.svg">  Macho</h1></div>
-                        <div><h1><img src=".././assets/paw.svg">  Cachorro</h1></div>
+                        <div><h1><img src=".././assets/mars-and-venus.svg">  <span id="animalGender"></span></h1></div>
+                        <div><h1><img src=".././assets/paw.svg">   <span id="animalType"></span></h1></div>
                     </div>
                     <div class="info-infoAnimal">
-                        <div><h1><img src=".././assets/id-badge.svg">  Cleiton</h1></div>
-                        <div><h1><img src=".././assets/phone.svg">  (79) 9 988178842</h1></div>
+                        <div><h1><img src=".././assets/id-badge.svg">  <span id="userName"></span></h1></div>
+                        <div><h1><img src=".././assets/phone.svg">  <span id="userPhone"></span></h1></div>
                     </div>
                 </div>
                 <div class="all-info">
-                    <h1>Foi encontrado na rua a 3 dias, está sobe cuidados
-                        médicos e estou a procura  de um pai e uma mâe para ele</h1>
+                    <h1 id="animalDescription"></h1>
                 </div>
                 <div id="wpp-button">
-                    <button>Entrar em contato</button>
+                    <button onclick="redirectWpp()">Entrar em contato</button>
                 </div>
             </article>
         </div>
@@ -109,5 +108,6 @@
         </div>
     </footer>
     <script src="../js/script.js"></script>
+    <script src="../js/infoAnimal.js"></script>
 </body>
 </html>
