@@ -1,5 +1,27 @@
 let ids = JSON.parse(localStorage.getItem('id')) || {animalId: 0, id: 0}
 
+const fileInput = document.getElementById("img-file");
+fileInput.addEventListener('change', () => {
+    const file = fileInput.files[0]
+    let img;
+    
+    if (file) {
+        const reader = new FileReader();
+      
+        reader.onload = function (event) {
+          img = event.target.result;
+          localStorage.setItem('img', JSON.stringify(img));
+        };
+      
+        // Você deve chamar reader.readAsDataURL(file) para iniciar a leitura do arquivo
+        reader.readAsDataURL(file);
+    }
+    let animalIMG = JSON.parse(localStorage.getItem('img'))
+    console.log(animalIMG)
+
+})
+    
+
 function back() {
     document.getElementById('modal-sucessfulDonation').style.display = 'none'
     document.getElementsByTagName('body')[0].style.overflowY = 'scroll'
@@ -39,7 +61,6 @@ function getUserId(){
 
 function donationCreate() {
     const animalName = document.getElementById('animal-name')
-    const animalIMG = document.getElementById('img-file')
     const animalType = document.getElementById('animal-type')
     const phone = document.getElementById('phone')
     const zipCode = document.getElementById('zipcode')
@@ -50,10 +71,6 @@ function donationCreate() {
     const date = new Date()
     const currentDate = `0${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}`
     
-    
-
-    
-
 
 
 
@@ -75,16 +92,16 @@ function donationCreate() {
         }
     }
 
-    
+    let animalIMG = JSON.parse(localStorage.getItem('img'))
+    console.log(animalIMG)
 
-    let newAnimal = new Animal(animalName.value, animalIMG.value, animalType.value, selectedGender.value, phone.value, zipCode.value, city.value, state.value, description.value, currentDate, getUserId())
+    let newAnimal = new Animal(animalName.value, animalIMG, animalType.value, selectedGender.value, phone.value, zipCode.value, city.value, state.value, description.value, currentDate, getUserId())
     
     let itemLocal = JSON.parse(localStorage.getItem('usuarios')) || []
    
     itemLocal.forEach(item => {
         if (item.logged) {
             item.animals.push(newAnimal)
-            console.log(item.animals)
             localStorage.setItem('usuarios', JSON.stringify(itemLocal));
         }
     });

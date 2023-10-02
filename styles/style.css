@@ -1021,6 +1021,14 @@ input[type=file] {
   height: 50vh;
 }
 
+.imgDiv {
+  width: 100%;
+  height: 200px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 20px;
+}
+
 @media only screen and (max-width: 600px) {
   #wannaAdopt-section {
     padding: 0%;
