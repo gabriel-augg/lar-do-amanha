@@ -238,6 +238,86 @@ input[type="file"] {
     background: $whiteP;
 }
 
+#animal-cards-register{
+    width: 100%;
+    height: 65vh;
+    padding: 30px;
+    background-color: $blueP-1;
+    overflow-y: scroll;
+    
+}
+
+#div-card-register{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    gap: 30px;
+    flex-wrap: wrap;
+
+}
+
+
+.card-register{
+    border-radius: 16px;
+    width: 30%;
+    background-color: $whiteP;
+    box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
+    padding: 20px 20px 6px 20px;
+
+}
+
+.animal-name-register{
+    width: 100%;
+    padding: 5px 0 5px 5px ;
+    background-color: $yellowP;
+    border-radius: 10px;
+    color: $whiteP;
+
+}
+
+.animal-name-register h3{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.animal-content-register{
+    display: flex;
+    padding: 5px 4px 4px 0;
+    justify-content: space-between;
+}
+
+
+
+.animal-content-register h3 {
+    font-size: 17px;
+}
+
+.edits-animals-register {
+    width: 100%;
+    height: 12%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.edit-animal-register{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.delete-animal-register {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+.date-register{
+    margin-top: 5%;
+    text-align: center;
+    color: #777777;
+    font-size: 14px;   
+}
+
 .inputs-animalEdit #fileImgLabel:hover,
 .inputs-animalEdit select:hover {
     cursor: pointer;
@@ -246,7 +326,36 @@ input[type="file"] {
 
 
 
+
 @media only screen and (max-width: 600px) {
+
+    #user-content {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #content-edit {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    
+    #contentArea-edit {
+        width: 100%;
+    }
+    
+    
+    article {
+        width: 100%;
+    }
+    
+    aside {
+        padding: 0;
+        margin-top: 40px;
+        width: 100%;
+    }
+
     #animalEdit-section {
         padding: 0;
         height: auto;
@@ -276,95 +385,14 @@ input[type="file"] {
     #radio-animalEdit label {
         font-size: 22px;
     }
+
+    #button-animalEdit button {
+       width: 100%;
+    }
+
+
+    
 }
 
 
 
-// #animal-cards-register{
-//     width: 100%;
-//     height: 20%;
-//     padding: 30px;
-//     border : 1px solid blue;
-// }
-
-// #div-card-register{
-//     display: flex;
-//     width: 100%;
-//     justify-content: space-evenly;
-// }
-
-
-// .card-register{
-//     border-radius: 16px;
-//     width: 17%;
-//     background-color: $whiteP;
-//     box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
-//     padding: 20px 20px 6px 20px;
-
-// }
-
-// .animal-name-register{
-//     width: 100%;
-//     padding: 5px 0 5px 5px ;
-//     background-color: $yellowP;
-//     border-radius: 10px;
-//     color: $whiteP;
-
-// }
-
-// .animal-name-register h3{
-//     font-weight: bold;
-//     font-size: 16px;
-// }
-
-// .animal-content-register{
-//     height: 10%;
-//     display: flex;
-//     padding: 5px 4px 4px 0;
-//     justify-content: space-between;
-// }
-
-// .animal-content-register h3 {
-//     font-size: 10px;
-// }
-
-// .edits-animals-register {
-//     width: 100%;
-//     height: 12%;
-//     display: flex;
-//     justify-content: space-between;
-//     flex-direction: row;
-// }
-// .edit-animal-register{
-//     width: 50%;
-//     display: flex;
-//     justify-content: center;
-// }
-
-
-// .delete-animal-register {
-//     width: 50%;
-//     display: flex;
-//     justify-content: center;
-// }
-// .date-register{
-//     margin-top: 5%;
-//     text-align: center;
-//     color: #777777;
-//     font-size: 10px;   
-// }
-
-
-// @media only screen and (max-width: 600px){
-   
-//     #div-card-register{
-//         display: flex;
-//         flex-direction: column;
-//         align-items: center;
-//         gap: 50px;
-//     }
-
-//     #text-card-register h1{
-//         font-size: 30px;
-//     }
-// }
