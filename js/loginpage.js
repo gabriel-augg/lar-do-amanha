@@ -9,24 +9,26 @@ const confirmPass = document.getElementById('confirmPass')
 const modal = document.getElementById('modal')
 const openModal = document.getElementById('openRegister')
 const closeModal = document.getElementById('closeModal')
-
+let id = 0
 
 function createUser() {
 
   const animals = []
   const logged = false
+  
+  
   class User {
-    constructor(email, nameUser, password, animals, userId, Logged) {
+  
+    constructor(email, nameUser, password, animals) {
       this.email = email
       this.nameUser = nameUser
       this.password = password
       this.animals = animals
-      this.userId = userId
+      this.id = id++
       this.logged = logged
     }
   }
-
-  let newUser = new User(email.value, nameUser.value, password.value, animals, logged)
+  let newUser = new User(email.value, nameUser.value, password.value, animals)
   createClient(newUser)
 }
 

@@ -43,11 +43,21 @@
 }
 
 #wannaAdopt-cards {
+    
     margin: 50px 0;
     display: flex;
     justify-content: space-evenly;
     gap: 50px 10px;
     flex-wrap: wrap;
+}
+
+#notFound {
+    color: white;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    height: 50vh;
 }
 
 

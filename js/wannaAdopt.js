@@ -2,6 +2,19 @@ function showAnimals() {
     matchAnimalsAndCards()
 }
 
+function verificCards(data) {
+    console.log(data)
+    if (!data.length) {
+        document.getElementById('notFound').style.display = 'flex';
+        document.getElementById('wannaAdopt-cards').style.display = 'none';
+    } else {
+        document.getElementById('notFound').style.display = 'none';
+        document.getElementById('wannaAdopt-cards').style.display = 'flex';
+    }
+}
+
+
+
 function createAnimalCard(animalNameParam, animalIMG, animalType, phone, zipCode, city, state, gender, postDate) {
     let div = document.getElementById('wannaAdopt-cards');
     matchAnimalsAndCards()
@@ -23,7 +36,7 @@ function animals() {
 
 
 
-function createCard(animalNameParam, animalIMG, animalType, phone, zipCode, city, state, gender, postDate) {
+function createCard(animalNameParam, animalIMG, animalType, phone, zipCode, city, state, gender, postDate, classId, animalId, userId) {
 
     let div = document.getElementById('wannaAdopt-cards')
 
@@ -31,6 +44,11 @@ function createCard(animalNameParam, animalIMG, animalType, phone, zipCode, city
 
 
     card.classList.add("card");
+    card.classList.add(classId)
+    card.onclick = () => {
+        localStorage.setItem('animal', JSON.stringify([animalId, userId]))
+        window.location.href = 'infoAnimal.html'
+    }
 
 
     const imageDiv = document.createElement("div");
@@ -79,7 +97,7 @@ function createCard(animalNameParam, animalIMG, animalType, phone, zipCode, city
 
 function matchAnimalsAndCards() {
     for (let i = 0; i < animals().length; i++) {
-        createCard(animals()[i].animalName, null, null, null, null, null, animals()[i].state, animals()[i].gender, animals()[i].date)
+        createCard(animals()[i].animalName, null, null, null, null, null, animals()[i].state, animals()[i].gender, animals()[i].date, `animal${animals()[i].animalId}`, animals()[i].animalId, animals()[i].userId)
     }
 }
 
@@ -88,7 +106,7 @@ function matchAnimalsAndCards() {
 function showAnimalsOrdered() {
 
     for (let i = 0; i < animals().length; i++) {
-        createCard(animals()[i].animalName, null, null, null, null, null, animals()[i].state, animals()[i].gender, animals()[i].date)
+        createCard(animals()[i].animalName, null, null, null, null, null, animals()[i].state, animals()[i].gender, animals()[i].date, `animal${animals()[i].animalId}`, animals()[i].animalId, animals()[i].userId)
     }
 }
 
@@ -132,8 +150,9 @@ function validation(animal, animals) {
         }
     });
     for (let i = 0; i < animals.length; i++) {
-        createCard(animals[i].animalName, null, null, null, null, null, animals[i].state, animals[i].gender, animals[i].postDate)
+        createCard(animals[i].animalName, null, null, null, null, null, animals[i].state, animals[i].gender, animals[i].date, `animal${animals[i].animalId}`, animals[i].animalId, animals[i].userId)
     }
+    verificCards(animals)
 }
 
 function search() {
@@ -146,31 +165,17 @@ function search() {
         return animalName.includes(keyword); // Verifica se o nome do animal contém a palavra-chave
     });
 
+    
+
     for (let i = 0; i < filteredAnimals.length; i++) {
-        createCard(filteredAnimals[i].animalName, null, null, null, null, null, filteredAnimals[i].state, filteredAnimals[i].gender, filteredAnimals[i].postDate)
+        createCard(filteredAnimals[i].animalName, null, null, null, null, null, filteredAnimals[i].state, filteredAnimals[i].gender, filteredAnimals[i].date, `animal${filteredAnimals[i].animalId}`, filteredAnimals[i].animalId, filteredAnimals[i].userId)
     }
 
-    console.log(filteredAnimals);
+
+    verificCards(filteredAnimals)
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+verificCards(animals())
 
 
 showAnimals()
