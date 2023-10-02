@@ -155,6 +155,18 @@ const ValidationData = () => {
     }
 }
 
+// logout page 
+
+const logoutPage = () => {
+    let itemLocal = JSON.parse(localStorage.getItem('usuarios')) || [];
+    itemLocal.forEach(item => {
+        if (item.logged) {
+            item.logged = false;
+            setLocalStorage(itemLocal);
+            location.href = "../index.html";
+        }
+    });
+}
 
 
 
