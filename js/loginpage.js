@@ -9,7 +9,7 @@ const confirmPass = document.getElementById('confirmPass')
 const modal = document.getElementById('modal')
 const openModal = document.getElementById('openRegister')
 const closeModal = document.getElementById('closeModal')
-let id = 0
+let ids = JSON.parse(localStorage.getItem('id')) || {animalId: 0, id: 0}
 
 function createUser() {
 
@@ -24,12 +24,14 @@ function createUser() {
       this.nameUser = nameUser
       this.password = password
       this.animals = animals
-      this.id = id++
+      this.id = ids.id
       this.logged = logged
     }
   }
   let newUser = new User(email.value, nameUser.value, password.value, animals)
   createClient(newUser)
+  ids.id++
+  localStorage.setItem('id', JSON.stringify(ids));
 }
 
 

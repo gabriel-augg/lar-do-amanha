@@ -502,6 +502,7 @@ footer {
   border-radius: 8px;
   border: none;
   box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+  outline: none;
 }
 
 label {

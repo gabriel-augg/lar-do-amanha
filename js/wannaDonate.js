@@ -1,14 +1,23 @@
-let animalId = 0
+let ids = JSON.parse(localStorage.getItem('id')) || {animalId: 0, id: 0}
 
 function back() {
     document.getElementById('modal-sucessfulDonation').style.display = 'none'
-    document.getElementsByTagName('body')[0].style.overflow = 'scroll'
+    document.getElementsByTagName('body')[0].style.overflowY = 'scroll'
     location.href = '../index.html'
 }
 
 function donateAnother() {
-    document.getElementsByTagName('body')[0].style.overflow = 'scroll'
+    document.getElementsByTagName('body')[0].style.overflowY = 'scroll'
     document.getElementById('modal-sucessfulDonation').style.display = 'none' 
+    document.getElementById('animal-name').value = ''
+    document.getElementById('img-file').value = ''
+    document.getElementById('animal-type').value = 'animal'
+    document.getElementById('phone').value = ''
+    document.getElementById('zipcode').value = ''
+    document.getElementById('city').value = ''
+    document.getElementById('state').value = 'State'
+    document.querySelector('input[name="gender"]:checked').checked = false
+    document.getElementById('textarea').value = ''
 }
 
 const btnDonation = document.getElementById('btn-donate')
@@ -62,16 +71,16 @@ function donationCreate() {
             this.date = date
             this.userId = userId
             this.description = description
-            this.animalId = animalId++
+            this.animalId = ids.animalId
         }
     }
 
-
+    
 
     let newAnimal = new Animal(animalName.value, animalIMG.value, animalType.value, selectedGender.value, phone.value, zipCode.value, city.value, state.value, description.value, currentDate, getUserId())
     
     let itemLocal = JSON.parse(localStorage.getItem('usuarios')) || []
-
+   
     itemLocal.forEach(item => {
         if (item.logged) {
             item.animals.push(newAnimal)
@@ -79,6 +88,9 @@ function donationCreate() {
             localStorage.setItem('usuarios', JSON.stringify(itemLocal));
         }
     });
+
+    ids.animalId++
+    localStorage.setItem('id', JSON.stringify(ids));
 
 }
 
