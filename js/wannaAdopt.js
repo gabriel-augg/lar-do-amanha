@@ -138,7 +138,7 @@ function validation(animal, animals) {
         }
     });
     for (let i = 0; i < animals.length; i++) {
-        indexCreatCard(animals[i].animalName, animals[i].state, animals[i].gender, animals[i].date, `animal${animals[i].animalId}`, animals[i].animalId, animals[i].userId)
+        indexCreatCard(animals[i].animalName, animals[i].animalIMG, animals[i].state, animals[i].gender, animals[i].date, `animal${animals[i].animalId}`, animals[i].animalId, animals[i].userId)
     }
     verificCards(animals)
 }
