@@ -119,7 +119,11 @@ function order() {
         case 'rabbit':
             validation('rabbit', animals())
             break;
-
+        case 'remove':
+            document.getElementById('wannaAdopt-cards').innerHTML = ''
+            document.getElementById('order').value = 'order'
+            showAnimals()
+            break
         default:
             break;
     }
