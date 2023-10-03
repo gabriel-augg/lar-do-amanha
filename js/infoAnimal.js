@@ -75,6 +75,7 @@ function showAnimalInfo(){
             document.getElementById('animalType').innerHTML = allAnimals[item.animalType]
             document.getElementById('userPhone').innerHTML = item.phone
             document.getElementById('animalDescription').innerHTML = item.description
+            document.getElementById('animal-img').style.backgroundImage = `url(${item.animalIMG})`
             console.log(item.animalId)
         }
     })
