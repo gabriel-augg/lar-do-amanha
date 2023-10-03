@@ -1073,8 +1073,11 @@ input[type=file] {
   width: 100%;
 }
 
-#animal-img img {
-  box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+#animal-img {
+  height: 450px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 16px;
 }
 
 #post-date h3 {
@@ -1083,11 +1086,6 @@ input[type=file] {
   font-size: 20px;
   font-weight: 800;
   text-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-#animal-img img {
-  width: 100%;
-  border-radius: 16px;
 }
 
 #animal-name h1 {
