@@ -169,6 +169,80 @@ const logoutPage = () => {
     });
 }
 
+function animals() {
+    
+    let animalList = [];
+    let itemLocal = JSON.parse(localStorage.getItem('usuarios')) || []
+    itemLocal.forEach(item => {
+        for (let i = 0; i < item.animals.length; i++) {
+            animalList.push(item.animals[i])
+        }
+    })
+   
+    return animalList
+}
 
+
+
+function indexCreatCard(animalNameParam, animalIMG, state, gender, postDate, classId, animalId, userId) {
+
+    let div = document.getElementById('div-card')
+
+    const card = document.createElement("div");
+
+
+    card.classList.add("card");
+    card.classList.add(classId)
+    card.onclick = () => {
+        localStorage.setItem('animal', JSON.stringify([animalId, userId]))
+        window.location.href = 'infoAnimal.html'
+    }
+
+
+    const imageDiv = document.createElement("div");
+    const cardContent = document.createElement("div");
+    const animalName = document.createElement("h3");
+    const animalContent = document.createElement("div");
+    const animalGender = document.createElement("h3");
+    const location = document.createElement("h3");
+    const date = document.createElement("div");
+    const dateText = document.createElement("h4");
+
+
+    cardContent.classList.add('card-content');
+    animalName.classList.add('animal-name');
+    animalContent.classList.add('animal-content');
+    animalGender.classList.add('animal-gender');
+    location.classList.add('location');
+    date.classList.add('date');
+    imageDiv.classList.add('imgDiv')
+
+
+    animalName.textContent = animalNameParam;
+    animalGender.innerHTML = `<img src=".././assets/mars-and-venus.svg" style="width: 26px; height: 26px;" alt="">${gender}`;
+    location.innerHTML = `<img src=".././assets/location.svg" style="width: 26px; height: 26px;" alt="">${state}`;
+    dateText.textContent = `adicionado em ${postDate}`;
+    imageDiv.style.backgroundImage = `url(${animalIMG})`
+
+
+    cardContent.appendChild(animalName);
+    animalContent.appendChild(animalGender);
+    animalContent.appendChild(location);
+    cardContent.appendChild(animalContent);
+    date.appendChild(dateText);
+    card.appendChild(imageDiv);
+    card.appendChild(cardContent);
+    card.appendChild(date);
+    div.appendChild(card);
+}
+
+function indexMatchAnimalAndCards() {
+    for (let i = 0; i < Math.min(3, animals().length); i++) {
+        indexCreatCard(animals()[i].animalName, animals()[i].animalIMG, animals()[i].state, animals()[i].gender, animals()[i].date, `animal${animals()[i].animalId}`, animals()[i].animalId, animals()[i].userId)
+    }
+}
+
+
+indexMatchAnimalAndCards()
 
 

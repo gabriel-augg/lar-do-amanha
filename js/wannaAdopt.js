@@ -1,5 +1,5 @@
 function showAnimals() {
-    matchAnimalsAndCards()
+    indexMatchAnimalAndCards()
 }
 console.log(JSON.parse(localStorage.getItem('img')))
 
@@ -14,12 +14,6 @@ function verificCards(data) {
     }
 }
 
-
-
-function createAnimalCard(animalNameParam, animalIMG, animalType, phone, zipCode, city, state, gender, postDate) {
-    let div = document.getElementById('wannaAdopt-cards');
-    matchAnimalsAndCards()
-}
 
 
 function animals() {
@@ -37,7 +31,7 @@ function animals() {
 
 
 
-function createCard(animalNameParam, animalIMG, animalType, phone, zipCode, city, state, gender, postDate, classId, animalId, userId) {
+function indexCreatCard(animalNameParam, animalIMG, state, gender, postDate, classId, animalId, userId) {
 
     let div = document.getElementById('wannaAdopt-cards')
 
@@ -89,9 +83,9 @@ function createCard(animalNameParam, animalIMG, animalType, phone, zipCode, city
     div.appendChild(card);
 }
 
-function matchAnimalsAndCards() {
+function indexMatchAnimalAndCards() {
     for (let i = 0; i < animals().length; i++) {
-        createCard(animals()[i].animalName, animals()[i].animalIMG, null, null, null, null, animals()[i].state, animals()[i].gender, animals()[i].date, `animal${animals()[i].animalId}`, animals()[i].animalId, animals()[i].userId)
+        indexCreatCard(animals()[i].animalName, animals()[i].animalIMG, animals()[i].state, animals()[i].gender, animals()[i].date, `animal${animals()[i].animalId}`, animals()[i].animalId, animals()[i].userId)
     }
 }
 
@@ -100,7 +94,7 @@ function matchAnimalsAndCards() {
 function showAnimalsOrdered() {
 
     for (let i = 0; i < animals().length; i++) {
-        createCard(animals()[i].animalName, animals()[i].animalIMG, null, null, null, null, animals()[i].state, animals()[i].gender, animals()[i].date, `animal${animals()[i].animalId}`, animals()[i].animalId, animals()[i].userId)
+        indexCreatCard(animals()[i].animalName, animals()[i].animalIMG, animals()[i].state, animals()[i].gender, animals()[i].date, `animal${animals()[i].animalId}`, animals()[i].animalId, animals()[i].userId)
     }
 }
 
@@ -144,7 +138,7 @@ function validation(animal, animals) {
         }
     });
     for (let i = 0; i < animals.length; i++) {
-        createCard(animals[i].animalName, null, null, null, null, null, animals[i].state, animals[i].gender, animals[i].date, `animal${animals[i].animalId}`, animals[i].animalId, animals[i].userId)
+        indexCreatCard(animals[i].animalName, animals[i].state, animals[i].gender, animals[i].date, `animal${animals[i].animalId}`, animals[i].animalId, animals[i].userId)
     }
     verificCards(animals)
 }
@@ -162,7 +156,7 @@ function search() {
     
 
     for (let i = 0; i < filteredAnimals.length; i++) {
-        createCard(filteredAnimals[i].animalName, null, null, null, null, null, filteredAnimals[i].state, filteredAnimals[i].gender, filteredAnimals[i].date, `animal${filteredAnimals[i].animalId}`, filteredAnimals[i].animalId, filteredAnimals[i].userId)
+        indexCreatCard(filteredAnimals[i].animalName, filteredAnimals[i].state, filteredAnimals[i].gender, filteredAnimals[i].date, `animal${filteredAnimals[i].animalId}`, filteredAnimals[i].animalId, filteredAnimals[i].userId)
     }
 
 
