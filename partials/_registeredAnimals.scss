@@ -9,6 +9,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    height: 65vh;
 }
 
 #contentArea-edit {
@@ -245,7 +246,8 @@ input[type="file"] {
     padding: 30px;
     background-color: $blueP-1;
     overflow-y: scroll;
-
+    border-radius: 16px;
+    box-shadow: inset 6px 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 #div-card-register {
@@ -273,6 +275,7 @@ input[type="file"] {
     background-color: $yellowP;
     border-radius: 10px;
     color: $whiteP;
+    
 
 }
 

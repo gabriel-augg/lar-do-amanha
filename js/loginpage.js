@@ -161,15 +161,15 @@ const errorPass = document.getElementById('pass-empty')
 
 btnEnter.addEventListener('click', () => {
   switch (true) {
-    case (inputEmail.value === "" && inputPass.value !== ""):
+    case inputEmail.value === "" && inputPass.value !== "":
       execulteEmail()
       break;
 
-    case (inputPass.value === "" && inputEmail.value !== ""):
+    case inputPass.value === "" && inputEmail.value !== "":
       executePass()
       break;
 
-    case (inputEmail.value === "" && inputPass.value === ""):
+    case inputEmail.value === "" && inputPass.value === "":
       executePass()
       execulteEmail()
       break;

@@ -68,15 +68,15 @@
         <article>
             <nav id="user-menu">
                 <ul>
-                    <li>Configurações</li>
-                    <li>Animais Cadastrados</li>
+                    <li onclick="config()">Configurações</li>
+                    <li onclick="animalsRegister()">Animais Cadastrados</li>
                     <li onclick="logoutPage()">Sair</li>
                 </ul>
             </nav>
 
         </article>
         <aside>
-            <div id="content-edit" style="display: none;">
+            <div id="content-edit" style="display: flex;">
 
                 <div id="contentArea-edit">
                     <div class="edit-inputs">
@@ -143,7 +143,7 @@
                         </div>
         
                     </div>
-                    <div class="content-animalEdit"  >
+                    <div class="content-animalEdit" >
                         <div class="inputs-animalEdit">
                             <select id="state">
                                 <option selected disabled>Estado</option>
@@ -197,7 +197,7 @@
                 </div>
             </div>
 
-            <div id="animal-cards-register" >
+            <div id="animal-cards-register" style="display: none;"  >
                 <div id="div-card-register">
     
                 </div>

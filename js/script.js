@@ -81,10 +81,25 @@ const changePage = (page) => {
             }
             break;
         case 'btnDonate':
-            if (window.location.href.includes("/pages/")) {
-                location.href = "../pages/wannaDonation.html"
+            let validation = false;
+            if (localStorage.getItem('usuarios')) {
+                getLocalStorage().forEach(item => {
+                    if(item.logged){
+                       validation = true 
+                    }
+                });
             } else {
-                location.href = "./pages/wannaDonation.html"
+                changePage('login')
+            }
+            
+            if (validation) {
+                if (window.location.href.includes("/pages/")) {
+                    location.href = "../pages/wannaDonation.html"
+                } else {
+                    location.href = "./pages/wannaDonation.html"
+                }
+            } else {
+                changePage('login')
             }
             break;
         default:
@@ -156,21 +171,9 @@ const ValidationData = () => {
     }
 }
 
-// logout page 
-
-const logoutPage = () => {
-    let itemLocal = JSON.parse(localStorage.getItem('usuarios')) || [];
-    itemLocal.forEach(item => {
-        if (item.logged) {
-            item.logged = false;
-            setLocalStorage(itemLocal);
-            location.href = "../index.html";
-        }
-    });
-}
 
 function userAnimals() {
-    
+
     let animalList = [];
     let itemLocal = JSON.parse(localStorage.getItem('usuarios')) || []
     itemLocal.forEach(item => {
@@ -178,7 +181,7 @@ function userAnimals() {
             animalList.push(item.animals[i])
         }
     })
-   
+
     return animalList
 }
 
@@ -241,8 +244,5 @@ function homeMatchAnimalsAndCards() {
         homeCreatCard(userAnimals()[i].animalName, userAnimals()[i].animalIMG, userAnimals()[i].state, userAnimals()[i].gender, userAnimals()[i].date, `animal${userAnimals()[i].animalId}`, userAnimals()[i].animalId, userAnimals()[i].userId)
     }
 }
-
-
-homeMatchAnimalsAndCards()
 
 
