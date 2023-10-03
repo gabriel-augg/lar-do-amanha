@@ -1566,6 +1566,15 @@ input[type=file] {
   background-color: #EEEEEE;
 }
 
+#errorEmpty {
+  color: brown;
+  display: none;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  background-color: #777777;
+}
+
 @media only screen and (max-width: 600px) {
   #user-content {
     display: flex;
@@ -1580,12 +1589,15 @@ input[type=file] {
   #contentArea-edit {
     width: 100%;
   }
+  #user-menu {
+    margin-top: 0;
+  }
   article {
     width: 100%;
   }
   aside {
     padding: 0;
-    margin-top: 40px;
+    margin-top: 20px;
     width: 100%;
   }
   #animalEdit-section {

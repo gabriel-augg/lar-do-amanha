@@ -29,7 +29,7 @@
     border-radius: 9px;
     outline: none;
     border: none;
-    box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);   
+    box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
 }
 
 
@@ -43,13 +43,13 @@
     border-radius: 9px;
     outline: none;
     border: none;
-    box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20); 
-    background-color: $orangeP;  
+    box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
+    background-color: $orangeP;
 }
 
 #contentArea-edit button:hover {
     cursor: pointer;
-    background-color: $orangeP1;  
+    background-color: $orangeP1;
 }
 
 article #user-menu ul {
@@ -82,9 +82,9 @@ article #user-menu ul {
 }
 
 #user-menu ul li:hover {
-   background: $blueP1 url(../assets/caret-right.svg) no-repeat left center;
-   background-size: 20px;
-   background-position: 10px;
+    background: $blueP1 url(../assets/caret-right.svg) no-repeat left center;
+    background-size: 20px;
+    background-position: 10px;
 }
 
 article {
@@ -121,7 +121,8 @@ aside {
     padding: 5px;
     box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.20);
 }
-#fileImgLabel{
+
+#fileImgLabel {
     color: $grayP;
 }
 
@@ -238,16 +239,16 @@ input[type="file"] {
     background: $whiteP;
 }
 
-#animal-cards-register{
+#animal-cards-register {
     width: 100%;
     height: 65vh;
     padding: 30px;
     background-color: $blueP-1;
     overflow-y: scroll;
-    
+
 }
 
-#div-card-register{
+#div-card-register {
     display: flex;
     width: 100%;
     justify-content: space-evenly;
@@ -257,7 +258,7 @@ input[type="file"] {
 }
 
 
-.card-register{
+.card-register {
     border-radius: 16px;
     width: 30%;
     background-color: $whiteP;
@@ -266,21 +267,21 @@ input[type="file"] {
 
 }
 
-.animal-name-register{
+.animal-name-register {
     width: 100%;
-    padding: 5px 0 5px 5px ;
+    padding: 5px 0 5px 5px;
     background-color: $yellowP;
     border-radius: 10px;
     color: $whiteP;
 
 }
 
-.animal-name-register h3{
+.animal-name-register h3 {
     font-weight: bold;
     font-size: 20px;
 }
 
-.animal-content-register{
+.animal-content-register {
     display: flex;
     padding: 5px 4px 4px 0;
     justify-content: space-between;
@@ -299,7 +300,8 @@ input[type="file"] {
     justify-content: space-between;
     flex-direction: row;
 }
-.edit-animal-register{
+
+.edit-animal-register {
     width: 50%;
     display: flex;
     justify-content: center;
@@ -311,11 +313,12 @@ input[type="file"] {
     display: flex;
     justify-content: center;
 }
-.date-register{
+
+.date-register {
     margin-top: 5%;
     text-align: center;
     color: #777777;
-    font-size: 14px;   
+    font-size: 14px;
 }
 
 .inputs-animalEdit #fileImgLabel:hover,
@@ -325,7 +328,14 @@ input[type="file"] {
 }
 
 
-
+#errorEmpty {
+    color: brown;
+    display: none;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    background-color: #777777;
+}
 
 @media only screen and (max-width: 600px) {
 
@@ -333,26 +343,29 @@ input[type="file"] {
         display: flex;
         flex-direction: column;
     }
-    
+
     #content-edit {
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100%;
     }
-    
+
     #contentArea-edit {
         width: 100%;
     }
-    
-    
+
+    #user-menu {
+        margin-top: 0;
+    }
+
     article {
         width: 100%;
     }
-    
+
     aside {
         padding: 0;
-        margin-top: 40px;
+        margin-top: 20px;
         width: 100%;
     }
 
@@ -381,18 +394,15 @@ input[type="file"] {
         justify-content: center;
         gap: 50px;
     }
-    
+
     #radio-animalEdit label {
         font-size: 22px;
     }
 
     #button-animalEdit button {
-       width: 100%;
+        width: 100%;
     }
 
 
-    
+
 }
-
-
-

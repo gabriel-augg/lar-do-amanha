@@ -1,18 +1,18 @@
-let ids = JSON.parse(localStorage.getItem('id')) || {animalId: 0, id: 0}
+let ids = JSON.parse(localStorage.getItem('id')) || { animalId: 0, id: 0 }
 
 const fileInput = document.getElementById("img-file");
 fileInput.addEventListener('change', () => {
     const file = fileInput.files[0]
     let img;
-    
+
     if (file) {
         const reader = new FileReader();
-      
+
         reader.onload = function (event) {
-          img = event.target.result;
-          localStorage.setItem('img', JSON.stringify(img));
+            img = event.target.result;
+            localStorage.setItem('img', JSON.stringify(img));
         };
-      
+
         // Você deve chamar reader.readAsDataURL(file) para iniciar a leitura do arquivo
         reader.readAsDataURL(file);
     }
@@ -20,7 +20,7 @@ fileInput.addEventListener('change', () => {
     console.log(animalIMG)
 
 })
-    
+
 
 function back() {
     document.getElementById('modal-sucessfulDonation').style.display = 'none'
@@ -30,7 +30,7 @@ function back() {
 
 function donateAnother() {
     document.getElementsByTagName('body')[0].style.overflowY = 'scroll'
-    document.getElementById('modal-sucessfulDonation').style.display = 'none' 
+    document.getElementById('modal-sucessfulDonation').style.display = 'none'
     document.getElementById('animal-name').value = ''
     document.getElementById('img-file').value = ''
     document.getElementById('animal-type').value = 'animal'
@@ -42,20 +42,14 @@ function donateAnother() {
     document.getElementById('textarea').value = ''
 }
 
-const btnDonation = document.getElementById('btn-donate')
-btnDonation.addEventListener('click', () => {
-    document.getElementById('modal-sucessfulDonation').style.display = 'flex'
-    document.getElementsByTagName('body')[0].style.overflow = 'hidden'
-    donationCreate()
-})
 
-function getUserId(){
+function getUserId() {
     let itemLocal = JSON.parse(localStorage.getItem('usuarios')) || []
     for (const item of itemLocal) {
         if (item.logged) {
-          return item.id;
+            return item.id;
         }
-      }
+    }
 }
 
 
@@ -69,14 +63,14 @@ function donationCreate() {
     const selectedGender = document.querySelector('input[name="gender"]:checked');
     const description = document.getElementById('textarea')
     const date = new Date()
-    const currentDate = `0${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}`
-    
+    const currentDate = `0${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`
+
 
 
 
 
     class Animal {
-        constructor(animalName, animalIMG, animalType, gender, phone, zipCode, city, state, description , date, userId) {
+        constructor(animalName, animalIMG, animalType, gender, phone, zipCode, city, state, description, date, userId) {
             this.animalName = animalName
             this.animalIMG = animalIMG
             this.animalType = animalType
@@ -96,9 +90,9 @@ function donationCreate() {
     console.log(animalIMG)
 
     let newAnimal = new Animal(animalName.value, animalIMG, animalType.value, selectedGender.value, phone.value, zipCode.value, city.value, state.value, description.value, currentDate, getUserId())
-    
+
     let itemLocal = JSON.parse(localStorage.getItem('usuarios')) || []
-   
+
     itemLocal.forEach(item => {
         if (item.logged) {
             item.animals.push(newAnimal)
@@ -155,12 +149,36 @@ cepInput.addEventListener('blur', () => {
     fetch(`https://viacep.com.br/ws/${fixedZipCode()}/json/`)
         .then(res => res.json())
         .then((res) => {
-            let city = res.localidade; 
+            let city = res.localidade;
             let state = res.uf;
-            
+
             inputCity.value = city;
             inputState.value = state;
         })
 });
 
+
+// validação quero doar
+
+const animalName = document.getElementById('animal-name')
+const animalType = document.getElementById('animal-type')
+const phone = document.getElementById('phone')
+const zipCode = document.getElementById('zipcode')
+const city = document.getElementById('city')
+const state = document.getElementById('state')
+const selectedGender = document.querySelector('input[name="gender"]:checked');
+const description = document.getElementById('textarea')
+const imageAnimal = document.getElementById('upload-image')
+
+
+const validationDonate = () => {
+    if (animalName.value === "" || animalType.value === "animal" || phone.value === "" || zipCode.value === "" || city.value === "" || state.value === "state" || description.value === "" || imageAnimal.childElementCount <= 0) {
+        document.getElementById('errorEmpty').style.display = "block"
+    } else {
+        document.getElementById('errorEmpty').style.display = "none"
+        document.getElementById('modal-sucessfulDonation').style.display = 'flex'
+        document.getElementsByTagName('body')[0].style.overflow = 'hidden'
+        donationCreate()
+    }
+}
 

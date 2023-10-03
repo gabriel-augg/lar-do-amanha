@@ -120,6 +120,7 @@ function showUser() {
 
                 userResponse.className = "content-user-response"
                 userResponse.innerHTML = `<img src=".././assets/caret-right.svg"><img class="icon-user-response" src="${userImage.src}"/><h4 id="name-user-response">${item.nameUser}</h4>`;
+                userResponse.onclick = clickUser
 
                 statusLogin.appendChild(user);
                 statusLoginResponse.appendChild(userResponse);

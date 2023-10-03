@@ -62,6 +62,7 @@
         </nav>
     </header>
     <section id="wannaDonation-section">
+        <div id="errorEmpty">Preencha todos os dados!</div>
         <div id="all-inputs-wannaDonation">
             <div id="title-wannaDonation">
                 <div>
@@ -110,7 +111,7 @@
             <div class="content-wannaDonation">
                 <div class="inputs-wannaDonation">
                     <select id="state">
-                        <option value="State" selected disabled>Estado</option>
+                        <option value="state" selected disabled>Estado</option>
                         <option value="AC">Acre</option>
                         <option value="AL">Alagoas</option>
                         <option value="AP">Amapá</option>
@@ -156,7 +157,7 @@
                 <textarea id="textarea" placeholder="Descrição"></textarea>
             </div>
             <div id="button-wannaDonation">
-                <button id="btn-donate">Colocar para adoção</button>
+                <button id="btn-donate" onclick="validationDonate()">Colocar para adoção</button>
             </div>
         </div>
     </section>
