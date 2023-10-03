@@ -402,7 +402,15 @@ input[type="file"] {
     #button-animalEdit button {
         width: 100%;
     }
-
-
+    
+    #div-card-register {
+        flex-direction: column;
+    }
+    
+    
+    .card-register {
+        width: 100%;
+    }
+    
 
 }

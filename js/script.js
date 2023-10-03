@@ -169,7 +169,7 @@ const logoutPage = () => {
     });
 }
 
-function animals() {
+function userAnimals() {
     
     let animalList = [];
     let itemLocal = JSON.parse(localStorage.getItem('usuarios')) || []
@@ -184,7 +184,7 @@ function animals() {
 
 
 
-function indexCreatCard(animalNameParam, animalIMG, state, gender, postDate, classId, animalId, userId) {
+function homeCreatCard(animalNameParam, animalIMG, state, gender, postDate, classId, animalId, userId) {
 
     let div = document.getElementById('div-card')
 
@@ -195,7 +195,7 @@ function indexCreatCard(animalNameParam, animalIMG, state, gender, postDate, cla
     card.classList.add(classId)
     card.onclick = () => {
         localStorage.setItem('animal', JSON.stringify([animalId, userId]))
-        window.location.href = 'infoAnimal.html'
+        window.location.href = '../pages/infoAnimal.html'
     }
 
 
@@ -236,13 +236,13 @@ function indexCreatCard(animalNameParam, animalIMG, state, gender, postDate, cla
     div.appendChild(card);
 }
 
-function indexMatchAnimalAndCards() {
-    for (let i = 0; i < Math.min(3, animals().length); i++) {
-        indexCreatCard(animals()[i].animalName, animals()[i].animalIMG, animals()[i].state, animals()[i].gender, animals()[i].date, `animal${animals()[i].animalId}`, animals()[i].animalId, animals()[i].userId)
+function homeMatchAnimalsAndCards() {
+    for (let i = 0; i < Math.min(3, userAnimals().length); i++) {
+        homeCreatCard(userAnimals()[i].animalName, userAnimals()[i].animalIMG, userAnimals()[i].state, userAnimals()[i].gender, userAnimals()[i].date, `animal${userAnimals()[i].animalId}`, userAnimals()[i].animalId, userAnimals()[i].userId)
     }
 }
 
 
-indexMatchAnimalAndCards()
+homeMatchAnimalsAndCards()
 
 
