@@ -85,6 +85,7 @@ function indexCreatCard(animalNameParam, animalIMG, state, gender, postDate, cla
 
 function indexMatchAnimalAndCards() {
     for (let i = 0; i < animals().length; i++) {
+    
         indexCreatCard(animals()[i].animalName, animals()[i].animalIMG, animals()[i].state, animals()[i].gender, animals()[i].date, `animal${animals()[i].animalId}`, animals()[i].animalId, animals()[i].userId)
     }
 }
@@ -160,8 +161,8 @@ function search() {
     
 
     for (let i = 0; i < filteredAnimals.length; i++) {
-        indexCreatCard(filteredAnimals[i].animalName, filteredAnimals[i].state, filteredAnimals[i].gender, filteredAnimals[i].date, `animal${filteredAnimals[i].animalId}`, filteredAnimals[i].animalId, filteredAnimals[i].userId)
-    }
+        indexCreatCard(filteredAnimals[i].animalName, filteredAnimals[i].animalIMG, filteredAnimals[i].state, filteredAnimals[i].gender, filteredAnimals[i].date, `animal${filteredAnimals[i].animalId}`, filteredAnimals[i].animalId, filteredAnimals[i].userId)
+     }
 
 
     verificCards(filteredAnimals)
