@@ -162,19 +162,23 @@ cepInput.addEventListener('blur', () => {
 
 // validação quero doar
 
-const animalName = document.getElementById('animal-name')
-const animalType = document.getElementById('animal-type')
-const phone = document.getElementById('phone')
-const zipCode = document.getElementById('zipcode')
-const city = document.getElementById('city')
-const state = document.getElementById('state')
-const selectedGender = document.querySelector('input[name="gender"]:checked');
-const description = document.getElementById('textarea')
-const imageAnimal = document.getElementById('upload-image')
+
 
 
 const validationDonate = () => {
-    if (animalName.value === "" || animalType.value === "animal" || phone.value === "" || zipCode.value === "" || city.value === "" || state.value === "state" || description.value === "" || imageAnimal.childElementCount <= 0) {
+
+    const animalName = document.getElementById('animal-name')
+    const animalType = document.getElementById('animal-type')
+    const phone = document.getElementById('phone')
+    const zipCode = document.getElementById('zipcode')
+    const city = document.getElementById('city')
+    const state = document.getElementById('state')
+    const description = document.getElementById('textarea')
+    const imageAnimal = document.getElementById('upload-image')
+    const selectedGender = document.querySelectorAll('input[name="gender"]');
+    const genderRadio = Array.from(selectedGender).some((radio) => radio.checked)
+
+    if (!animalName.value || animalType.value === "animal" || !phone.value || !zipCode.value || !city.value || state.value === "state" || !description.value || !genderRadio || imageAnimal.childElementCount <= 0) {
         goToTop()
         document.getElementById('errorEmpty').style.display = "block"
     } else {
