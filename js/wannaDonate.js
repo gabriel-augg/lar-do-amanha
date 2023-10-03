@@ -1,5 +1,7 @@
 let ids = JSON.parse(localStorage.getItem('id')) || { animalId: 0, id: 0 }
 
+const goToTop = () => window.scrollTo(0, 0);
+
 const fileInput = document.getElementById("img-file");
 fileInput.addEventListener('change', () => {
     const file = fileInput.files[0]
@@ -173,6 +175,7 @@ const imageAnimal = document.getElementById('upload-image')
 
 const validationDonate = () => {
     if (animalName.value === "" || animalType.value === "animal" || phone.value === "" || zipCode.value === "" || city.value === "" || state.value === "state" || description.value === "" || imageAnimal.childElementCount <= 0) {
+        goToTop()
         document.getElementById('errorEmpty').style.display = "block"
     } else {
         document.getElementById('errorEmpty').style.display = "none"
