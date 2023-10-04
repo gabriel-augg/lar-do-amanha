@@ -246,3 +246,4 @@ function homeMatchAnimalsAndCards() {
 }
 
 
+homeMatchAnimalsAndCards()

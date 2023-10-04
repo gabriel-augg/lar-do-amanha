@@ -112,7 +112,7 @@ const animalsRegister = () => {
     document.getElementById('div-card-register').innerHTML = ""
     homeMatchAnimalsAndCards()
     document.getElementById('animalsRegister').style.backgroundColor = "#122633"
-    document.getElementById('config').style.backgroundColor = "#385566"
+    document.getElementById('config').style.backgroundColor = ""
 }
 
 

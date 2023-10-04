@@ -1331,16 +1331,13 @@ article #user-menu ul {
   background-size: 20px;
   background-position: 10px;
   border-radius: 16px;
+  cursor: pointer;
 }
 
 #user-menu ul li:hover {
   background: #122633 url(../assets/caret-right.svg) no-repeat left center;
   background-size: 20px;
   background-position: 10px;
-}
-
-#config {
-  background-color: #122633;
 }
 
 article {
