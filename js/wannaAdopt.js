@@ -1,5 +1,5 @@
 function showAnimals() {
-    indexMatchAnimalAndCards()
+    matchAnimalsAndCards()
 }
 console.log(JSON.parse(localStorage.getItem('img')))
 
@@ -31,7 +31,7 @@ function animals() {
 
 
 
-function indexCreatCard(animalNameParam, animalIMG, state, gender, postDate, classId, animalId, userId) {
+function createCard(animalNameParam, animalIMG, state, gender, postDate, classId, animalId, userId) {
 
     let div = document.getElementById('wannaAdopt-cards')
 
@@ -83,10 +83,10 @@ function indexCreatCard(animalNameParam, animalIMG, state, gender, postDate, cla
     div.appendChild(card);
 }
 
-function indexMatchAnimalAndCards() {
+function matchAnimalsAndCards() {
     for (let i = 0; i < animals().length; i++) {
     
-        indexCreatCard(animals()[i].animalName, animals()[i].animalIMG, animals()[i].state, animals()[i].gender, animals()[i].date, `animal${animals()[i].animalId}`, animals()[i].animalId, animals()[i].userId)
+        createCard(animals()[i].animalName, animals()[i].animalIMG, animals()[i].state, animals()[i].gender, animals()[i].date, `animal${animals()[i].animalId}`, animals()[i].animalId, animals()[i].userId)
     }
 }
 
@@ -95,7 +95,7 @@ function indexMatchAnimalAndCards() {
 function showAnimalsOrdered() {
 
     for (let i = 0; i < animals().length; i++) {
-        indexCreatCard(animals()[i].animalName, animals()[i].animalIMG, animals()[i].state, animals()[i].gender, animals()[i].date, `animal${animals()[i].animalId}`, animals()[i].animalId, animals()[i].userId)
+        createCard(animals()[i].animalName, animals()[i].animalIMG, animals()[i].state, animals()[i].gender, animals()[i].date, `animal${animals()[i].animalId}`, animals()[i].animalId, animals()[i].userId)
     }
 }
 
@@ -143,7 +143,7 @@ function validation(animal, animals) {
         }
     });
     for (let i = 0; i < animals.length; i++) {
-        indexCreatCard(animals[i].animalName, animals[i].animalIMG, animals[i].state, animals[i].gender, animals[i].date, `animal${animals[i].animalId}`, animals[i].animalId, animals[i].userId)
+        createCard(animals[i].animalName, animals[i].animalIMG, animals[i].state, animals[i].gender, animals[i].date, `animal${animals[i].animalId}`, animals[i].animalId, animals[i].userId)
     }
     verificCards(animals)
 }
@@ -161,7 +161,7 @@ function search() {
     
 
     for (let i = 0; i < filteredAnimals.length; i++) {
-        indexCreatCard(filteredAnimals[i].animalName, filteredAnimals[i].animalIMG, filteredAnimals[i].state, filteredAnimals[i].gender, filteredAnimals[i].date, `animal${filteredAnimals[i].animalId}`, filteredAnimals[i].animalId, filteredAnimals[i].userId)
+        createCard(filteredAnimals[i].animalName, filteredAnimals[i].animalIMG, filteredAnimals[i].state, filteredAnimals[i].gender, filteredAnimals[i].date, `animal${filteredAnimals[i].animalId}`, filteredAnimals[i].animalId, filteredAnimals[i].userId)
      }
 
 
