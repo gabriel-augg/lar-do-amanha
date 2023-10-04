@@ -55,9 +55,11 @@ header {
 }
 
 
+
 #btnDonate:hover {
     background-color: $orangeP-1;
     transform: scale(1.1);
+    cursor: pointer;
 }
 
 .selected {

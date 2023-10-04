@@ -42,6 +42,7 @@ function donateAnother() {
     document.getElementById('state').value = 'State'
     document.querySelector('input[name="gender"]:checked').checked = false
     document.getElementById('textarea').value = ''
+    document.getElementById('upload-image').style.display = "none"
 }
 
 

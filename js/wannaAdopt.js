@@ -133,13 +133,13 @@ function order() {
 
 function validation(animal, animals) {
     animals.sort(function (a, b) {
-        // Compare os tipos de animal para ordenar "gato" antes de "cachorro"
+ 
         if (a.animalType === animal && b.animalType !== animal) {
-            return -1; // "a" deve vir antes de "b"
+            return -1;
         } else if (a.animalType !== animal && b.animalType === animal) {
-            return 1; // "b" deve vir antes de "a"
+            return 1;
         } else {
-            return 0; // Mantenha a ordem original
+            return 0;
         }
     });
     for (let i = 0; i < animals.length; i++) {
@@ -150,12 +150,12 @@ function validation(animal, animals) {
 
 function search() {
     const input = document.getElementById("key-word");
-    const keyword = input.value.toLowerCase(); // Converte a palavra-chave para minúsculas
+    const keyword = input.value.toLowerCase();
     document.getElementById('wannaAdopt-cards').innerHTML = ''
 
     const filteredAnimals = animals().filter(animal => {
-        const animalName = animal.animalName.toLowerCase(); // Converte o nome do animal para minúsculas
-        return animalName.includes(keyword); // Verifica se o nome do animal contém a palavra-chave
+        const animalName = animal.animalName.toLowerCase(); 
+        return animalName.includes(keyword);
     });
 
     

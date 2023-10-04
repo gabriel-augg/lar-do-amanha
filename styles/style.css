@@ -54,6 +54,7 @@ header {
 #btnDonate:hover {
   background-color: #f39754;
   transform: scale(1.1);
+  cursor: pointer;
 }
 
 .selected {
@@ -873,6 +874,7 @@ input[type=file] {
 #contactUs-section button:hover {
   margin: 40px 0;
   transition: all 0.3s;
+  cursor: pointer;
 }
 
 #contactUs-section button:hover {
@@ -1335,6 +1337,10 @@ article #user-menu ul {
   background: #122633 url(../assets/caret-right.svg) no-repeat left center;
   background-size: 20px;
   background-position: 10px;
+}
+
+#config {
+  background-color: #122633;
 }
 
 article {
