@@ -872,14 +872,8 @@ input[type=file] {
 }
 
 #contactUs-section button:hover {
-  margin: 40px 0;
-  transition: all 0.3s;
-  cursor: pointer;
-}
-
-#contactUs-section button:hover {
-  transform: scale(1.05);
   background-color: #f39754;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 600px) {
@@ -1272,6 +1266,10 @@ input[type=file] {
   gap: 20px;
 }
 
+#nothingSelected {
+  height: 80vh;
+}
+
 #contentArea-edit label {
   font-size: 24px;
 }
@@ -1331,16 +1329,13 @@ article #user-menu ul {
   background-size: 20px;
   background-position: 10px;
   border-radius: 16px;
+  cursor: pointer;
 }
 
 #user-menu ul li:hover {
   background: #122633 url(../assets/caret-right.svg) no-repeat left center;
   background-size: 20px;
   background-position: 10px;
-}
-
-#config {
-  background-color: #122633;
 }
 
 article {
@@ -1715,13 +1710,13 @@ input[type=file] {
   box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-#test {
+#sucessRegister {
   display: none;
   color: green;
   font-size: 30px;
   position: absolute;
   top: 40%;
-  left: 20%;
+  left: 27%;
   text-align: center;
   font-weight: bold;
 }
