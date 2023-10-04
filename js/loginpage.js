@@ -135,14 +135,14 @@ function allEmpty() {
     default:
       document.getElementsByClassName('modalContent')[0].style.display = "none"
       document.getElementById('closeModal').style.display = "none"
-      document.getElementById('test').style.display = "block"
+      document.getElementById('sucessRegister').style.display = "block"
       createUser()
       setTimeout(() => {
         closeSingUp()
         document.getElementsByClassName('modalContent')[0].style.display = "block"
         document.getElementById('closeModal').style.display = "block"
-        document.getElementById('test').style.display = "none"
-      }, 2000);
+        document.getElementById('sucessRegister').style.display = "none"
+      }, 1500);
       break;
 }
 }

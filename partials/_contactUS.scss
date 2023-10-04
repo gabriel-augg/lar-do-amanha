@@ -67,16 +67,12 @@
 }
 
 #contactUs-section button:hover {
-  margin: 40px 0;
-  transition: all .3s;
+  background-color: $orangeP-1;
   cursor: pointer;
   
 }
 
-#contactUs-section button:hover {
-  transform: scale(1.05);
-  background-color: $orangeP-1;
-}
+
 
 @media only screen and (max-width: 600px) {
   #contactUs-section{
