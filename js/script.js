@@ -246,4 +246,6 @@ function homeMatchAnimalsAndCards() {
 }
 
 
-homeMatchAnimalsAndCards()
+if(document.getElementById('animal-cards')){
+    homeMatchAnimalsAndCards()
+}

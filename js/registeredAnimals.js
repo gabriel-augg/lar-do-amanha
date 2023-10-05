@@ -1,3 +1,6 @@
+
+
+
 function saveUser() {
     let itemLocal = JSON.parse(localStorage.getItem('usuarios')) || []
     itemLocal.forEach(item => {
@@ -12,9 +15,39 @@ function saveUser() {
     document.getElementById('status-login').innerHTML = ''
     showUser()
     disabled()
+    document.getElementById('savedInfo').style.display = 'flex'
+    document.getElementsByTagName('body')[0].style.overflowY = 'hidden'
+    setTimeout(() => {
+        document.getElementById('savedInfo').style.display = 'none'
+        document.getElementsByTagName('body')[0].style.overflowY = 'scroll'
+    },2000)
 }
 
 function saveAnimalInfo(){
+    let itemLocal = JSON.parse(localStorage.getItem('usuarios')) || []
+    let data = JSON.parse(localStorage.getItem('animalIdSave'))
+    itemLocal.forEach(item => {
+        item.animals.forEach(animal => {
+            if(animal.animalId === data) {
+                
+                animal.animalName = document.getElementById('animal-name').value
+                animal.phone = document.getElementById('phone').value
+                animal.zipCode = document.getElementById('zipcode').value
+                animal.city = document.getElementById('city').value
+                animal.state = document.getElementById('state').value
+                animal.gender = document.querySelector('input[name="gender"]:checked').value
+                animal.description = document.getElementById('textarea').value
+
+            }
+        })
+    })
+    localStorage.setItem('usuarios', JSON.stringify(itemLocal))
+    document.getElementById('savedInfo').style.display = 'flex'
+    document.getElementsByTagName('body')[0].style.overflowY = 'hidden'
+    setTimeout(() => {
+        document.getElementById('savedInfo').style.display = 'none'
+        document.getElementsByTagName('body')[0].style.overflowY = 'scroll'
+    },2000)
     disabled()
 }
 
@@ -44,6 +77,40 @@ function userAnimals() {
     })
 
     return animalList
+}
+
+function showAnimalInfo(data){
+    localStorage.setItem('animalIdSave', JSON.stringify(data))
+        
+    let itemLocal = JSON.parse(localStorage.getItem('usuarios')) || []
+    itemLocal.forEach(item => {
+        item.animals.forEach(animal => {
+            if(animal.animalId === data) {
+                
+                document.getElementById('animal-name').value = animal.animalName
+                document.getElementById('phone').value = animal.phone
+                document.getElementById('zipcode').value = animal.zipCode
+                document.getElementById('city').value = animal.city
+                document.getElementById('state').value = animal.state
+                let radioButtons = document.querySelectorAll('input[name="gender"]')
+                for (var i = 0; i < radioButtons.length; i++) {
+                    if (radioButtons[i].value === animal.gender) {
+                      radioButtons[i].checked = true;
+                      break
+                    }
+                }
+                document.getElementById('textarea').value = animal.description
+                let img = document.createElement('img')
+                let div = document.getElementById('upload-image')
+                div.innerHTML = ''
+                img.style.width = '100%'
+                img.style.height = '100%'
+                img.src = animal.animalIMG
+                div.style.display = 'block'
+                div.appendChild(img)
+            }
+        })
+    })
 }
 
 
@@ -87,38 +154,7 @@ function homeCreateCard(animalNameParam, animalIMG, state, gender, postDate, cla
     editAnimal.classList.add('edit-animal-register')
     deleteAnimal.classList.add('delete-animal-register')
 
-    function showAnimalInfo(data){
-        
-        let itemLocal = JSON.parse(localStorage.getItem('usuarios')) || []
-        itemLocal.forEach(item => {
-            item.animals.forEach(animal => {
-                if(animal.animalId === data) {
-                    
-                    document.getElementById('animal-name').value = animal.animalName
-                    document.getElementById('phone').value = animal.phone
-                    document.getElementById('zipcode').value = animal.zipCode
-                    document.getElementById('city').value = animal.city
-                    document.getElementById('state').value = animal.state
-                    let radioButtons = document.querySelectorAll('input[name="gender"]')
-                    for (var i = 0; i < radioButtons.length; i++) {
-                        if (radioButtons[i].value === animal.gender) {
-                          radioButtons[i].checked = true;
-                          break
-                        }
-                    }
-                    document.getElementById('textarea').value = animal.description
-                    let img = document.createElement('img')
-                    let div = document.getElementById('upload-image')
-                    div.innerHTML = ''
-                    img.style.width = '100%'
-                    img.style.height = '100%'
-                    img.src = animal.animalIMG
-                    div.style.display = 'block'
-                    div.appendChild(img)
-                }
-            })
-        })
-    }
+    
 
 
 
