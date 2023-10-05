@@ -13,6 +13,7 @@ function saveUser() {
     })
     localStorage.setItem('usuarios', JSON.stringify(itemLocal))
     document.getElementById('status-login').innerHTML = ''
+    document.getElementById('status-login-response').innerHTML = ''
     showUser()
     disabled()
     document.getElementById('savedInfo').style.display = 'flex'
