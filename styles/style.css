@@ -1052,6 +1052,12 @@ input[type=file] {
   .div-inputs {
     width: 100%;
   }
+  #notFound {
+    height: 65vh;
+  }
+  #notFound h1 {
+    font-size: 20px;
+  }
 }
 #infoAnimal-section {
   padding: 1% 7%;
