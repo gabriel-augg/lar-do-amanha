@@ -1,5 +1,30 @@
+function saveUser() {
+    let itemLocal = JSON.parse(localStorage.getItem('usuarios')) || []
+    itemLocal.forEach(item => {
+        if (item.logged) {
+          item.email = document.getElementById('edit-email').value;
+           item.nameUser = document.getElementById('edit-name').value;
+          item.password = document.getElementById('edit-pass').value ;
+          item.password = document.getElementById('edit-confirm-pass').value;
+        }
+    })
+    localStorage.setItem('usuarios', JSON.stringify(itemLocal))
+    document.getElementById('status-login').innerHTML = ''
+    showUser()
+}
 
 
+function editUser() {
+    let itemLocal = JSON.parse(localStorage.getItem('usuarios')) || []
+    itemLocal.forEach(item => {
+        if (item.logged) {
+            document.getElementById('edit-email').value = item.email
+            document.getElementById('edit-name').value = item.nameUser
+            document.getElementById('edit-pass').value = item.password
+            document.getElementById('edit-confirm-pass').value = item.password
+        }
+    })
+}
 
 function userAnimals() {
 
@@ -170,6 +195,8 @@ const config = () => {
     document.getElementById('config').style.backgroundColor = "#122633"
     document.getElementById('animalsRegister').style.backgroundColor = ""
     document.getElementById('nothingSelected').style.display = "none"
+
+    editUser()
 }
 
 

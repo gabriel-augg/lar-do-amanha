@@ -21,7 +21,13 @@
 
 
 #nothingSelected{
-    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:65vh;
+    font-weight: bold;
+    font-size: 36px;
+    color: $whiteP;
 }
 
 
