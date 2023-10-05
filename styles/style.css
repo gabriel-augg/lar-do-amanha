@@ -1703,7 +1703,7 @@ input[type=file] {
   #noAnimal {
     text-align: center;
   }
-  #logOut-div {
+  #logOut-div, #savedInfo {
     width: 90%;
   }
 }
