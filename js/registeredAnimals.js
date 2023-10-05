@@ -11,10 +11,16 @@ function saveUser() {
     localStorage.setItem('usuarios', JSON.stringify(itemLocal))
     document.getElementById('status-login').innerHTML = ''
     showUser()
+    disabled()
+}
+
+function saveAnimalInfo(){
+    disabled()
 }
 
 
 function editUser() {
+    
     let itemLocal = JSON.parse(localStorage.getItem('usuarios')) || []
     itemLocal.forEach(item => {
         if (item.logged) {
@@ -24,6 +30,7 @@ function editUser() {
             document.getElementById('edit-confirm-pass').value = item.password
         }
     })
+    
 }
 
 function userAnimals() {
@@ -167,16 +174,33 @@ function homeCreateCard(animalNameParam, animalIMG, state, gender, postDate, cla
 }
 
 function homeMatchAnimalsAndCards() {
-    for (let i = 0; i < userAnimals().length; i++) {
-        homeCreateCard(userAnimals()[i].animalName, userAnimals()[i].animalIMG, userAnimals()[i].state, userAnimals()[i].gender, userAnimals()[i].date, `animal${userAnimals()[i].animalId}`, userAnimals()[i].animalId, userAnimals()[i].userId)
+    if(userAnimals().length){
+        for (let i = 0; i < userAnimals().length; i++) {
+            homeCreateCard(userAnimals()[i].animalName, userAnimals()[i].animalIMG, userAnimals()[i].state, userAnimals()[i].gender, userAnimals()[i].date, `animal${userAnimals()[i].animalId}`, userAnimals()[i].animalId, userAnimals()[i].userId)
+        }
+        document.getElementById('noAnimal').style.display = 'none'
+        document.getElementById('animal-cards-register').style.overflowY = 'scroll'
+    } else {
+        document.getElementById('noAnimal').style.display = 'flex'
+        document.getElementById('animal-cards-register').style.overflowY = 'hidden'
     }
 }
 
+function able(){
+    let inputs = document.querySelectorAll('.able')
+    for(let i = 0; i < inputs.length; i++){
+        inputs[i].disabled = false
+    }
+}
 
+function disabled(){
+    let inputs = document.querySelectorAll('.able')
+    for(let i = 0; i < inputs.length; i++){
+        inputs[i].disabled = true
+    }
+}
 
-
-
-const logoutPage = () => {
+function logOutClick(){
     let itemLocal = JSON.parse(localStorage.getItem('usuarios')) || [];
     itemLocal.forEach(item => {
         if (item.logged) {
@@ -185,6 +209,16 @@ const logoutPage = () => {
             location.href = "../index.html";
         }
     });
+}
+
+function closeModal(){
+    document.getElementById('logOut-modal').style.display = 'none'
+    document.getElementsByTagName('body')[0].style.overflowY = 'scroll'
+}
+
+const logoutPage = () => {
+    document.getElementById('logOut-modal').style.display = 'flex'
+    document.getElementsByTagName('body')[0].style.overflowY = 'hidden'
 }
 
 

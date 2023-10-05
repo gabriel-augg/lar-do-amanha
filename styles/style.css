@@ -1353,6 +1353,15 @@ aside {
   width: 70%;
 }
 
+#btn-register-user {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#btn-register-user button {
+  width: 48%;
+}
+
 #animalEdit-section {
   padding: 2% 5%;
 }
@@ -1459,11 +1468,13 @@ aside {
 
 #button-animalEdit {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 #button-animalEdit button {
   box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.2);
+  width: 40%;
   border: none;
   font-size: 24px;
   padding: 10px 20px;
@@ -1585,6 +1596,55 @@ input[type=file] {
   background-color: #777777;
 }
 
+#noAnimal {
+  height: 100%;
+  display: flex;
+  color: white;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+#logOut-modal {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+#logOut-div {
+  background: #233d4d;
+  padding: 50px;
+  border-radius: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+#logOut-btns {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#logOut-btns button {
+  width: 40%;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  background: #fe7f2d;
+}
+
+#logOut-btns button:hover {
+  cursor: pointer;
+  background-color: #e56512;
+}
+
 @media only screen and (max-width: 600px) {
   #user-content {
     display: flex;
@@ -1634,14 +1694,17 @@ input[type=file] {
   #radio-animalEdit label {
     font-size: 22px;
   }
-  #button-animalEdit button {
-    width: 100%;
-  }
   #div-card-register {
     flex-direction: column;
   }
   .card-register {
     width: 100%;
+  }
+  #noAnimal {
+    text-align: center;
+  }
+  #logOut-div {
+    width: 90%;
   }
 }
 #closeModal {

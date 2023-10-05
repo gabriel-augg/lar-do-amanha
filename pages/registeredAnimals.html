@@ -91,22 +91,23 @@
                 <div id="contentArea-edit">
                     <div class="edit-inputs">
                         <label for="edit-email">Email</label>
-                        <input type="email" id="edit-email" autocomplete="off">
+                        <input class="able" disabled type="email" id="edit-email" autocomplete="off">
                     </div>
                     <div class="edit-inputs">
                         <label for="edit-name">Nome</label>
-                        <input type="text" id="edit-name" autocomplete="off">
+                        <input class="able" disabled type="text" id="edit-name" autocomplete="off">
                     </div>
                     <div class="edit-inputs">
                         <label for="edit-pass">Senha</label>
-                        <input type="password" id="edit-pass">
+                        <input class="able" disabled type="password" id="edit-pass">
                     </div>
                     <div class="edit-inputs">
                         <label for="edit-confirm-pass">Repetir Senha</label>
-                        <input type="password" id="edit-confirm-pass">
+                        <input class="able" disabled type="password" id="edit-confirm-pass">
                     </div>
-                    <div id="btn-register">
-                        <button onclick="saveUser()" id="save-register">Salvar alterações</button>
+                    <div id="btn-register-user">
+                        <button onclick="able()">Editar</button>
+                        <button onclick="saveUser()"  id="save-register">Salvar alterações</button>
                     </div>
                 </div>
             </div>
@@ -119,18 +120,18 @@
                     </div>
                     <div class="content-animalEdit">
                         <div class="inputs-animalEdit">
-                            <input type="text" id="animal-name" placeholder="Nome do animal">
+                            <input disabled type="text" class="able" id="animal-name" placeholder="Nome do animal">
         
                         </div>
                         <div class="inputs-animalEdit">
                             <label for="img-file" id="fileImgLabel">Selecionar imagem</label>
-                            <input type="file" name="img" id="img-file">
+                            <input disabled type="file" class="able" name="img" id="img-file">
                         </div>
                     </div>
                     <div class="content-animalEdit">
                         <div class="inputs-animalEdit">
         
-                            <select id="animal-type">
+                            <select disabled class="able" id="animal-type">
                                 <option selected disabled>Animal</option>
                                 <option value="cat">Gato</option>
                                 <option value="dog">Cachorro</option>
@@ -139,23 +140,23 @@
                             </select>
                         </div>
                         <div class="inputs-animalEdit">
-                            <input type="text" id="phone" placeholder="Telefone" onkeypress="$(this).mask('(00) 0 0000-0000')">
+                            <input type="text" id="phone" class="able" disabled placeholder="Telefone" onkeypress="$(this).mask('(00) 0 0000-0000')">
                         </div>
                     </div>
                     <div class="content-animalEdit">
                         <div class="inputs-animalEdit">
-                            <input type="text" id="zipcode" onkeypress="$(this).mask('00000-000')"
+                            <input type="text" disabled class="able" id="zipcode" onkeypress="$(this).mask('00000-000')"
                                 placeholder="CEP">
         
                         </div>
                         <div class="inputs-animalEdit">
-                            <input type="text" id="city" placeholder="Cidade">
+                            <input type="text" disabled class="able" id="city" placeholder="Cidade">
                         </div>
         
                     </div>
                     <div class="content-animalEdit" >
                         <div class="inputs-animalEdit">
-                            <select id="state">
+                            <select disabled class="able" id="state">
                                 <option selected disabled>Estado</option>
                                 <option value="AC">Acre</option>
                                 <option value="AL">Alagoas</option>
@@ -189,27 +190,29 @@
                         <div id="radio-animalEdit">
                             <div>
                                 <label for="macho">Macho</label>
-                                <input type="radio" name="gender" value="Macho" id="male">
+                                <input  type="radio" disabled class="able" name="gender" value="Macho" id="male">
                             </div>
                             <div>
                                 <label for="femea">Fêmea</label>
-                                <input type="radio" name="gender" value="Fêmea" id="female">
+                                <input type="radio" disabled class="able" name="gender" value="Fêmea" id="female">
                             </div>
                         </div>
         
                     </div>
                     <div id="textare-animalEdit">
-                        <textarea id="textarea" placeholder="Descrição"></textarea>
+                        <textarea id="textarea" disabled class="able" placeholder="Descrição"></textarea>
                     </div>
                     <div id="button-animalEdit">
-                        <button id="btn-donate">Salvar</button>
+                        <button onclick="able()">Editar</button>
+                        <button onclick="saveAnimalInfo()">Salvar</button>
                     </div>
                 </div>
             </div>
 
             <div id="animal-cards-register" style="display: none;"  >
+                <div id="noAnimal" style="display: none;" ><h1>Nenhum animal encontrado</h1></div>
                 <div id="div-card-register">
-    
+                    
                 </div>
             </div>
         </aside>
@@ -230,7 +233,15 @@
             </div>
         </div>
     </footer>
-
+    <dialog id="logOut-modal">
+        <div id="logOut-div">
+            <h1>Tem certeza que deseja sair?</h1>
+            <div id="logOut-btns">
+                <button onclick="closeModal()">Não</button>
+                <button onclick="logOutClick()">Sim</button>
+            </div>
+        </div>
+    </dialog>
  <script src="../js/script.js"></script>
  <script src="../js/registeredAnimals.js"></script>
 </body>
