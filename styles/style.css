@@ -1605,7 +1605,7 @@ input[type=file] {
   align-items: center;
 }
 
-#logOut-modal, #savedInfo {
+#logOut-modal, #savedInfo, #deleteModal {
   display: none;
   width: 100%;
   height: 100%;
@@ -1618,7 +1618,7 @@ input[type=file] {
   z-index: 999;
 }
 
-#logOut-div, #savedInfo-div {
+#logOut-div, #savedInfo-div, #delete-div {
   background: #233d4d;
   padding: 50px;
   border-radius: 20px;
@@ -1626,13 +1626,13 @@ input[type=file] {
   text-align: center;
 }
 
-#logOut-btns {
+#logOut-btns, #deleteBtns {
   margin-top: 20px;
   display: flex;
   justify-content: space-evenly;
 }
 
-#logOut-btns button {
+#logOut-btns button, #deleteBtns button {
   width: 40%;
   font-size: 20px;
   font-weight: bold;
@@ -1640,7 +1640,7 @@ input[type=file] {
   background: #fe7f2d;
 }
 
-#logOut-btns button:hover {
+#logOut-btns button:hover, #deleteBtns button:hover {
   cursor: pointer;
   background-color: #e56512;
 }
@@ -1703,8 +1703,12 @@ input[type=file] {
   #noAnimal {
     text-align: center;
   }
-  #logOut-div, #savedInfo-div {
+  #logOut-div, #savedInfo-div, #delete-div {
+    font-size: 16px;
     width: 90%;
+  }
+  #nothingSelected {
+    font-size: 18px;
   }
 }
 #closeModal {

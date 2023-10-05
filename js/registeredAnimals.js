@@ -114,6 +114,27 @@ function showAnimalInfo(data){
     })
 }
 
+function closeModalDelete(){
+    document.getElementById('deleteModal').style.display = 'none'
+    document.getElementsByTagName('body')[0].style.overflowY = 'scroll'
+}
+
+function clickDelte(){
+    let animalId = JSON.parse(localStorage.getItem('animalDelete'))
+    let itemLocal = JSON.parse(localStorage.getItem('usuarios')) || []
+    itemLocal.forEach(item => {
+        if (item.logged) {
+            let animalToDelete = item.animals.find(animal => animal.animalId === animalId);
+            let index = item.animals.indexOf(animalToDelete)
+            item.animals.splice(index, 1)
+            localStorage.setItem('usuarios', JSON.stringify(itemLocal))
+            document.getElementById('div-card-register').innerHTML = ''
+            homeMatchAnimalsAndCards()
+        }
+    })
+    document.getElementById('deleteModal').style.display = 'none'
+    document.getElementsByTagName('body')[0].style.overflowY = 'scroll'
+}
 
 
 function homeCreateCard(animalNameParam, animalIMG, state, gender, postDate, classId, animalId, userId) {
@@ -169,21 +190,13 @@ function homeCreateCard(animalNameParam, animalIMG, state, gender, postDate, cla
     }
 
     deleteAnimal.onclick = () => {
-        let itemLocal = JSON.parse(localStorage.getItem('usuarios')) || []
-        itemLocal.forEach(item => {
-            if (item.logged) {
-                // let animalToDelete = item.animals.filter(item =>  item.animalId === animalId )
-                // let index = item.animals.findIndex(item => item.animalId === animalToDelete.animalId)
-                let animalToDelete = item.animals.find(animal => animal.animalId === animalId);
-                let index = item.animals.indexOf(animalToDelete)
-                item.animals.splice(index, 1)
-                localStorage.setItem('usuarios', JSON.stringify(itemLocal))
-                document.getElementById('div-card-register').innerHTML = ''
-                homeMatchAnimalsAndCards()
-                
-            }
-        })
+
+        document.getElementById('deleteModal').style.display = 'flex'
+        document.getElementsByTagName('body')[0].style.overflowY = 'hidden'
+        localStorage.setItem('animalDelete', JSON.stringify(animalId))
+        
     }
+
 
   
 
@@ -280,5 +293,6 @@ const animalsRegister = () => {
     document.getElementById('animalsRegister').style.backgroundColor = "#122633"
     document.getElementById('config').style.backgroundColor = ""
     document.getElementById('nothingSelected').style.display = "none"
+    disabled()
 }
 
