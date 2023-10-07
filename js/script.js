@@ -295,4 +295,7 @@ function indexAnimalNotFound(){
   }
 }
 
-indexAnimalNotFound()
+if(document.getElementById('home')){
+  indexAnimalNotFound()
+}
+

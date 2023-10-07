@@ -1832,4 +1832,8 @@ body {
   width: 100%;
   height: 100%;
   background-color: #458270;
+}
+
+#home .li-home, #wannaAdopt .li-adopt, #whoWeAre .li-whoWeAre, #registerPage #status-login, #registerPage #status-login-response, #loginPage .li-login {
+  color: #f39754;
 }/*# sourceMappingURL=style.css.map */

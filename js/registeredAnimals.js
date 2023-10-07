@@ -301,7 +301,9 @@ const config = () => {
   document.getElementById("animalEdit-section").style.display = "none";
   document.getElementById("animal-cards-register").style.display = "none";
   document.getElementById("config").style.backgroundColor = "#122633";
+  document.getElementById('config').style.color = '#f39754'
   document.getElementById("animalsRegister").style.backgroundColor = "";
+  document.getElementById('animalsRegister').style.color = ''
   document.getElementById("nothingSelected").style.display = "none";
 
   editUser();
@@ -314,7 +316,9 @@ const animalsRegister = () => {
   document.getElementById("div-card-register").innerHTML = "";
   homeMatchAnimalsAndCards();
   document.getElementById("animalsRegister").style.backgroundColor = "#122633";
+  document.getElementById("animalsRegister").style.color = "#f39754";
   document.getElementById("config").style.backgroundColor = "";
+  document.getElementById("config").style.color = "";
   document.getElementById("nothingSelected").style.display = "none";
   disabled();
 };

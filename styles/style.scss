@@ -30,3 +30,7 @@ body {
     height: 100%;
     background-color: $greenP1;
 }
+
+#home .li-home, #wannaAdopt .li-adopt, #whoWeAre .li-whoWeAre, #registerPage #status-login, #registerPage #status-login-response, #loginPage .li-login {
+    color: $orangeP-1;
+}

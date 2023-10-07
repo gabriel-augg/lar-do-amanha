@@ -8,124 +8,124 @@
     <link rel="icon" href=".././assets/logo2.png">
     <link rel="stylesheet" href=".././styles/style.css">
 </head>
+<body id="loginPage">
+    <header>
+        <div id="image-logo">
+            <img src=".././assets/logo1.png" alt="">
+        </div>
+        <nav>
+            <ul id="menu">
+                <li class="nav-item">
+                    <h4 onclick="changePage('start')">Início</h4>
+                </li>
+                <li class="nav-item">
+                    <h4 onclick="changePage('adopt')">Adotar</h4>
+                </li>
+                <li class="nav-item">
+                    <h4 onclick="changePage('contactus')">Quem somos</h4>
+                </li>
+                <li class="nav-item" id="navItem">
+                    <h4 onclick="changePage('login')" class="li-login" id="login">Entrar</h4>
+                </li>
+                <li id="status-login"></li>
+                <li><button id="btnDonate" onclick="changePage('btnDonate')">Quero Doar</button></li>
+            </ul>
+            <div>
+                <img class="listed-menu" src=".././assets/bars.svg" alt="">
+                <img class="close-menu" src=".././assets/xmark.svg" alt="">
 
-<header>
-    <div id="image-logo">
-        <img src=".././assets/logo1.png" alt="">
-    </div>
-    <nav>
-        <ul id="menu">
-            <li class="nav-item">
-                <h4 onclick="changePage('start')">Início</h4>
-            </li>
-            <li class="nav-item">
-                <h4 onclick="changePage('adopt')">Adotar</h4>
-            </li>
-            <li class="nav-item">
-                <h4 onclick="changePage('contactus')">Quem somos</h4>
-            </li>
-            <li class="nav-item" id="navItem">
-                <h4 onclick="changePage('login')" id="login">Entrar</h4>
-            </li>
-            <li id="status-login"></li>
-            <li><button id="btnDonate" onclick="changePage('btnDonate')">Quero Doar</button></li>
-        </ul>
-        <div>
-            <img class="listed-menu" src=".././assets/bars.svg" alt="">
-            <img class="close-menu" src=".././assets/xmark.svg" alt="">
+                <div class="responsive-menu hide">
+                    <ul class="list-menu">
+                        <li class="nav-item">
+                            <h4 onclick="changePage('start')"><span><img src=".././assets/caret-right.svg"
+                                        alt=""></span>Início</h4>
+                        </li>
+                        <li class="nav-item">
+                            <h4 onclick="changePage('adopt')"><span><img src=".././assets/caret-right.svg"
+                                        alt=""></span>Adotar</h4>
+                        </li>
+                        <li class="nav-item">
+                            <h4 onclick="changePage('contactus')"><span><img src=".././assets/caret-right.svg"
+                                        alt=""></span>Quem somos</h4>
+                        </li>
+                        <li class="nav-item" id="navItemResponse">
+                            <h4 class="li-login" onclick="changePage('login')"><span><img src=".././assets/caret-right.svg"
+                                        alt=""></span>Entrar</h4>
+                        </li>
+                        <li id="status-login-response"></li>
+                        <li class="list-btn"><button id="btnDonate" onclick="changePage('btnDonate')">Quero Doar</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-            <div class="responsive-menu hide">
-                <ul class="list-menu">
-                    <li class="nav-item">
-                        <h4 onclick="changePage('start')"><span><img src=".././assets/caret-right.svg"
-                                    alt=""></span>Início</h4>
-                    </li>
-                    <li class="nav-item">
-                        <h4 onclick="changePage('adopt')"><span><img src=".././assets/caret-right.svg"
-                                    alt=""></span>Adotar</h4>
-                    </li>
-                    <li class="nav-item">
-                        <h4 onclick="changePage('contactus')"><span><img src=".././assets/caret-right.svg"
-                                    alt=""></span>Quem somos</h4>
-                    </li>
-                    <li class="nav-item" id="navItemResponse">
-                        <h4 onclick="changePage('login')"><span><img src=".././assets/caret-right.svg"
-                                    alt=""></span>Entrar</h4>
-                    </li>
-                    <li id="status-login-response"></li>
-                    <li class="list-btn"><button id="btnDonate" onclick="changePage('btnDonate')">Quero Doar</button>
-                    </li>
-                </ul>
+    <section class="loginCard">
+        <div id="divCardLogin">
+            <h1 id="enter">Entrar</h1>
+            <div id="errorUserPass"></div>
+            <label for="inputEmail">Email</label>
+            <input type="email" id="inputEmail" required autocomplete="off">
+            <div id="user-empty"><i style="display: flex; justify-content: end;">Digite um email</i></div>
+
+            <img onclick="clickEye('loginEye')" id="pass-login-show" style="width: 30px; height: auto;" src="../assets/showPass.png" alt="">
+
+            <label for="inputPass">Senha</label>
+            <input type="password" id="inputPass" required>
+            <div id="pass-empty"><i style="display: flex; justify-content: end;">Digite uma senha</i></div>
+            <button id="btnEnter">Entrar</button>
+            <h5 id="register">Não tem cadastro? <a id="openRegister">Cadastre-se!</a></h5>
+
+        </div>
+
+    </section>
+    <dialog id="modal">
+        <div id="sucessRegister">Usuário<br>Cadastrado</div>
+        <div class="modalContent">
+            <h1>Cadastrar</h1>
+            <div class="contentSingUp">
+                <div id="errorEmail">Digite um email válido</div>
+                <label for="registerEmail">Email</label>
+                <input type="email" id="registerEmail" autocomplete="off">
+                <div id="erroName">Digite um nome</div>
+                <div id="existingName">Nome Ja usado</div>
+                <label for="registerName">Nome</label>
+                <input type="text" id="registerName" autocomplete="off">
+                <div id="errorPass">As senha não se conhecidem</div>
+                <div id="enter-password">Digite uma senha</div>
+                <img onclick="clickEye('registerEye')" id="pass-register-show" style="width: 30px; height: auto;" src="../assets/showPass.png" alt="">
+                <label for="registerPass">Senha</label>
+                <input type="password" id="registerPass">
+                <label for="confirmPass">Repetir Senha</label>
+                <input type="password" id="confirmPass">
+
+                <button id="send-register">Cadastrar</button>
+
+            </div>
+
+        </div>
+        <img src=".././assets/xmark.svg" id="closeModal" onclick="closeSingUp()"></img>
+
+    </dialog>
+
+    <footer id="footer">
+
+        <h4 class="title-footer">© 2023 Lar do amanhã. Todos os direitos reservados.</h4>
+
+        <div class="footer-content">
+
+            <img src=".././assets/logo3.png" alt="" class="logo3">
+            <div class="social-media">
+                <img src=".././assets/logoInstagram.png" alt="" class="Insta-logo">
+                <img src=".././assets/logoTwiter.png" alt="" class="Twitter-logo">
+                <img src=".././assets/logoWhatsapp.png" alt="" class="Whats-logo">
             </div>
         </div>
-    </nav>
-</header>
+    </footer>
 
-<section class="loginCard">
-    <div id="divCardLogin">
-        <h1 id="enter">Entrar</h1>
-        <div id="errorUserPass"></div>
-        <label for="inputEmail">Email</label>
-        <input type="email" id="inputEmail" required autocomplete="off">
-        <div id="user-empty"><i style="display: flex; justify-content: end;">Digite um email</i></div>
-
-        <img onclick="clickEye('loginEye')" id="pass-login-show" style="width: 30px; height: auto;" src="../assets/showPass.png" alt="">
-
-        <label for="inputPass">Senha</label>
-        <input type="password" id="inputPass" required>
-        <div id="pass-empty"><i style="display: flex; justify-content: end;">Digite uma senha</i></div>
-        <button id="btnEnter">Entrar</button>
-        <h5 id="register">Não tem cadastro? <a id="openRegister">Cadastre-se!</a></h5>
-
-    </div>
-
-</section>
-<dialog id="modal">
-    <div id="sucessRegister">Usuário<br>Cadastrado</div>
-    <div class="modalContent">
-        <h1>Cadastrar</h1>
-        <div class="contentSingUp">
-            <div id="errorEmail">Digite um email válido</div>
-            <label for="registerEmail">Email</label>
-            <input type="email" id="registerEmail" autocomplete="off">
-            <div id="erroName">Digite um nome</div>
-            <div id="existingName">Nome Ja usado</div>
-            <label for="registerName">Nome</label>
-            <input type="text" id="registerName" autocomplete="off">
-            <div id="errorPass">As senha não se conhecidem</div>
-            <div id="enter-password">Digite uma senha</div>
-            <img onclick="clickEye('registerEye')" id="pass-register-show" style="width: 30px; height: auto;" src="../assets/showPass.png" alt="">
-            <label for="registerPass">Senha</label>
-            <input type="password" id="registerPass">
-            <label for="confirmPass">Repetir Senha</label>
-            <input type="password" id="confirmPass">
-
-            <button id="send-register">Cadastrar</button>
-
-        </div>
-
-    </div>
-    <img src=".././assets/xmark.svg" id="closeModal" onclick="closeSingUp()"></img>
-
-</dialog>
-
-<footer id="footer">
-
-    <h4 class="title-footer">© 2023 Lar do amanhã. Todos os direitos reservados.</h4>
-
-    <div class="footer-content">
-
-        <img src=".././assets/logo3.png" alt="" class="logo3">
-        <div class="social-media">
-            <img src=".././assets/logoInstagram.png" alt="" class="Insta-logo">
-            <img src=".././assets/logoTwiter.png" alt="" class="Twitter-logo">
-            <img src=".././assets/logoWhatsapp.png" alt="" class="Whats-logo">
-        </div>
-    </div>
-</footer>
-
-<script src="../js/script.js"></script>
-<script src="../js/loginpage.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/loginpage.js"></script>
 </body>
 
 </html>
