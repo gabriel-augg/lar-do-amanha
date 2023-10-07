@@ -156,7 +156,10 @@ const ValidationData = () => {
   if (validation) {
     location.href = "../index.html";
   } else {
-    console.log("usuario ou senha n encontrados");
+    document.getElementById('incorrect').style.display = 'flex'
+    setTimeout(() => {
+      document.getElementById('incorrect').style.display = 'none'
+    }, 2000)
   }
 };
 
