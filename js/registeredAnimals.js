@@ -21,32 +21,66 @@ function saveUser() {
   }, 2000);
 }
 
-function saveAnimalInfo() {
-  let itemLocal = JSON.parse(localStorage.getItem("usuarios")) || [];
-  let data = JSON.parse(localStorage.getItem("animalIdSave"));
-  itemLocal.forEach((item) => {
-    item.animals.forEach((animal) => {
-      if (animal.animalId === data) {
-        animal.animalName = document.getElementById("animal-name").value;
-        animal.phone = document.getElementById("phone").value;
-        animal.zipCode = document.getElementById("zipcode").value;
-        animal.city = document.getElementById("city").value;
-        animal.state = document.getElementById("state").value;
-        animal.gender = document.querySelector(
-          'input[name="gender"]:checked'
-        ).value;
-        animal.description = document.getElementById("textarea").value;
-      }
-    });
-  });
-  localStorage.setItem("usuarios", JSON.stringify(itemLocal));
-  document.getElementById("savedInfo").style.display = "flex";
-  document.getElementsByTagName("body")[0].style.overflowY = "hidden";
-  setTimeout(() => {
-    document.getElementById("savedInfo").style.display = "none";
-    document.getElementsByTagName("body")[0].style.overflowY = "scroll";
-  }, 2000);
-  disabled();
+localStorage.setItem('img', JSON.stringify(''))
+const fileInput = document.getElementById("img-file");
+fileInput.addEventListener('change', (e) => {
+    
+    const file = fileInput.files[0]
+    let imgResult;
+
+    if (file) {
+        const reader = new FileReader();
+
+        reader.onload = function (event) {
+            imgResult = event.target.result;
+            localStorage.setItem('img', JSON.stringify(imgResult));
+        };
+
+        reader.readAsDataURL(file);
+    }
+
+
+    let divImage = document.getElementById('upload-image');
+    divImage.innerHTML = ''
+    let img = document.createElement('img');
+    document.getElementById('upload-image').style.display = "block"
+    img.src = URL.createObjectURL(e.target.files[0]);
+    img.style.width = '100%';
+    img.style.height = '100%';
+    divImage.appendChild(img);
+
+    
+    
+})
+
+function saveAnimalInfo(){
+    let itemLocal = JSON.parse(localStorage.getItem('usuarios')) || []
+    let data = JSON.parse(localStorage.getItem('animalIdSave'))
+    let animalIMG = JSON.parse(localStorage.getItem('img'))
+    
+    itemLocal.forEach(item => {
+        item.animals.forEach(animal => {
+            if(animal.animalId === data) {
+                
+                animal.animalName = document.getElementById('animal-name').value
+                animal.phone = document.getElementById('phone').value
+                animal.zipCode = document.getElementById('zipcode').value
+                animal.city = document.getElementById('city').value
+                animal.state = document.getElementById('state').value
+                animal.gender = document.querySelector('input[name="gender"]:checked').value
+                animal.description = document.getElementById('textarea').value
+                animal.animalIMG = animalIMG
+            }
+        })
+    })
+    localStorage.setItem('usuarios', JSON.stringify(itemLocal))
+    document.getElementById('savedInfo').style.display = 'flex'
+    document.getElementsByTagName('body')[0].style.overflowY = 'hidden'
+    setTimeout(() => {
+        document.getElementById('savedInfo').style.display = 'none'
+        document.getElementsByTagName('body')[0].style.overflowY = 'scroll'
+    },2000)
+    disabled()
 }
 
 function editUser() {
