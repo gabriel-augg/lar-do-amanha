@@ -7,7 +7,7 @@ function saveUser() {
       item.password = document.getElementById("edit-pass").value;
       item.password = document.getElementById("edit-confirm-pass").value;
     }
-  });
+  })
   localStorage.setItem("usuarios", JSON.stringify(itemLocal));
   document.getElementById("status-login").innerHTML = "";
   document.getElementById("status-login-response").innerHTML = "";
