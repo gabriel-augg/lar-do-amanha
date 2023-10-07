@@ -68,6 +68,9 @@
         <label for="inputEmail">Email</label>
         <input type="email" id="inputEmail" required autocomplete="off">
         <div id="user-empty"><i style="display: flex; justify-content: end;">Digite um email</i></div>
+
+        <img onclick="clickEye('loginEye')" id="pass-login-show" style="width: 30px; height: auto;" src="../assets/showPass.png" alt="">
+
         <label for="inputPass">Senha</label>
         <input type="password" id="inputPass" required>
         <div id="pass-empty"><i style="display: flex; justify-content: end;">Digite uma senha</i></div>
@@ -91,6 +94,7 @@
             <input type="text" id="registerName" autocomplete="off">
             <div id="errorPass">As senha não se conhecidem</div>
             <div id="enter-password">Digite uma senha</div>
+            <img onclick="clickEye('registerEye')" id="pass-register-show" style="width: 30px; height: auto;" src="../assets/showPass.png" alt="">
             <label for="registerPass">Senha</label>
             <input type="password" id="registerPass">
             <label for="confirmPass">Repetir Senha</label>
