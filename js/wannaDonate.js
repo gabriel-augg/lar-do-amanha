@@ -18,7 +18,6 @@ fileInput.addEventListener("change", () => {
     reader.readAsDataURL(file);
   }
   let animalIMG = JSON.parse(localStorage.getItem("img"));
-  console.log(animalIMG);
 });
 
 function back() {
@@ -95,7 +94,6 @@ function donationCreate() {
   }
 
   let animalIMG = JSON.parse(localStorage.getItem("img"));
-  console.log(animalIMG);
 
   let newAnimal = new Animal(
     animalName.value,

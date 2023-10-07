@@ -1,10 +1,8 @@
 function showAnimals() {
     matchAnimalsAndCards()
 }
-console.log(JSON.parse(localStorage.getItem('img')))
 
 function verificCards(data) {
-    console.log(data)
     if (!data.length) {
         document.getElementById('notFound').style.display = 'flex';
         document.getElementById('wannaAdopt-cards').style.display = 'none';
