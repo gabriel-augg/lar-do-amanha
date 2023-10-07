@@ -313,6 +313,14 @@ footer {
   color: #4f4f4f;
 }
 
+#index-animalNotFound {
+  height: 30vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
 @media only screen and (max-width: 600px) {
   #div-card {
     display: flex;
@@ -322,6 +330,9 @@ footer {
   }
   #text-card h1 {
     font-size: 30px;
+  }
+  #index-animalNotFound h1 {
+    text-align: center;
   }
 }
 #whyToAdopt-section {

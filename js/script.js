@@ -286,3 +286,13 @@ function showPassword(senha,iconEye) {
     iconEye.src = "../assets/showPass.png";
   }
 }
+
+function indexAnimalNotFound(){
+  if( userAnimals().length){
+    document.getElementById('index-animalNotFound').style.display = 'none'
+  } else {
+    document.getElementById('index-animalNotFound').style.display = 'flex'
+  }
+}
+
+indexAnimalNotFound()
