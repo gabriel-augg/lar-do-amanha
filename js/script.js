@@ -156,10 +156,10 @@ const ValidationData = () => {
   if (validation) {
     location.href = "../index.html";
   } else {
-    document.getElementById('incorrect').style.display = 'flex'
+    document.getElementById("incorrect").style.display = "flex";
     setTimeout(() => {
-      document.getElementById('incorrect').style.display = 'none'
-    }, 2000)
+      document.getElementById("incorrect").style.display = "none";
+    }, 2000);
   }
 };
 
@@ -249,38 +249,38 @@ if (document.getElementById("animal-cards")) {
   homeMatchAnimalsAndCards();
 }
 
-
 const iconLoginPass = document.getElementById("pass-login-show");
 const iconRegisterPass = document.getElementById("pass-register-show");
+const iconEditPass = document.getElementById("pass-edit-show");
 
 const registerEyePass = document.getElementById("registerPass");
-const confirmEyePass= document.getElementById("confirmPass");
-const loginEyePass = document.getElementById('inputPass')
+const confirmEyePass = document.getElementById("confirmPass");
+const loginEyePass = document.getElementById("inputPass");
+const editPass = document.getElementById("edit-pass");
+const editConfirmPass = document.getElementById("edit-confirm-pass");
 
 function clickEye(eye) {
   switch (eye) {
-    case 'registerEye':
-        showPassword(registerEyePass,iconRegisterPass)
-        showPassword(confirmEyePass,iconRegisterPass)
-
-
+    case "registerEye":
+      showPassword(registerEyePass, iconRegisterPass);
+      showPassword(confirmEyePass, iconRegisterPass);
 
       break;
-      case 'loginEye':
-        showPassword(loginEyePass,iconLoginPass)
-    
-      break;
-    //   case 'registerEye':
-    //     showPassword(pass)
-    //     showPassword(confirmpass)
+    case "loginEye":
+      showPassword(loginEyePass, iconLoginPass);
 
-    //   break;
+      break;
+    case "editEye":
+      showPassword(editPass, iconEditPass);
+      showPassword(editConfirmPass, iconEditPass );
+
+      break;
     default:
       break;
   }
 }
 
-function showPassword(senha,iconEye) {
+function showPassword(senha, iconEye) {
   if (senha.type === "password") {
     senha.type = "text";
     iconEye.src = "../assets/hidePass.png";
@@ -290,15 +290,14 @@ function showPassword(senha,iconEye) {
   }
 }
 
-function indexAnimalNotFound(){
-  if( userAnimals().length){
-    document.getElementById('index-animalNotFound').style.display = 'none'
+function indexAnimalNotFound() {
+  if (userAnimals().length) {
+    document.getElementById("index-animalNotFound").style.display = "none";
   } else {
-    document.getElementById('index-animalNotFound').style.display = 'flex'
+    document.getElementById("index-animalNotFound").style.display = "flex";
   }
 }
 
-if(document.getElementById('home')){
-  indexAnimalNotFound()
+if (document.getElementById("home")) {
+  indexAnimalNotFound();
 }
-

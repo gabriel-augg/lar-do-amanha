@@ -1281,6 +1281,7 @@ input[type=file] {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  position: relative;
 }
 
 #nothingSelected {
@@ -1661,6 +1662,12 @@ input[type=file] {
 #logOut-btns button:hover, #deleteBtns button:hover {
   cursor: pointer;
   background-color: #e56512;
+}
+
+#pass-edit-show {
+  position: absolute;
+  right: 2%;
+  top: 39%;
 }
 
 @media only screen and (max-width: 600px) {
