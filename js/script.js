@@ -119,8 +119,6 @@ function showUser() {
         document.getElementById("navItemResponse").style.display = "none";
         let userImage = document.createElement("img");
         userImage.src = ".././assets/user.svg";
-        let arrow = document.createElement("img");
-        arrow.src = ".././assets/caret-down.svg";
 
         let user = document.createElement("div");
         let userResponse = document.createElement("div");

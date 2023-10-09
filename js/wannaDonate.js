@@ -60,9 +60,7 @@ function donationCreate() {
   const selectedGender = document.querySelector('input[name="gender"]:checked');
   const description = document.getElementById("textarea");
   const date = new Date();
-  const currentDate = `0${date.getDate()}/${
-    date.getMonth() + 1
-  }/${date.getFullYear()}`;
+  const currentDate = `${date.getDate()}/${ date.getMonth() + 1}/${date.getFullYear()}`;
 
   class Animal {
     constructor(

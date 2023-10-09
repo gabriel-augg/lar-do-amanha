@@ -220,8 +220,8 @@ function homeCreateCard(
   animalName.textContent = animalNameParam;
   animalGender.innerHTML = `<img src=".././assets/mars-and-venus.svg" style="width: 26px; height: 26px;" alt="">${gender}`;
   location.innerHTML = `<img src=".././assets/location.svg" style="width: 26px; height: 26px;" alt="">${state}`;
-  editAnimal.innerHTML = `<img src="/assets/edit.png" style="width: 42px; height: 42px; cursor:pointer;" alt="">`;
-  deleteAnimal.innerHTML = `<img src="/assets/delete.png" style="width: 32px; height: 42px; cursor:pointer;" alt="">`;
+  editAnimal.innerHTML = `<img src="../assets/edit.png" style="width: 42px; height: 42px; cursor:pointer;" alt="">`;
+  deleteAnimal.innerHTML = `<img src="../assets/delete.png" style="width: 32px; height: 42px; cursor:pointer;" alt="">`;
   dateText.textContent = `adicionado em ${postDate}`;
   imageDiv.style.backgroundImage = `url(${animalIMG})`;
 
