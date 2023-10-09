@@ -193,7 +193,7 @@ function homeCreatCard(
   card.classList.add(classId);
   card.onclick = () => {
     localStorage.setItem("animal", JSON.stringify([animalId, userId]));
-    window.location.href = "../pages/infoAnimal.html";
+    window.location.href = "./pages/infoAnimal.html";
   };
 
   const imageDiv = document.createElement("div");
