@@ -21,11 +21,11 @@ Eles podem fornecer informações detalhadas sobre o animal, foto, nome, raça e
 **Adoção de Animais:**
 
 - Qualquer pessoa pode navegar pelos perfis de animais disponíveis para adoção sem a necessidade de cadastro.
-Os interessados em adotar podem entrar em contato com os doadores através do site ou pelo whatsapp.
+Os interessados em adotar podem entrar em contato com os doadores pelo whatsapp.
 
 **Pesquisa e Filtros:**
 
-- Os usuários podem usar filtros de pesquisa avançados para encontrar animais que atendam às suas preferências, como raça, localização e idade.
+- Os usuários podem usar filtros de pesquisa avançados para encontrar animais que atendam às suas preferências.
 
 
 ## Tecnologias utilizadas 💻
