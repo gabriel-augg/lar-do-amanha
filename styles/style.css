@@ -496,6 +496,7 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
 }
 
 #enter {
@@ -574,15 +575,28 @@ label {
   display: none;
   font-weight: bold;
 }
-#pass-empty #openRegister:hover {
+
+#openRegister:hover {
   cursor: pointer;
 }
+
+#pass-login-show {
+  position: absolute;
+  right: 3%;
+  top: 62.3%;
+}
+
+#pass-register-show {
+  position: absolute;
+  right: 3%;
+  top: 56%;
+}
+
 @media screen and (max-width: 600px) {
-  #pass-empty .divCardLogin {
+  .divCardLogin {
     width: 100%;
   }
 }
-
 #wannaDonation-section {
   padding: 2% 10%;
 }

@@ -11,6 +11,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
 }
 
 #enter {
@@ -96,23 +97,26 @@ label {
     color: rgb(172, 12, 12);
     display: none;
     font-weight: bold;
-    
+}
+
 #openRegister:hover{
     cursor: pointer;
 }
 
-// #pass-login-show{
-//     position: absolute;
-//     right: 0;
-// }
+#pass-login-show{
+    position: absolute;
+    right: 3%;
+    top: 62.3%;
+}
 
-// #pass-register-show{
-//     position: absolute;
-//     right: 0;
-// }
+#pass-register-show{
+    position: absolute;
+    right: 3%;
+    top: 56%;
+}
 
 @media screen and (max-width: 600px) {
     .divCardLogin {
         width: 100%;
     }
-} }
+} 
