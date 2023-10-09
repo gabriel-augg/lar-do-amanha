@@ -118,7 +118,9 @@ function showUser() {
         document.getElementById("navItem").style.display = "none";
         document.getElementById("navItemResponse").style.display = "none";
         let userImage = document.createElement("img");
-        userImage.src = ".././assets/user.svg";
+        userImage.src = (window.location.href.includes("/pages/")) ? "../assets/user.svg" : "assets/user.svg"
+        let caretRight =  (window.location.href.includes("/pages/")) ? ".././assets/caret-right.svg" : "./assets/caret-right.svg"
+        
 
         let user = document.createElement("div");
         let userResponse = document.createElement("div");
@@ -127,7 +129,7 @@ function showUser() {
         user.innerHTML = `<img class="icon-user" src="${userImage.src}"/><h4 id="name-user">${item.nameUser}</h4>`;
 
         userResponse.className = "content-user-response";
-        userResponse.innerHTML = `<img src=".././assets/caret-right.svg"><img class="icon-user-response" src="${userImage.src}"/><h4 id="name-user-response">${item.nameUser}</h4>`;
+        userResponse.innerHTML = `<img src="${caretRight}"><img class="icon-user-response" src="${userImage.src}"/><h4 id="name-user-response">${item.nameUser}</h4>`;
         userResponse.onclick = clickUser;
 
         statusLogin.appendChild(user);
@@ -211,9 +213,12 @@ function homeCreatCard(
   date.classList.add("date");
   imageDiv.classList.add("imgDiv");
 
+  let animalGenderIMG = (window.location.href.includes("/pages/")) ? ".././assets/mars-and-venus.svg" : "./assets/mars-and-venus.svg"
+  let animalLocationIMG = (window.location.href.includes("/pages/")) ? ".././assets/location.svg" : "./assets/location.svg"
+
   animalName.textContent = animalNameParam;
-  animalGender.innerHTML = `<img src=".././assets/mars-and-venus.svg" style="width: 26px; height: 26px;" alt="">${gender}`;
-  location.innerHTML = `<img src=".././assets/location.svg" style="width: 26px; height: 26px;" alt="">${state}`;
+  animalGender.innerHTML = `<img src="${animalGenderIMG}" style="width: 26px; height: 26px;" alt="">${gender}`;
+  location.innerHTML = `<img src="${animalLocationIMG}" style="width: 26px; height: 26px;" alt="">${state}`;
   dateText.textContent = `adicionado em ${postDate}`;
   imageDiv.style.backgroundImage = `url(${animalIMG})`;
 
