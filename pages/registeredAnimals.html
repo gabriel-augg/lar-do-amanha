@@ -87,8 +87,8 @@
 
 
             <div id="content-edit" style="display: none;">
-
                 <div id="contentArea-edit">
+                    <div id="errorEmptyUser">Preencha todos os dados!</div>
                     <div class="edit-inputs">
                         <label for="edit-email">Email</label>
                         <input class="able" disabled type="email" id="edit-email" autocomplete="off">
@@ -108,12 +108,13 @@
                     </div>
                     <div id="btn-register-user">
                         <button onclick="able()">Editar</button>
-                        <button onclick="saveUser()"  id="save-register">Salvar alterações</button>
+                        <button onclick="validationUserEdit()"  id="save-register">Salvar alterações</button>
                     </div>
                 </div>
             </div>
             <div id="animalEdit-section" style="display: none;" >
                 <div id="all-inputs-animalEdit">
+                    <div id="errorEmptyAnimal">Preencha todos os dados!</div>
                     <div id="title-animalEdit">
                         <div>
                             <div id="upload-image"></div>
@@ -205,7 +206,7 @@
                     </div>
                     <div id="button-animalEdit">
                         <button onclick="able()">Editar</button>
-                        <button onclick="saveAnimalInfo()">Salvar</button>
+                        <button onclick="validationDonate()">Salvar</button>
                     </div>
                 </div>
             </div>

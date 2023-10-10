@@ -630,6 +630,15 @@ label {
   color: #4f4f4f;
 }
 
+#errorEmpty {
+  color: brown;
+  display: none;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  background-color: #777777;
+}
+
 .inputs-wannaDonation,
 #radio-wannaDonation {
   width: 40%;
@@ -1582,6 +1591,24 @@ input[type=file] {
   justify-content: space-between;
 }
 
+#errorEmptyAnimal {
+  color: brown;
+  display: none;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  background-color: #777777;
+}
+
+#errorEmptyUser {
+  color: brown;
+  display: none;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  background-color: #777777;
+}
+
 .animal-content-register h3 {
   font-size: 17px;
 }
@@ -1617,15 +1644,6 @@ input[type=file] {
 .inputs-animalEdit select:hover {
   cursor: pointer;
   background-color: #EEEEEE;
-}
-
-#errorEmpty {
-  color: brown;
-  display: none;
-  text-align: center;
-  font-weight: bold;
-  font-size: 30px;
-  background-color: #777777;
 }
 
 #noAnimal {

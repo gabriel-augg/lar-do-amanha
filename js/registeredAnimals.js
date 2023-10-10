@@ -18,7 +18,7 @@ function saveUser() {
   setTimeout(() => {
     document.getElementById("savedInfo").style.display = "none";
     document.getElementsByTagName("body")[0].style.overflowY = "scroll";
-  }, 2000);
+  }, 1150);
 }
 
 localStorage.setItem('img', JSON.stringify(''))
@@ -79,7 +79,7 @@ function saveAnimalInfo(){
     setTimeout(() => {
         document.getElementById('savedInfo').style.display = 'none'
         document.getElementsByTagName('body')[0].style.overflowY = 'scroll'
-    },2000)
+    },1250)
     disabled()
 }
 
@@ -322,3 +322,57 @@ const animalsRegister = () => {
   document.getElementById("nothingSelected").style.display = "none";
   disabled();
 };
+
+const goToTop = () => window.scrollTo(0, 0);
+
+const validationDonate = () => {
+  const animalName = document.getElementById("animal-name");
+  const animalType = document.getElementById("animal-type");
+  const phone = document.getElementById("phone");
+  const zipCode = document.getElementById("zipcode");
+  const city = document.getElementById("city");
+  const state = document.getElementById("state");
+  const description = document.getElementById("textarea");
+  const imageAnimal = document.getElementById("upload-image");
+  const selectedGender = document.querySelectorAll('input[name="gender"]');
+  const genderRadio = Array.from(selectedGender).some((radio) => radio.checked);
+
+  if (
+    !animalName.value ||
+    animalType.value === "animal" ||
+    !phone.value ||
+    !zipCode.value ||
+    !city.value ||
+    state.value === "state" ||
+    !description.value ||
+    !genderRadio ||
+    imageAnimal.childElementCount <= 0
+  ) {
+    document.getElementById("errorEmptyAnimal").style.display = "block";
+    goToTop();
+  } else {
+    document.getElementById("errorEmptyAnimal").style.display = "none";
+    document.getElementsByTagName("body")[0].style.overflow = "hidden";
+    saveAnimalInfo();
+  }
+};
+
+const validationUserEdit = () => {
+  let editEmail =  document.getElementById("edit-email").value
+  let editName = document.getElementById("edit-name").value
+  let editPass = document.getElementById("edit-pass").value
+  let editConfirmPass = document.getElementById("edit-confirm-pass").value
+
+ if(editEmail == ""){
+  document.getElementById("errorEmptyUser").style.display = "block";
+ }else if (editName == ""){
+  document.getElementById("errorEmptyUser").style.display = "block";
+ }else if (editPass == "") {
+  document.getElementById("errorEmptyUser").style.display = "block";
+ }else if (editConfirmPass == "") {
+  document.getElementById("errorEmptyUser").style.display = "block";
+ }else{
+  document.getElementById("errorEmptyUser").style.display = "none";
+  saveUser();
+ }
+}

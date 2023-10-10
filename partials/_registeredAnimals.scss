@@ -317,7 +317,22 @@ input[type="file"] {
     justify-content: space-between;
 }
 
-
+#errorEmptyAnimal{
+    color: brown;
+    display: none;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    background-color: #777777;
+}
+#errorEmptyUser{
+    color: brown;
+    display: none;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    background-color: #777777;
+}
 
 .animal-content-register h3 {
     font-size: 17px;
@@ -358,14 +373,7 @@ input[type="file"] {
 }
 
 
-#errorEmpty {
-    color: brown;
-    display: none;
-    text-align: center;
-    font-weight: bold;
-    font-size: 30px;
-    background-color: #777777;
-}
+
 
 #noAnimal {
     height: 100%;

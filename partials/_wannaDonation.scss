@@ -30,6 +30,16 @@
     color: $grayP;
 }
 
+#errorEmpty {
+    color: brown;
+    display: none;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    background-color: #777777;
+} 
+
+
 .inputs-wannaDonation,
 #radio-wannaDonation {
     width: 40%;
