@@ -69,7 +69,8 @@ function saveAnimalInfo(){
                 animal.state = document.getElementById('state').value
                 animal.gender = document.querySelector('input[name="gender"]:checked').value
                 animal.description = document.getElementById('textarea').value
-                animal.animalIMG = animalIMG
+                animal.animalIMG = (!animalIMG) ? animal.animalIMG : animalIMG;
+                
             }
         })
     })
@@ -333,10 +334,9 @@ const validationDonate = () => {
   const city = document.getElementById("city");
   const state = document.getElementById("state");
   const description = document.getElementById("textarea");
-  const imageAnimal = JSON.parse(localStorage.getItem("img"));
+  const imageAnimal = document.getElementById("upload-image");
   const selectedGender = document.querySelectorAll('input[name="gender"]');
   const genderRadio = Array.from(selectedGender).some((radio) => radio.checked);
-  
 
   if (
     !animalName.value ||
@@ -347,7 +347,7 @@ const validationDonate = () => {
     state.value === "state" ||
     !description.value ||
     !genderRadio ||
-    !imageAnimal
+    imageAnimal.childElementCount <= 0
   ) {
     document.getElementById("errorEmptyAnimal").style.display = "block";
     goToTop();
