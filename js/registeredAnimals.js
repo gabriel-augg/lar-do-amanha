@@ -333,9 +333,10 @@ const validationDonate = () => {
   const city = document.getElementById("city");
   const state = document.getElementById("state");
   const description = document.getElementById("textarea");
-  const imageAnimal = document.getElementById("upload-image");
+  const imageAnimal = JSON.parse(localStorage.getItem("img"));
   const selectedGender = document.querySelectorAll('input[name="gender"]');
   const genderRadio = Array.from(selectedGender).some((radio) => radio.checked);
+  
 
   if (
     !animalName.value ||
@@ -346,7 +347,7 @@ const validationDonate = () => {
     state.value === "state" ||
     !description.value ||
     !genderRadio ||
-    imageAnimal.childElementCount <= 0
+    !imageAnimal
   ) {
     document.getElementById("errorEmptyAnimal").style.display = "block";
     goToTop();
@@ -363,13 +364,13 @@ const validationUserEdit = () => {
   let editPass = document.getElementById("edit-pass").value
   let editConfirmPass = document.getElementById("edit-confirm-pass").value
 
- if(editEmail == ""){
+ if(!editEmail){
   document.getElementById("errorEmptyUser").style.display = "block";
- }else if (editName == ""){
+ }else if (!editName){
   document.getElementById("errorEmptyUser").style.display = "block";
- }else if (editPass == "") {
+ }else if (!editPass) {
   document.getElementById("errorEmptyUser").style.display = "block";
- }else if (editConfirmPass == "") {
+ }else if (!editConfirmPass) {
   document.getElementById("errorEmptyUser").style.display = "block";
  }else{
   document.getElementById("errorEmptyUser").style.display = "none";
