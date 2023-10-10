@@ -426,9 +426,11 @@ input[type="file"] {
 }
 
 #pass-edit-show{
+    width: 30px;
+    height: auto;
     position: absolute;
-    right: 2%;
-    top: 39%;
+    right: 3%;
+    top: 53%;
 }
 
 
@@ -519,4 +521,9 @@ input[type="file"] {
     #nothingSelected {
         font-size: 18px;
     }
+
+    #pass-edit-show{
+        top: 50%;
+    }
+    
 }
