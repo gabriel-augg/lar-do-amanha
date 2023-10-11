@@ -36,6 +36,7 @@ const registerName = document.getElementById("registerName");
 password.addEventListener("input", () => {
   passInvalid.style.display = "none";
   document.getElementById("enter-password").style.display = "none";
+  eyePassword.style.top = "56%" ;
   password.style.outline = "none";
   confirmPass.style.outline = "none";
 });
@@ -43,6 +44,7 @@ password.addEventListener("input", () => {
 confirmPass.addEventListener("input", () => {
   passInvalid.style.display = "none";
   document.getElementById("enter-password").style.display = "none";
+  eyePassword.style.top = "56%" ;
   password.style.outline = "none";
   confirmPass.style.outline = "none";
 });
@@ -105,6 +107,7 @@ function allEmpty() {
       break;
     case password.value !== confirmPass.value:
       passInvalid.style.display = "block";
+      eyePassword.style.top = "53%" ;
       break;
     case password.value === "":
       document.getElementById("enter-password").style.display = "block";
@@ -130,7 +133,7 @@ function allEmpty() {
       break;
   }
 }
-
+const eyePassword = document.getElementById("pass-register-show")
 const inputEmail = document.getElementById("inputEmail");
 const inputPass = document.getElementById("inputPass");
 const btnEnter = document.getElementById("btnEnter");

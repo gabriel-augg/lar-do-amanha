@@ -334,6 +334,15 @@ input[type="file"] {
     background-color: #777777;
 }
 
+#errorPassword{
+    color: brown;
+    display: none;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    background-color: #777777;
+}
+
 .animal-content-register h3 {
     font-size: 17px;
 }

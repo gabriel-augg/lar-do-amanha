@@ -565,9 +565,11 @@ label {
 }
 
 #user-empty, #errorEmail, #errorPass, #enter-password, #erroName, #existingName {
-  color: rgb(172, 12, 12);
+  color: rgb(255, 63, 63);
   display: none;
   font-weight: bold;
+  text-align: center;
+  font-size: 20px;
 }
 
 #pass-empty {
@@ -590,11 +592,16 @@ label {
   position: absolute;
   right: 3%;
   top: 56%;
+  width: 25px;
+  height: auto;
 }
 
 @media screen and (max-width: 600px) {
   .divCardLogin {
     width: 100%;
+  }
+  #pass-register-show {
+    top: 56.5%;
   }
 }
 #wannaDonation-section {
@@ -1601,6 +1608,15 @@ input[type=file] {
 }
 
 #errorEmptyUser {
+  color: brown;
+  display: none;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  background-color: #777777;
+}
+
+#errorPassword {
   color: brown;
   display: none;
   text-align: center;

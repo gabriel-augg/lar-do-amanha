@@ -364,16 +364,19 @@ const validationUserEdit = () => {
   let editPass = document.getElementById("edit-pass").value
   let editConfirmPass = document.getElementById("edit-confirm-pass").value
 
- if(!editEmail){
+ if(!editEmail || !editName || !editPass || !editConfirmPass){
   document.getElementById("errorEmptyUser").style.display = "block";
- }else if (!editName){
-  document.getElementById("errorEmptyUser").style.display = "block";
- }else if (!editPass) {
-  document.getElementById("errorEmptyUser").style.display = "block";
- }else if (!editConfirmPass) {
-  document.getElementById("errorEmptyUser").style.display = "block";
+  document.getElementById("pass-edit-show").style.top = "58.5%"
+  document.getElementById("errorPassword").style.display = "none"
+ }else if(editPass != editConfirmPass){
+  document.getElementById("errorEmptyUser").style.display = "none";
+  document.getElementById("pass-edit-show").style.top = "58.5%"
+  document.getElementById("errorPassword").style.display = "block"
  }else{
+  document.getElementById("pass-edit-show").style.top = "53%"
+  document.getElementById("errorPassword").style.display = "none"
   document.getElementById("errorEmptyUser").style.display = "none";
   saveUser();
  }
 }
+
